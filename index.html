@@ -164,7 +164,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/01/27/Presentation20211115/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/03/04/Presentation20220304/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -178,7 +178,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2022/01/27/Presentation20211115/" class="post-title-link" itemprop="url">Presentation20211115</a>
+            <a href="/2022/03/04/Presentation20220304/" class="post-title-link" itemprop="url">Presentation20220304</a>
         </h2>
 
         <div class="post-meta">
@@ -187,16 +187,10 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
+              
 
-              <time title="创建时间：2022-01-27 23:56:51" itemprop="dateCreated datePublished" datetime="2022-01-27T23:56:51+08:00">2022-01-27</time>
+              <time title="创建时间：2022-03-04 13:03:35 / 修改时间：13:06:52" itemprop="dateCreated datePublished" datetime="2022-03-04T13:03:35+08:00">2022-03-04</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-01-28 00:10:59" itemprop="dateModified" datetime="2022-01-28T00:10:59+08:00">2022-01-28</time>
-              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -218,24 +212,107 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 align = "center">
-  A complete digital pre-distortion algorithm structure 
-</h1>
+          <h1 id="Presentation-2022-03-04"><a href="#Presentation-2022-03-04" class="headerlink" title="Presentation 2022.03.04"></a>Presentation 2022.03.04</h1><h2 id="Modeling-amp-Coding"><a href="#Modeling-amp-Coding" class="headerlink" title="Modeling &amp; Coding"></a>Modeling &amp; Coding</h2><h3 id="Modeling-using-matlab"><a href="#Modeling-using-matlab" class="headerlink" title="Modeling using matlab"></a>Modeling using matlab</h3><p>Simulink + simRF<br><img src="https://cdn.jsdelivr.net/gh/JC-GGBond/image-JC@master/20220304/dpd-twotone.79pcie42wlg0.webp"></p>
+<p>Spectrum Analyzer<br>without dpd<br><img src="https://cdn.jsdelivr.net/gh/JC-GGBond/image-JC@master/20220304/without-dpd.6r3ecdmg2b40.webp"></p>
+<p>after dpd<br><img src="https://cdn.jsdelivr.net/gh/JC-GGBond/image-JC@master/20220304/dpd.25xuh144t40w.webp"></p>
+<h3 id="Coding"><a href="#Coding" class="headerlink" title="Coding"></a>Coding</h3><h4 id="MP"><a href="#MP" class="headerlink" title="MP"></a>MP</h4><p>$$<br>y(n)=\sum_{k=1}^K\sum_{q=0}^Q x(n-q)|x(n-q)|^{k-1}<br>$$</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">% try to realise the MP function</span><br><span class="line">function MP_coef=Memory_Polymonial_model(x,y,memlen,K)</span><br><span class="line">%as the matlab language syntax from 1 to N</span><br><span class="line">%MP: q=0:Q  k=1:K</span><br><span class="line">%actually the memlen is Q+1;degree is k</span><br><span class="line">x=x(:);</span><br><span class="line">%原矩阵按每一列摞起来成为N*1</span><br><span class="line">y=y(:);</span><br><span class="line">xlen=length(x);</span><br><span class="line"></span><br><span class="line">xrow=reshape((memlen:-1:1)&#x27;+(0:xlen:xlen*(K-1)),1,[]);</span><br><span class="line"></span><br><span class="line">%reshape(([memlen,memlen-1,memlen-2,...,1]&#x27;+[0:xlen:xlen*(K-1)]),1,[])</span><br><span class="line"></span><br><span class="line">% caculate the delay matrix</span><br><span class="line">xVec=(0:xlen-memlen)&#x27;+xrow;</span><br><span class="line"></span><br><span class="line">%compute the delay matrix</span><br><span class="line">%.^ power(A ,B)得到时延项矩阵</span><br><span class="line">%.*按对应元素相乘</span><br><span class="line">xPow=x.*(abs(x).^(0:K-1));</span><br><span class="line"></span><br><span class="line">%天秀啊，矩阵元素查找</span><br><span class="line">%A(B)=A(B(i,j))=C;得到一个与B同样大小的矩阵</span><br><span class="line">%其中C（i,j）=先把A=A=(:),然后C（i，j）=A(第B(i,j))</span><br><span class="line">xVec=xPow(xVec);</span><br><span class="line"></span><br><span class="line">%\ mldivide Ax=B 求x 相当于解系数项，跳过了前1,2,...,memlen-1项的y(n)</span><br><span class="line">coef=xVec\y(memlen:xlen);</span><br><span class="line"></span><br><span class="line">%reshape(coef,memlen,size of (coef)/memlen)相当于再拆，拆成系数项矩阵而不是一个长列。</span><br><span class="line">MP_coef=reshape(coef,memlen,numel(coef)/memlen);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
+<h4 id="LMS"><a href="#LMS" class="headerlink" title="LMS"></a>LMS</h4><p>$$<br>y(n)=w^T(n)u(n)\<br>e(n)=d(n)-y(n)\<br>w(n+1)=w(n)+2\mu e^*(n)x(n)<br>$$</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line">clear all;</span><br><span class="line">clc;</span><br><span class="line">%% data generate</span><br><span class="line">% original signal</span><br><span class="line">N=1000;%sample numble</span><br><span class="line">data=sign(rand(N,1)-0.5);%1000*1;rand() (0,1);-0.5-&gt;(-0.5,0.5);sign()&gt;0=1 &lt;0=-1</span><br><span class="line">% give filter taps value to calculate the first output</span><br><span class="line">w=[0.8783 -0.5806 0.6537 -0.3223 0.6577 -0.0582 0.2895 -0.2710];</span><br><span class="line">% caculate filter output</span><br><span class="line">output=conv(data,w);%M+N-1</span><br><span class="line">snr=20;</span><br><span class="line">output=awgn(output,snr,&#x27;measured&#x27;); </span><br><span class="line">%% LMS</span><br><span class="line"></span><br><span class="line">% initialization</span><br><span class="line"></span><br><span class="line">M=8;%w.size</span><br><span class="line">error_whole=zeros(1000,1);</span><br><span class="line">%for k =1:100 单纯的循环没有意义。</span><br><span class="line">w_lms=zeros(1,8);</span><br><span class="line">for i=M:N</span><br><span class="line">    input=data(i:-1:i-M+1);%8*1</span><br><span class="line">    error=output(i)-w_lms*input;%1*8*8*1</span><br><span class="line">    mu=0.04;</span><br><span class="line">    w_lms=w_lms+mu*error*input&#x27;;</span><br><span class="line">    error_whole(i)=error_whole(i)+error^2;</span><br><span class="line">end</span><br><span class="line">%end</span><br><span class="line"></span><br><span class="line">%% plot</span><br><span class="line">figure;</span><br><span class="line">error_dB=zeros(1,1000);</span><br><span class="line">for p =8:1000</span><br><span class="line">error_dB(p)=10*log10(error_whole(p));</span><br><span class="line">end</span><br><span class="line">plot(error_dB);</span><br><span class="line">axis tight;         % 使用紧凑的坐标轴</span><br><span class="line">legend(&#x27;LMS算法&#x27;);       % 图例</span><br><span class="line">title(&#x27;LMS算法误差曲线&#x27;);  % 图标题</span><br><span class="line">xlabel(&#x27;样本&#x27;);                     % x轴标签</span><br><span class="line">ylabel(&#x27;误差/dB&#x27;);                  % y轴标签</span><br><span class="line">grid on;                            % 网格线</span><br><span class="line"></span><br><span class="line">    </span><br></pre></td></tr></table></figure>
 
+<p>One epoch<br><img src="https://cdn.jsdelivr.net/gh/JC-GGBond/image-JC@master/20220304/lms.3kri5yn5v6w0.webp"></p>
+<p>Averange<br><img src="https://cdn.jsdelivr.net/gh/JC-GGBond/image-JC@master/20220304/multiple-rand-signal-lms-averange.170glmzkdta8.webp"></p>
+<h2 id="Paper-reading"><a href="#Paper-reading" class="headerlink" title="Paper reading"></a>Paper reading</h2><p>decomposition dpd</p>
+<p>sub6G &amp; mmwave</p>
+<p>sub6G：</p>
+<p>PC generated a 5G NR waveform of 64-quadrature amplitude modulation (QAM),BW = 100 MHz, and PAPR = 9.1 dB after crest factor reduction.（CFR消峰） Next, download the signal into the vector signal generator (R&amp;S, SMW200A). Then, the signal was upconverted to 2.4 GHz.（SMW）</p>
+<p><strong>For me,all in SDR with AD9363.</strong></p>
+<p> After a preamplifier, it was fed into a symmetrical Doherty PA using two Wolfspeed CGH40010 GaN transistors (CREE Inc.) with an average output power of 32.1 dBm. The 1-dB compression point of PA is P1 d B = 41 dBm.</p>
+<p><strong>Choose PA</strong></p>
+<p>At last, the spectrum analyzer (Keysight, N9030A) captured in-phase and quadrature (I/Q) data  fter the attenuator and sent them back to PC for coefficients extraction and predistortion.</p>
+<p><strong>Demodulation and FFT</strong><br>用不同的PA模型测试，对比不同文章NMSE 25 27 35 28</p>
+<p>mmwave:</p>
+<p>the center frequency was selected as 28 GHz and the modulation BWs were 400 and 800 MHz. </p>
+<p>The test signals employed are a 5G NR waveform with the PAPR of around 9 dB by crest factor reduction and the BW of 400 and 800 MHz with 64-QAM.</p>
+<p> First, the ultrabroadband signals were generated in PC and downloaded into a vector signal generator (R&amp;S, SMW200A).</p>
+<p>Then, it was upconverted to an mmWave frequency at 28 GHz. Later, a Ka-band PA (SAGE Millimeter,Inc., Torrance, CA, USA) transmitted the signal with gain =45 dB and P1dB = 26 dBm. The average output power is set as 18.2 dBm.</p>
+<p>A coupler was used to send a small portion of the amplified signal to the spectrum analyzer (R&amp;S, FSW).<br>At last, FSW captured I/Q data and sent them back to PC.</p>
 
-<hr>
-<h2 id="1-Block-diagram"><a href="#1-Block-diagram" class="headerlink" title="1.Block diagram"></a>1.Block diagram</h2><h2 id="2-PA-model"><a href="#2-PA-model" class="headerlink" title="2.PA model"></a>2.PA model</h2><p><strong>MP（Memory Polynomial）:</strong><br>$$<br>z(n)=\sum_{k=1}^{K}\sum_{q=0}^{Q}a_{kq}x(n-q)|x(n-q)|^{k-1}<br>$$<br><strong>Plug the above formula  into the variables in the block diagram:</strong><br>$$<br>z(n)=\vec y \alpha<br>$$<br><strong>Which:</strong><br>$$<br>\vec y=[\phi_{10}(y(n)),\phi_{11}(y(n)),\phi_{12}(y(n)),\phi_{13}(y(n)),\dots\dots,\phi_{KQ}(y(n))]\<br>\phi_{kq}(y(n))=y(n-q)|y(n-q)|^{k-1}\<br>$$<br><strong>and:</strong><br>$$<br>\alpha=[a_{10},\dots \dots,a_{1Q},a_{21},\dots \dots,a_{KQ}]^{T}<br>$$</p>
-<hr>
-<h2 id="3-Optimization"><a href="#3-Optimization" class="headerlink" title="3.Optimization"></a>3.Optimization</h2><h3 id="3-1-Iteration-range"><a href="#3-1-Iteration-range" class="headerlink" title="3.1 Iteration range"></a>3.1 Iteration range</h3><p><strong>Select:</strong><br>$$<br>\vec y_{o}=[y(n),y(n+1),\dots\dots,y(n+N-1)]^{T}<br>$$<br><strong>Now:</strong><br>$$<br>\vec z=Y\alpha<br>$$<br><strong>Which:</strong><br>$$<br>\vec z=[z(n),z(n+1),\dots\dots,z(n+N-1)]\<br>Y=[\phi_{10}(\vec y_{o}),\phi_{11}(\vec y_{o}),\phi_{12}(\vec y_{o}),\phi_{13}(\vec y_{o}),\dots\dots,\phi_{KQ}(\vec y_{o})]<br>$$</p>
-<hr>
-<h3 id="3-2-Optimize-algorithm"><a href="#3-2-Optimize-algorithm" class="headerlink" title="3.2 Optimize algorithm"></a>3.2 Optimize algorithm</h3><h4 id="3-2-1-LS-Least-Square"><a href="#3-2-1-LS-Least-Square" class="headerlink" title="3.2.1 LS  (Least Square)"></a>3.2.1 LS  (Least Square)</h4><p><strong>Target:</strong><br>$$<br>min||\vec z-Y\alpha||_{2}^2<br>$$<br><strong>So：</strong><br>$$<br>\frac{\partial ||\vec z-Y\alpha||_{2}^2}{\partial \alpha}=\frac{\partial (\vec z^{H}\vec z-2\alpha^{H}Y^{H}\vec z+\alpha^{H}Y^{H}Y\alpha)}{\partial \alpha}=2(Y^{H}Y\alpha-Y^{H}\vec z)\<br>$$<br><strong>Let it equal to zero:</strong><br>$$<br>\alpha=(Y^{H}Y)^{-1}Y^{H}\vec z<br>$$<br><strong>Q:</strong></p>
-<p>$r(Y^{H}Y)\le min{r(Y^{H}),r(Y)}$，$inv(Y^{H}Y)$ <strong>may not exist</strong></p>
-<hr>
-<h4 id="3-2-2-QR-decomposition"><a href="#3-2-2-QR-decomposition" class="headerlink" title="3.2.2 QR decomposition"></a>3.2.2 QR decomposition</h4><p><strong>Principle：</strong></p>
-<p>$Y \in \mathbb{R}^{m\times n} ,m\ge n$， $Y=QR$，<strong>while</strong> $Q\in \mathbb{R}^{m\times m}$<strong>is orthogonal matrix</strong>，$R\equiv  \left[\begin{array}{c} \hat{R} \0 \end{array} \right] \in \mathbb{R^{m\times n}}$，$\hat{R} \in \mathbb{R^{n\times n}}$ <strong>is Upper triangular matrix</strong></p>
-<p><strong>Let:</strong> $Y=QR$<br>$$<br>\alpha=(R^{H}Q^{H}QR)^{-1}R^{H}Q^{H}\vec z\<br>$$<br><strong>Because:</strong>  $Q^{H}Q=E$<br>$$<br>\alpha=R^{-1}R^{-H}R^{H}Q^{H}\vec z\<br>\alpha=R^{-1}Q^{H}\vec z\<br>R\alpha=Q^H\vec z<br>$$<br>$\alpha$ <strong>can be solved by solving homogeneous equations from bottom to top</strong></p>
+      
+    </div>
 
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/02/20/Weeklyproject202202-1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="JC.GGBond">
+      <meta itemprop="description" content="How you doing?">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="JC.GGBond 's homepage.">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/02/20/Weeklyproject202202-1/" class="post-title-link" itemprop="url">Weeklyproject202202-1</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2022-02-20 23:01:55" itemprop="dateCreated datePublished" datetime="2022-02-20T23:01:55+08:00">2022-02-20</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-02-21 17:17:37" itemprop="dateModified" datetime="2022-02-21T17:17:37+08:00">2022-02-21</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Work-Project/" itemprop="url" rel="index"><span itemprop="name">Work Project</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="Weekly-Project-202002-1"><a href="#Weekly-Project-202002-1" class="headerlink" title="Weekly Project 202002-1"></a>Weekly Project 202002-1</h1><h2 id="1-C-RLS-NLMS-DPD"><a href="#1-C-RLS-NLMS-DPD" class="headerlink" title="1.C++ RLS+NLMS DPD"></a>1.C++ RLS+NLMS DPD</h2><h2 id="2-Book-data-structure"><a href="#2-Book-data-structure" class="headerlink" title="2.Book: data structure"></a>2.Book: data structure</h2><h2 id="Paper-reading-Implement-it-under-local-conditions"><a href="#Paper-reading-Implement-it-under-local-conditions" class="headerlink" title="Paper reading: Implement it under local conditions"></a>Paper reading: Implement it under local conditions</h2><p>Cree PA<br>RF lab dpd competition system<br>experiment environment: UESTC: Power Scalable Behavioral<br>PA: Cree CG2H40010F BUPT A Low Sampling Rate Memory-Grouped Method<br>    single HEMT MOSFET :300RMB<br>    DEV BOARD: 5000 = =?<br>    WHAT THE FUCK</p>
+<h2 id="Fin-Spread-Spectrum-Communication"><a href="#Fin-Spread-Spectrum-Communication" class="headerlink" title="Fin: Spread Spectrum Communication"></a>Fin: Spread Spectrum Communication</h2>
       
     </div>
 
@@ -338,6 +415,96 @@
 </tr>
 </tbody></table>
 <h2 id="3-Hardware-platform"><a href="#3-Hardware-platform" class="headerlink" title="3.Hardware platform"></a>3.Hardware platform</h2><h3 id="Adalm-pluto"><a href="#Adalm-pluto" class="headerlink" title="Adalm-pluto"></a>Adalm-pluto</h3>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/01/27/Presentation20211115/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="JC.GGBond">
+      <meta itemprop="description" content="How you doing?">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="JC.GGBond 's homepage.">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/01/27/Presentation20211115/" class="post-title-link" itemprop="url">Presentation20211115</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2022-01-27 23:56:51" itemprop="dateCreated datePublished" datetime="2022-01-27T23:56:51+08:00">2022-01-27</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-01-28 00:10:59" itemprop="dateModified" datetime="2022-01-28T00:10:59+08:00">2022-01-28</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Presentation/" itemprop="url" rel="index"><span itemprop="name">Presentation</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 align = "center">
+  A complete digital pre-distortion algorithm structure 
+</h1>
+
+
+
+<hr>
+<h2 id="1-Block-diagram"><a href="#1-Block-diagram" class="headerlink" title="1.Block diagram"></a>1.Block diagram</h2><h2 id="2-PA-model"><a href="#2-PA-model" class="headerlink" title="2.PA model"></a>2.PA model</h2><p><strong>MP（Memory Polynomial）:</strong><br>$$<br>z(n)=\sum_{k=1}^{K}\sum_{q=0}^{Q}a_{kq}x(n-q)|x(n-q)|^{k-1}<br>$$<br><strong>Plug the above formula  into the variables in the block diagram:</strong><br>$$<br>z(n)=\vec y \alpha<br>$$<br><strong>Which:</strong><br>$$<br>\vec y=[\phi_{10}(y(n)),\phi_{11}(y(n)),\phi_{12}(y(n)),\phi_{13}(y(n)),\dots\dots,\phi_{KQ}(y(n))]\<br>\phi_{kq}(y(n))=y(n-q)|y(n-q)|^{k-1}\<br>$$<br><strong>and:</strong><br>$$<br>\alpha=[a_{10},\dots \dots,a_{1Q},a_{21},\dots \dots,a_{KQ}]^{T}<br>$$</p>
+<hr>
+<h2 id="3-Optimization"><a href="#3-Optimization" class="headerlink" title="3.Optimization"></a>3.Optimization</h2><h3 id="3-1-Iteration-range"><a href="#3-1-Iteration-range" class="headerlink" title="3.1 Iteration range"></a>3.1 Iteration range</h3><p><strong>Select:</strong><br>$$<br>\vec y_{o}=[y(n),y(n+1),\dots\dots,y(n+N-1)]^{T}<br>$$<br><strong>Now:</strong><br>$$<br>\vec z=Y\alpha<br>$$<br><strong>Which:</strong><br>$$<br>\vec z=[z(n),z(n+1),\dots\dots,z(n+N-1)]\<br>Y=[\phi_{10}(\vec y_{o}),\phi_{11}(\vec y_{o}),\phi_{12}(\vec y_{o}),\phi_{13}(\vec y_{o}),\dots\dots,\phi_{KQ}(\vec y_{o})]<br>$$</p>
+<hr>
+<h3 id="3-2-Optimize-algorithm"><a href="#3-2-Optimize-algorithm" class="headerlink" title="3.2 Optimize algorithm"></a>3.2 Optimize algorithm</h3><h4 id="3-2-1-LS-Least-Square"><a href="#3-2-1-LS-Least-Square" class="headerlink" title="3.2.1 LS  (Least Square)"></a>3.2.1 LS  (Least Square)</h4><p><strong>Target:</strong><br>$$<br>min||\vec z-Y\alpha||_{2}^2<br>$$<br><strong>So：</strong><br>$$<br>\frac{\partial ||\vec z-Y\alpha||_{2}^2}{\partial \alpha}=\frac{\partial (\vec z^{H}\vec z-2\alpha^{H}Y^{H}\vec z+\alpha^{H}Y^{H}Y\alpha)}{\partial \alpha}=2(Y^{H}Y\alpha-Y^{H}\vec z)\<br>$$<br><strong>Let it equal to zero:</strong><br>$$<br>\alpha=(Y^{H}Y)^{-1}Y^{H}\vec z<br>$$<br><strong>Q:</strong></p>
+<p>$r(Y^{H}Y)\le min{r(Y^{H}),r(Y)}$，$inv(Y^{H}Y)$ <strong>may not exist</strong></p>
+<hr>
+<h4 id="3-2-2-QR-decomposition"><a href="#3-2-2-QR-decomposition" class="headerlink" title="3.2.2 QR decomposition"></a>3.2.2 QR decomposition</h4><p><strong>Principle：</strong></p>
+<p>$Y \in \mathbb{R}^{m\times n} ,m\ge n$， $Y=QR$，<strong>while</strong> $Q\in \mathbb{R}^{m\times m}$<strong>is orthogonal matrix</strong>，$R\equiv  \left[\begin{array}{c} \hat{R} \0 \end{array} \right] \in \mathbb{R^{m\times n}}$，$\hat{R} \in \mathbb{R^{n\times n}}$ <strong>is Upper triangular matrix</strong></p>
+<p><strong>Let:</strong> $Y=QR$<br>$$<br>\alpha=(R^{H}Q^{H}QR)^{-1}R^{H}Q^{H}\vec z\<br>$$<br><strong>Because:</strong>  $Q^{H}Q=E$<br>$$<br>\alpha=R^{-1}R^{-H}R^{H}Q^{H}\vec z\<br>\alpha=R^{-1}Q^{H}\vec z\<br>R\alpha=Q^H\vec z<br>$$<br>$\alpha$ <strong>can be solved by solving homogeneous equations from bottom to top</strong></p>
+
       
     </div>
 
@@ -1001,14 +1168,14 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">8</span>
+          <span class="site-state-item-count">10</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-count">4</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
@@ -1099,6 +1266,8 @@
 <script src="/js/next-boot.js"></script>
 
 
+  <script defer src="/lib/three/three.min.js"></script>
+    <script defer src="/lib/three/canvas_lines.min.js"></script>
 
 
   
