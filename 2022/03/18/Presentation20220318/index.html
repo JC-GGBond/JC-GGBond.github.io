@@ -20,12 +20,12 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="Presentation 2022.03.04Modeling &amp; Coding在上次组会对Matlab中DPD模块搭建simulink框图； 本次对具体的两个数据集自己编写代码进行dpd建模。 datasetCenter Frequency:491520000 491.52MHz 原信号x，过功放经CFR后去增益信号d，用x去建模d 评价dpd性能指标：  err&#x3D;d-F(X),共计16">
+  <meta name="description" content="Presentation 2022.03.18Modeling &amp; Coding在上次组会对Matlab中DPD模块搭建simulink框图； 本次对具体的两个数据集自己编写代码进行dpd建模。 datasetCenter Frequency:491520000 491.52MHz 原信号x，过功放经CFR后去增益信号d，用x去建模d 评价dpd性能指标：  err&#x3D;d-F(X),共计16">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Presentation20220318">
 <meta property="og:url" content="http://example.com/2022/03/18/Presentation20220318/index.html">
 <meta property="og:site_name" content="JC.GGBond &#39;s homepage.">
-<meta property="og:description" content="Presentation 2022.03.04Modeling &amp; Coding在上次组会对Matlab中DPD模块搭建simulink框图； 本次对具体的两个数据集自己编写代码进行dpd建模。 datasetCenter Frequency:491520000 491.52MHz 原信号x，过功放经CFR后去增益信号d，用x去建模d 评价dpd性能指标：  err&#x3D;d-F(X),共计16">
+<meta property="og:description" content="Presentation 2022.03.18Modeling &amp; Coding在上次组会对Matlab中DPD模块搭建simulink框图； 本次对具体的两个数据集自己编写代码进行dpd建模。 datasetCenter Frequency:491520000 491.52MHz 原信号x，过功放经CFR后去增益信号d，用x去建模d 评价dpd性能指标：  err&#x3D;d-F(X),共计16">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/JC-GGBond/image-JC@master/Massive-MIMO-Competition/x&d.53kiy4e24qw0.webp">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/JC-GGBond/image-JC@master/Massive-MIMO-Competition/x&d_00.5wpnrqnenm80.webp">
@@ -42,7 +42,7 @@
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/JC-GGBond/image-JC@master/GMP_1/predict_00.69xjbq53bao0.webp">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/JC-GGBond/image-JC@master/GMP_1/lmserror_00.63rsngyohwo0.webp">
 <meta property="article:published_time" content="2022-03-18T05:09:09.000Z">
-<meta property="article:modified_time" content="2022-03-18T06:11:59.607Z">
+<meta property="article:modified_time" content="2022-03-18T06:16:36.939Z">
 <meta property="article:author" content="JC.GGBond">
 <meta property="article:tag" content="做一个比生活本身还操蛋的人">
 <meta name="twitter:card" content="summary">
@@ -206,7 +206,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2022-03-18 13:09:09 / 修改时间：14:11:59" itemprop="dateCreated datePublished" datetime="2022-03-18T13:09:09+08:00">2022-03-18</time>
+              <time title="创建时间：2022-03-18 13:09:09 / 修改时间：14:16:36" itemprop="dateCreated datePublished" datetime="2022-03-18T13:09:09+08:00">2022-03-18</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -229,7 +229,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="Presentation-2022-03-04"><a href="#Presentation-2022-03-04" class="headerlink" title="Presentation 2022.03.04"></a>Presentation 2022.03.04</h1><h2 id="Modeling-amp-Coding"><a href="#Modeling-amp-Coding" class="headerlink" title="Modeling &amp; Coding"></a>Modeling &amp; Coding</h2><p>在上次组会对Matlab中DPD模块搭建simulink框图；</p>
+        <h1 id="Presentation-2022-03-18"><a href="#Presentation-2022-03-18" class="headerlink" title="Presentation 2022.03.18"></a>Presentation 2022.03.18</h1><h2 id="Modeling-amp-Coding"><a href="#Modeling-amp-Coding" class="headerlink" title="Modeling &amp; Coding"></a>Modeling &amp; Coding</h2><p>在上次组会对Matlab中DPD模块搭建simulink框图；</p>
 <p>本次对具体的两个数据集自己编写代码进行dpd建模。</p>
 <h2 id="dataset"><a href="#dataset" class="headerlink" title="dataset"></a>dataset</h2><p>Center Frequency:491520000 491.52MHz</p>
 <p>原信号x，过功放经CFR后去增益信号d，用x去建模d</p>
@@ -326,7 +326,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Presentation-2022-03-04"><span class="nav-number">1.</span> <span class="nav-text">Presentation 2022.03.04</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Modeling-amp-Coding"><span class="nav-number">1.1.</span> <span class="nav-text">Modeling &amp; Coding</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#dataset"><span class="nav-number">1.2.</span> <span class="nav-text">dataset</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#dataset1"><span class="nav-number">1.2.1.</span> <span class="nav-text">dataset1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#dataset2"><span class="nav-number">1.2.2.</span> <span class="nav-text">dataset2</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#test-result"><span class="nav-number">1.3.</span> <span class="nav-text">test result</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#MP-Full-lms"><span class="nav-number">1.3.1.</span> <span class="nav-text">MP_Full + lms</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MP-odd-lms"><span class="nav-number">1.3.2.</span> <span class="nav-text">MP_odd + lms</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#GMP-lms"><span class="nav-number">1.3.3.</span> <span class="nav-text">GMP + lms</span></a></li></ol></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Presentation-2022-03-18"><span class="nav-number">1.</span> <span class="nav-text">Presentation 2022.03.18</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Modeling-amp-Coding"><span class="nav-number">1.1.</span> <span class="nav-text">Modeling &amp; Coding</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#dataset"><span class="nav-number">1.2.</span> <span class="nav-text">dataset</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#dataset1"><span class="nav-number">1.2.1.</span> <span class="nav-text">dataset1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#dataset2"><span class="nav-number">1.2.2.</span> <span class="nav-text">dataset2</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#test-result"><span class="nav-number">1.3.</span> <span class="nav-text">test result</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#MP-Full-lms"><span class="nav-number">1.3.1.</span> <span class="nav-text">MP_Full + lms</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MP-odd-lms"><span class="nav-number">1.3.2.</span> <span class="nav-text">MP_odd + lms</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#GMP-lms"><span class="nav-number">1.3.3.</span> <span class="nav-text">GMP + lms</span></a></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
