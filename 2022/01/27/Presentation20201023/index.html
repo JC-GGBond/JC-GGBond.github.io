@@ -233,6 +233,7 @@
 <p>​        <strong>Markdown</strong> is one lightweight markup language. Lightweight markup languages use simple markup syntax to  describe simple format description.</p>
 <p>For example:</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">h3</span> <span class="attr">align</span> = <span class="string">&quot;center&quot;</span>&gt;</span></span><br><span class="line">    hello, Prof.Zhang and every student in 404 lab! </span><br><span class="line"><span class="tag">&lt;/<span class="name">h3</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h6</span> <span class="attr">align</span> = <span class="string">&quot;center&quot;</span>&gt;</span></span><br><span class="line">    Here is the second Presentation by Jingci Zhu.</span><br><span class="line"><span class="tag">&lt;/<span class="name">h6</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
 <p>Well, we can see the result:</p>
 <h3 align = "center">
     Hello, Prof.Zhang and every student in 404 lab! 
@@ -244,12 +245,8 @@
 
 
 
-We can find it is simple and fast to use __markdown__ to edit our text! At the same time, it can also show the code with highlights as you just saw.
-
-By the way, the app which I edited this text is __Typora__. It is one __markdown__ editor.
-
-
-
+<p>We can find it is simple and fast to use <strong>markdown</strong> to edit our text! At the same time, it can also show the code with highlights as you just saw.</p>
+<p>By the way, the app which I edited this text is <strong>Typora</strong>. It is one <strong>markdown</strong> editor.</p>
 <h3 align = "center">
     Well, Let's start the presentation!
 </h3>
@@ -257,88 +254,57 @@ By the way, the app which I edited this text is __Typora__. It is one __markdown
 
 
 
-<h2 id="Contents"><a href="#Contents" class="headerlink" title="Contents"></a>Contents</h2><p><a href="# 1.Something about the last presentation">1.Something about the last presentation</a></p>
-<p><a href="2.Electromagnetic theory">2.Electromagnetic theory</a></p>
+<h2 id="Contents"><a href="#Contents" class="headerlink" title="Contents"></a>Contents</h2><p>[1.Something about the last presentation](# 1.Something about the last presentation)</p>
+<p>[2.Electromagnetic theory](2.Electromagnetic theory)</p>
 <h3 id="1-Something-about-the-last-presentation"><a href="#1-Something-about-the-last-presentation" class="headerlink" title="1.Something about the last presentation"></a>1.Something about the last presentation</h3><ul>
 <li><p>The principle of dipole antenna</p>
 <pre><code>A dipole means one positive and one negative charge placed a distance apart. As the Coulomb low:
-</code></pre><script type="math/tex; mode=display">
-\vec{F}=k \frac{q_{1} q_{2}}{r^{2}} \overrightarrow{e_{r}}</script><p> we can know their have interaction force between two charges, which makes them do <strong>simple harmonic motion</strong>.That means they doing <strong>sinusoidal motion</strong>.</p>
+</code></pre>
+<p>$$<br>\vec{F}=k \frac{q_{1} q_{2}}{r^{2}} \overrightarrow{e_{r}}<br>$$</p>
+<p> we can know their have interaction force between two charges, which makes them do <strong>simple harmonic motion</strong>.That means they doing <strong>sinusoidal motion</strong>.</p>
 </li>
 </ul>
-<p>Consider the oscillating electric dipoles as a <strong>sinusoidal current</strong> :</p>
-<script type="math/tex; mode=display">
-i(t)=I * \cos (\omega t)=\operatorname{Re}\left[I e^{j \omega t}\right]</script><p>Use micro element method:</p>
-<script type="math/tex; mode=display">
-J d V^{\prime}=e_{z} \frac{I}{\Delta s^{\prime}} \Delta s^{\prime} d z^{\prime}=e_{z} I d z</script><p>At the same time, as the maxwell’ s functions and field theory, we use potential method to describe time-varying electromagnetic field:</p>
-<script type="math/tex; mode=display">
-\nabla \cdot \vec{B}=0 \quad  \quad \vec{B}=\nabla \times \vec{A}</script><p>So get the A(r),</p>
-<script type="math/tex; mode=display">
-\vec{A(r)}=\frac{u_{0}}{4 \pi} \int_{l} \frac{e_{z} I}{\left|r-r^{\prime}\right|} e^{-j k\left|r-r^{\prime}\right|}</script><script type="math/tex; mode=display">
-\begin{array}{c}
-\vec{A(r)}=e_{z} \frac{u_{0} I l}{4 \pi r} e^{-j k r} \\
-\end{array}</script><p> while I&lt;&lt;r, we can approximate it.</p>
-<script type="math/tex; mode=display">
-\left\{\begin{array}{l}
-A_{r}=A_{z} \cos (\theta)=\frac{u_{0} I l}{4 \pi r} \operatorname{cosi}(\theta) e^{-j k r} \\
-A_{\theta}=-A_{z} \sin (\theta)=\frac{u_{0} I l}{4 \pi r} \sin (\theta) e^{-j k r} \\
-A_{\phi}=0
-\end{array}\right.</script><p>Finally, use maxwell’s functions to get <strong>E</strong> and <strong>H</strong>.</p>
-<script type="math/tex; mode=display">
-\vec{H}=\frac{1}{u_{0}}\nabla  \times \vec{A}</script><script type="math/tex; mode=display">
-\vec{E}=\frac{1}{j \omega \varepsilon_{0}} \nabla \times \vec{H}</script><p>(The derivation of the powerline equation is complicated and is omitted here)</p>
+<p>Consider the oscillating electric dipoles as a <strong>sinusoidal current</strong> :<br>$$<br>i(t)=I * \cos (\omega t)=\operatorname{Re}\left[I e^{j \omega t}\right]<br>$$<br>Use micro element method:<br>$$<br>J d V^{\prime}=e_{z} \frac{I}{\Delta s^{\prime}} \Delta s^{\prime} d z^{\prime}=e_{z} I d z<br>$$<br>At the same time, as the maxwell’ s functions and field theory, we use potential method to describe time-varying electromagnetic field:<br>$$<br>\nabla \cdot \vec{B}=0 \quad  \quad \vec{B}=\nabla \times \vec{A}<br>$$<br>So get the A(r),<br>$$<br>\vec{A(r)}=\frac{u_{0}}{4 \pi} \int_{l} \frac{e_{z} I}{\left|r-r^{\prime}\right|} e^{-j k\left|r-r^{\prime}\right|}<br>$$</p>
+<p>$$<br>\begin{array}{c}<br>\vec{A(r)}=e_{z} \frac{u_{0} I l}{4 \pi r} e^{-j k r} \<br>\end{array}<br>$$</p>
+<p> while I&lt;&lt;r, we can approximate it.<br>$$<br>\left{\begin{array}{l}<br>A_{r}=A_{z} \cos (\theta)=\frac{u_{0} I l}{4 \pi r} \operatorname{cosi}(\theta) e^{-j k r} \<br>A_{\theta}=-A_{z} \sin (\theta)=\frac{u_{0} I l}{4 \pi r} \sin (\theta) e^{-j k r} \<br>A_{\phi}=0<br>\end{array}\right.<br>$$<br>Finally, use maxwell’s functions to get <strong>E</strong> and <strong>H</strong>.<br>$$<br>\vec{H}=\frac{1}{u_{0}}\nabla  \times \vec{A}<br>$$</p>
+<p>$$<br>\vec{E}=\frac{1}{j \omega \varepsilon_{0}} \nabla \times \vec{H}<br>$$</p>
+<p>(The derivation of the powerline equation is complicated and is omitted here)</p>
 <p>Next, we will simulate the radiation process.</p>
 <ul>
-<li>Figure <strong>Powerline</strong></li>
-</ul>
-<ul>
-<li>Gif of <strong>radiation</strong></li>
-</ul>
-<ul>
-<li>Figure in <strong>far field</strong></li>
-</ul>
+<li><p>Figure <strong>Powerline</strong></p>
+</li>
+<li><p>Gif of <strong>radiation</strong></p>
+</li>
+<li><p>Figure in <strong>far field</strong></p>
 <h3 id="2-Electromagnetic-theory"><a href="#2-Electromagnetic-theory" class="headerlink" title="2.Electromagnetic theory"></a>2.Electromagnetic theory</h3><ul>
-<li><strong>TE and TM</strong></li>
-</ul>
-<ul>
+<li><p><strong>TE and TM</strong></p>
+</li>
 <li><p><strong>Plane wave,  spherical wave, cylindrical wave,</strong></p>
 <p>The differences of them are the different Equiphase surface.</p>
 </li>
-</ul>
-<ul>
 <li><p><strong>Linear polarization, circular polarization, elliptic polarization</strong></p>
 <p>The path of an electric vector as a radio wave travels</p>
-</li>
+<h3 id="3-Works-for-course-Electromagnetic-mathematical"><a href="#3-Works-for-course-Electromagnetic-mathematical" class="headerlink" title="3.Works for course: Electromagnetic mathematical"></a>3.Works for course: <strong>Electromagnetic mathematical</strong></h3><ul>
+<li>Why the formula below is an cylindrical wave?</li>
 </ul>
-<pre><code>### 3.Works for course: __Electromagnetic mathematical__
-
-* Why the formula below is an cylindrical wave?
-
-$$
-E=\frac&#123;E_&#123;max&#125;&#125;&#123;\sqrt&#123;r&#125;&#125;cos(kr-\omega t)
-$$
-
-Use matlab to solve it:
-
+<p>$$<br>E=\frac{E_{max}}{\sqrt{r}}cos(kr-\omega t)<br>$$</p>
+<p>Use matlab to solve it:</p>
 <figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Emax=<span class="number">5</span>;</span><br><span class="line">r=<span class="number">0.01</span>:<span class="number">0.01</span>:<span class="number">4</span>;</span><br><span class="line">k=<span class="built_in">pi</span>;</span><br><span class="line">w=<span class="number">2</span>*<span class="built_in">pi</span>;</span><br><span class="line"><span class="keyword">for</span> t=<span class="number">0.01</span>:<span class="number">0.01</span>:<span class="number">10</span></span><br><span class="line">    <span class="keyword">for</span> <span class="built_in">i</span>=<span class="number">1</span>:<span class="number">400</span></span><br><span class="line">        E(<span class="built_in">i</span>)=(Emax/<span class="built_in">sqrt</span>(r(<span class="built_in">i</span>)))*<span class="built_in">cos</span>(k*r(<span class="built_in">i</span>)-w*t);</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line"><span class="built_in">plot</span>(r,E,<span class="string">&#x27;.&#x27;</span>);</span><br></pre></td></tr></table></figure>
 
-Get the result:
-
-__Figure in a moment in time __
-
-(__Cylindrical coordinates__ ，and X label is the __radius__, Y label is the __Electric field intensity__)
-
-
-
-__Gif of it__:
-
-
-
-​                                                 
-
-* __Bessel function__
-</code></pre><h3 id="4-Our-‘academic’-Trip-to-ShangHai-for-IME-2020-☆＿☆"><a href="#4-Our-‘academic’-Trip-to-ShangHai-for-IME-2020-☆＿☆" class="headerlink" title="4.Our ‘academic’ Trip to ShangHai for IME 2020  (☆＿☆)"></a>4.Our ‘academic’ Trip to ShangHai for IME 2020  (☆＿☆)</h3><ul>
+<p>Get the result:</p>
+<p>__Figure in a moment in time __</p>
+<p>(<strong>Cylindrical coordinates</strong> ，and X label is the <strong>radius</strong>, Y label is the <strong>Electric field intensity</strong>)</p>
+<p><strong>Gif of it</strong>:</p>
+<p>​                                                 </p>
+<ul>
+<li><strong>Bessel function</strong></li>
+</ul>
+</li>
+</ul>
+<h3 id="4-Our-‘academic’-Trip-to-ShangHai-for-IME-2020-☆＿☆"><a href="#4-Our-‘academic’-Trip-to-ShangHai-for-IME-2020-☆＿☆" class="headerlink" title="4.Our ‘academic’ Trip to ShangHai for IME 2020  (☆＿☆)"></a>4.Our ‘academic’ Trip to ShangHai for IME 2020  (☆＿☆)</h3><ul>
 <li><strong>My focus</strong></li>
+</ul>
+</li>
 </ul>
 <h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><ol>
 <li><a target="_blank" rel="noopener" href="https://wenku.baidu.com/view/34f5586f79563c1ec5da71b1.html">The simulation of dipole radiation</a></li>
@@ -443,7 +409,7 @@ __Gif of it__:
     Here is the second Presentation by Jingci Zhu.
 </span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">1.2.2.</span> <span class="nav-text">
     Well, Let&#39;s start the presentation!
-</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Contents"><span class="nav-number">1.3.</span> <span class="nav-text">Contents</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-Something-about-the-last-presentation"><span class="nav-number">1.3.1.</span> <span class="nav-text">1.Something about the last presentation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-Electromagnetic-theory"><span class="nav-number">1.3.2.</span> <span class="nav-text">2.Electromagnetic theory</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-Our-%E2%80%98academic%E2%80%99-Trip-to-ShangHai-for-IME-2020-%E2%98%86%EF%BC%BF%E2%98%86"><span class="nav-number">1.3.3.</span> <span class="nav-text">4.Our ‘academic’ Trip to ShangHai for IME 2020  (☆＿☆)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Reference"><span class="nav-number">1.4.</span> <span class="nav-text">Reference</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">2.</span> <span class="nav-text">Thanks To Your Careful Guidence</span></a></li></ol></div>
+</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Contents"><span class="nav-number">1.3.</span> <span class="nav-text">Contents</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-Something-about-the-last-presentation"><span class="nav-number">1.3.1.</span> <span class="nav-text">1.Something about the last presentation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-Electromagnetic-theory"><span class="nav-number">1.3.2.</span> <span class="nav-text">2.Electromagnetic theory</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-Works-for-course-Electromagnetic-mathematical"><span class="nav-number">1.3.3.</span> <span class="nav-text">3.Works for course: Electromagnetic mathematical</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-Our-%E2%80%98academic%E2%80%99-Trip-to-ShangHai-for-IME-2020-%E2%98%86%EF%BC%BF%E2%98%86"><span class="nav-number">1.3.4.</span> <span class="nav-text">4.Our ‘academic’ Trip to ShangHai for IME 2020  (☆＿☆)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Reference"><span class="nav-number">1.4.</span> <span class="nav-text">Reference</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">2.</span> <span class="nav-text">Thanks To Your Careful Guidence</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
