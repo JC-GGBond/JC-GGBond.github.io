@@ -20,20 +20,35 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="A complete digital pre-distortion algorithm structure       1.Block diagram2.PA modelMP（Memory Polynomial）:$$z(n)&#x3D;\sum_{k&#x3D;1}^{K}\sum_{q&#x3D;0}^{Q}a_{kq}x(n-q)|x(n-q)|^{k-1}$$Plug the above formula  int">
+  <meta name="description" content="Presentation 2022.03.04Modeling &amp; Coding在上次组会对Matlab中DPD模块搭建simulink框图； 本次对具体的两个数据集自己编写代码进行dpd建模。 datasetCenter Frequency:491520000 491.52MHz 原信号x，过功放经CFR后去增益信号d，用x去建模d 评价dpd性能指标：  err&#x3D;d-F(X),共计16">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Presentation20211115">
-<meta property="og:url" content="http://example.com/2022/01/27/Presentation20211115/index.html">
+<meta property="og:title" content="Presentation20220318">
+<meta property="og:url" content="http://example.com/2022/03/18/Presentation20220318/index.html">
 <meta property="og:site_name" content="JC.GGBond &#39;s homepage.">
-<meta property="og:description" content="A complete digital pre-distortion algorithm structure       1.Block diagram2.PA modelMP（Memory Polynomial）:$$z(n)&#x3D;\sum_{k&#x3D;1}^{K}\sum_{q&#x3D;0}^{Q}a_{kq}x(n-q)|x(n-q)|^{k-1}$$Plug the above formula  int">
+<meta property="og:description" content="Presentation 2022.03.04Modeling &amp; Coding在上次组会对Matlab中DPD模块搭建simulink框图； 本次对具体的两个数据集自己编写代码进行dpd建模。 datasetCenter Frequency:491520000 491.52MHz 原信号x，过功放经CFR后去增益信号d，用x去建模d 评价dpd性能指标：  err&#x3D;d-F(X),共计16">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-01-27T15:56:51.000Z">
-<meta property="article:modified_time" content="2022-03-13T12:39:04.733Z">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/JC-GGBond/image-JC@master/Massive-MIMO-Competition/x&d.53kiy4e24qw0.webp">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/JC-GGBond/image-JC@master/Massive-MIMO-Competition/x&d_00.5wpnrqnenm80.webp">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/JC-GGBond/image-JC@master/MP_full/predict.4v4ymhwxd6s0.webp">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/JC-GGBond/image-JC@master/MP_full/lmserror.38vvikmu0ca0.webp">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/JC-GGBond/image-JC@master/MP_full/predict_00.3y3lbdgh178.webp">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/JC-GGBond/image-JC@master/MP_full/lmserror_00.5k1a2eloig40.webp">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/JC-GGBond/image-JC@master/Massive-MIMO-Competition/predict.y2z54m0yya8.webp">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/JC-GGBond/image-JC@master/Massive-MIMO-Competition/lmserror.1k795xqfgeu8.webp">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/JC-GGBond/image-JC@master/Massive-MIMO-Competition/predict_00.7jz21q0k7b0.webp">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/JC-GGBond/image-JC@master/Massive-MIMO-Competition/lmserror_00.5gvgdzwykqo0.webp">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/JC-GGBond/image-JC@master/GMP_1/predict.632l7h75q2w0.webp">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/JC-GGBond/image-JC@master/GMP_1/lmserror.4y18gsr3q340.webp">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/JC-GGBond/image-JC@master/GMP_1/predict_00.69xjbq53bao0.webp">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/JC-GGBond/image-JC@master/GMP_1/lmserror_00.63rsngyohwo0.webp">
+<meta property="article:published_time" content="2022-03-18T05:09:09.000Z">
+<meta property="article:modified_time" content="2022-03-18T06:11:59.607Z">
 <meta property="article:author" content="JC.GGBond">
 <meta property="article:tag" content="做一个比生活本身还操蛋的人">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/JC-GGBond/image-JC@master/Massive-MIMO-Competition/x&d.53kiy4e24qw0.webp">
 
-<link rel="canonical" href="http://example.com/2022/01/27/Presentation20211115/">
+<link rel="canonical" href="http://example.com/2022/03/18/Presentation20220318/">
 
 
 <script id="page-configurations">
@@ -46,7 +61,7 @@
   };
 </script>
 
-  <title>Presentation20211115 | JC.GGBond 's homepage.</title>
+  <title>Presentation20220318 | JC.GGBond 's homepage.</title>
   
 
 
@@ -167,7 +182,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/01/27/Presentation20211115/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/03/18/Presentation20220318/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -180,7 +195,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Presentation20211115
+          Presentation20220318
         </h1>
 
         <div class="post-meta">
@@ -189,16 +204,10 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
+              
 
-              <time title="创建时间：2022-01-27 23:56:51" itemprop="dateCreated datePublished" datetime="2022-01-27T23:56:51+08:00">2022-01-27</time>
+              <time title="创建时间：2022-03-18 13:09:09 / 修改时间：14:11:59" itemprop="dateCreated datePublished" datetime="2022-03-18T13:09:09+08:00">2022-03-18</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-03-13 20:39:04" itemprop="dateModified" datetime="2022-03-13T20:39:04+08:00">2022-03-13</time>
-              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -220,23 +229,26 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 align = "center">
-  A complete digital pre-distortion algorithm structure 
-</h1>
-
-
-
-<hr>
-<h2 id="1-Block-diagram"><a href="#1-Block-diagram" class="headerlink" title="1.Block diagram"></a>1.Block diagram</h2><h2 id="2-PA-model"><a href="#2-PA-model" class="headerlink" title="2.PA model"></a>2.PA model</h2><p><strong>MP（Memory Polynomial）:</strong><br>$$<br>z(n)=\sum_{k=1}^{K}\sum_{q=0}^{Q}a_{kq}x(n-q)|x(n-q)|^{k-1}<br>$$<br><strong>Plug the above formula  into the variables in the block diagram:</strong><br>$$<br>z(n)=\vec y \alpha<br>$$<br><strong>Which:</strong><br>$$<br>\vec y=[\phi_{10}(y(n)),\phi_{11}(y(n)),\phi_{12}(y(n)),\phi_{13}(y(n)),\dots\dots,\phi_{KQ}(y(n))]\<br>\phi_{kq}(y(n))=y(n-q)|y(n-q)|^{k-1}\<br>$$<br><strong>and:</strong><br>$$<br>\alpha=[a_{10},\dots \dots,a_{1Q},a_{21},\dots \dots,a_{KQ}]^{T}<br>$$</p>
-<hr>
-<h2 id="3-Optimization"><a href="#3-Optimization" class="headerlink" title="3.Optimization"></a>3.Optimization</h2><h3 id="3-1-Iteration-range"><a href="#3-1-Iteration-range" class="headerlink" title="3.1 Iteration range"></a>3.1 Iteration range</h3><p><strong>Select:</strong><br>$$<br>\vec y_{o}=[y(n),y(n+1),\dots\dots,y(n+N-1)]^{T}<br>$$<br><strong>Now:</strong><br>$$<br>\vec z=Y\alpha<br>$$<br><strong>Which:</strong><br>$$<br>\vec z=[z(n),z(n+1),\dots\dots,z(n+N-1)]\<br>Y=[\phi_{10}(\vec y_{o}),\phi_{11}(\vec y_{o}),\phi_{12}(\vec y_{o}),\phi_{13}(\vec y_{o}),\dots\dots,\phi_{KQ}(\vec y_{o})]<br>$$</p>
-<hr>
-<h3 id="3-2-Optimize-algorithm"><a href="#3-2-Optimize-algorithm" class="headerlink" title="3.2 Optimize algorithm"></a>3.2 Optimize algorithm</h3><h4 id="3-2-1-LS-Least-Square"><a href="#3-2-1-LS-Least-Square" class="headerlink" title="3.2.1 LS  (Least Square)"></a>3.2.1 LS  (Least Square)</h4><p><strong>Target:</strong><br>$$<br>min||\vec z-Y\alpha||_{2}^2<br>$$<br><strong>So：</strong><br>$$<br>\frac{\partial ||\vec z-Y\alpha||_{2}^2}{\partial \alpha}=\frac{\partial (\vec z^{H}\vec z-2\alpha^{H}Y^{H}\vec z+\alpha^{H}Y^{H}Y\alpha)}{\partial \alpha}=2(Y^{H}Y\alpha-Y^{H}\vec z)\<br>$$<br><strong>Let it equal to zero:</strong><br>$$<br>\alpha=(Y^{H}Y)^{-1}Y^{H}\vec z<br>$$<br><strong>Q:</strong></p>
-<p>$r(Y^{H}Y)\le min{r(Y^{H}),r(Y)}$，$inv(Y^{H}Y)$ <strong>may not exist</strong></p>
-<hr>
-<h4 id="3-2-2-QR-decomposition"><a href="#3-2-2-QR-decomposition" class="headerlink" title="3.2.2 QR decomposition"></a>3.2.2 QR decomposition</h4><p><strong>Principle：</strong></p>
-<p>$Y \in \mathbb{R}^{m\times n} ,m\ge n$， $Y=QR$，<strong>while</strong> $Q\in \mathbb{R}^{m\times m}$<strong>is orthogonal matrix</strong>，$R\equiv  \left[\begin{array}{c} \hat{R} \0 \end{array} \right] \in \mathbb{R^{m\times n}}$，$\hat{R} \in \mathbb{R^{n\times n}}$ <strong>is Upper triangular matrix</strong></p>
-<p><strong>Let:</strong> $Y=QR$<br>$$<br>\alpha=(R^{H}Q^{H}QR)^{-1}R^{H}Q^{H}\vec z\<br>$$<br><strong>Because:</strong>  $Q^{H}Q=E$<br>$$<br>\alpha=R^{-1}R^{-H}R^{H}Q^{H}\vec z\<br>\alpha=R^{-1}Q^{H}\vec z\<br>R\alpha=Q^H\vec z<br>$$<br>$\alpha$ <strong>can be solved by solving homogeneous equations from bottom to top</strong></p>
+        <h1 id="Presentation-2022-03-04"><a href="#Presentation-2022-03-04" class="headerlink" title="Presentation 2022.03.04"></a>Presentation 2022.03.04</h1><h2 id="Modeling-amp-Coding"><a href="#Modeling-amp-Coding" class="headerlink" title="Modeling &amp; Coding"></a>Modeling &amp; Coding</h2><p>在上次组会对Matlab中DPD模块搭建simulink框图；</p>
+<p>本次对具体的两个数据集自己编写代码进行dpd建模。</p>
+<h2 id="dataset"><a href="#dataset" class="headerlink" title="dataset"></a>dataset</h2><p>Center Frequency:491520000 491.52MHz</p>
+<p>原信号x，过功放经CFR后去增益信号d，用x去建模d</p>
+<p><strong>评价dpd性能指标：</strong></p>
+<ul>
+<li>err=d-F(X),共计16384个点,实际输出-预测的输出,**这个也可以反应到功率谱上，也就是对e进行功率谱密度绘制，显得更小</li>
+<li>NMSE：归一化均方误差(Normalized Mean Square Error)，预测信号$y_d(n)$与实际输出信号y(n)差异大小<br>$$<br>NMSE=10\log_{10}{\frac{\sum_{n=1}^{N}|y_{arr}(n)-d(n)|^2}{\sum_{n=1}^{N}|d(n)|^2}}<br>$$<h3 id="dataset1"><a href="#dataset1" class="headerlink" title="dataset1"></a>dataset1</h3>20Mh宽带信号<br><img src="https://cdn.jsdelivr.net/gh/JC-GGBond/image-JC@master/Massive-MIMO-Competition/x&d.53kiy4e24qw0.webp"></li>
+</ul>
+<h3 id="dataset2"><a href="#dataset2" class="headerlink" title="dataset2"></a>dataset2</h3><p>40MHz带频率间隔的调制信号<br><img src="https://cdn.jsdelivr.net/gh/JC-GGBond/image-JC@master/Massive-MIMO-Competition/x&d_00.5wpnrqnenm80.webp"></p>
+<h2 id="test-result"><a href="#test-result" class="headerlink" title="test result"></a>test result</h2><h3 id="MP-Full-lms"><a href="#MP-Full-lms" class="headerlink" title="MP_Full + lms"></a>MP_Full + lms</h3><p>$$<br>y_{MP}(n)=\sum_{k=1}^{K} \sum_{q=0}^{Q-1} a_{kq} x(n-q)|x(n-q)|^{k-1}<br>$$<br>K=5,Q=2参数量15:</p>
+<p>dataset1</p>
+<p><strong>AfMPDPD_NMSE = -31.89 dB</strong><br><img src="https://cdn.jsdelivr.net/gh/JC-GGBond/image-JC@master/MP_full/predict.4v4ymhwxd6s0.webp"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/JC-GGBond/image-JC@master/MP_full/lmserror.38vvikmu0ca0.webp"></p>
+<p>dataset2</p>
+<p><strong>AfMPDPD_NMSE = -17.20 dB</strong><br><img src="https://cdn.jsdelivr.net/gh/JC-GGBond/image-JC@master/MP_full/predict_00.3y3lbdgh178.webp"><br><img src="https://cdn.jsdelivr.net/gh/JC-GGBond/image-JC@master/MP_full/lmserror_00.5k1a2eloig40.webp"></p>
+<h3 id="MP-odd-lms"><a href="#MP-odd-lms" class="headerlink" title="MP_odd + lms"></a>MP_odd + lms</h3><p>$$<br>y_{MP}(n)=\sum_{k=1,k=odd}^{K} \sum_{q=0}^{Q-1} a_{kq} x(n-q)|x(n-q)|^{k-1}<br>$$<br>K=5,Q=2且只取奇阶参数量9:</p>
+<p>dataset1<br><strong>AfMPDPD_NMSE = -32.48 dB</strong><br><img src="https://cdn.jsdelivr.net/gh/JC-GGBond/image-JC@master/Massive-MIMO-Competition/predict.y2z54m0yya8.webp"><br>dataset2<br><img src="https://cdn.jsdelivr.net/gh/JC-GGBond/image-JC@master/Massive-MIMO-Competition/lmserror.1k795xqfgeu8.webp"><br><strong>AfMPDPD_NMSE = -14.84 dB</strong><br><img src="https://cdn.jsdelivr.net/gh/JC-GGBond/image-JC@master/Massive-MIMO-Competition/predict_00.7jz21q0k7b0.webp"><br><img src="https://cdn.jsdelivr.net/gh/JC-GGBond/image-JC@master/Massive-MIMO-Competition/lmserror_00.5gvgdzwykqo0.webp"></p>
+<h3 id="GMP-lms"><a href="#GMP-lms" class="headerlink" title="GMP + lms"></a>GMP + lms</h3><p>$$<br>\begin{aligned}<br>y_{GMP}(n)=&amp; \sum_{k=0}^{K_{a}-1} \sum_{l=0}^{L_{a}-1} a_{k l} x(n-l)|x(n-l)|^{k} \<br>&amp;+\sum_{k=1}^{K_{b}} \sum_{l=0}^{L_{b}-1} \sum_{m=1}^{M_{b}} b_{k l m} x(n-l)|x(n-l-m)|^{k} \<br>\end{aligned}<br>$$<br>K_a=5;<br>L_a=3;<br>K_b=4;<br>L_b=4;<br>M_b=3;<br>参数量68</p>
+<p>dataset1<br><strong>AfMPDPD_NMSE = -35.20 dB</strong><br><img src="https://cdn.jsdelivr.net/gh/JC-GGBond/image-JC@master/GMP_1/predict.632l7h75q2w0.webp"><br><img src="https://cdn.jsdelivr.net/gh/JC-GGBond/image-JC@master/GMP_1/lmserror.4y18gsr3q340.webp"><br>dataset2<br><strong>AfMPDPD_NMSE = -19.82 dB</strong><br><img src="https://cdn.jsdelivr.net/gh/JC-GGBond/image-JC@master/GMP_1/predict_00.69xjbq53bao0.webp"><br><img src="https://cdn.jsdelivr.net/gh/JC-GGBond/image-JC@master/GMP_1/lmserror_00.63rsngyohwo0.webp"></p>
 
     </div>
 
@@ -252,13 +264,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2022/01/27/Presentation20211128/" rel="prev" title="Presentation20211128">
-      <i class="fa fa-chevron-left"></i> Presentation20211128
+    <a href="/2022/03/13/Daily20220313/" rel="prev" title="Daily20220313">
+      <i class="fa fa-chevron-left"></i> Daily20220313
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2022/02/20/Weeklyproject202202-1/" rel="next" title="Weeklyproject202202-1">
-      Weeklyproject202202-1 <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -317,9 +326,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">1.</span> <span class="nav-text">
-  A complete digital pre-distortion algorithm structure 
-</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-Block-diagram"><span class="nav-number">1.1.</span> <span class="nav-text">1.Block diagram</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-PA-model"><span class="nav-number">1.2.</span> <span class="nav-text">2.PA model</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-Optimization"><span class="nav-number">1.3.</span> <span class="nav-text">3.Optimization</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-Iteration-range"><span class="nav-number">1.3.1.</span> <span class="nav-text">3.1 Iteration range</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2-Optimize-algorithm"><span class="nav-number">1.3.2.</span> <span class="nav-text">3.2 Optimize algorithm</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#3-2-1-LS-Least-Square"><span class="nav-number">1.3.2.1.</span> <span class="nav-text">3.2.1 LS  (Least Square)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-2-2-QR-decomposition"><span class="nav-number">1.3.2.2.</span> <span class="nav-text">3.2.2 QR decomposition</span></a></li></ol></li></ol></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Presentation-2022-03-04"><span class="nav-number">1.</span> <span class="nav-text">Presentation 2022.03.04</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Modeling-amp-Coding"><span class="nav-number">1.1.</span> <span class="nav-text">Modeling &amp; Coding</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#dataset"><span class="nav-number">1.2.</span> <span class="nav-text">dataset</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#dataset1"><span class="nav-number">1.2.1.</span> <span class="nav-text">dataset1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#dataset2"><span class="nav-number">1.2.2.</span> <span class="nav-text">dataset2</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#test-result"><span class="nav-number">1.3.</span> <span class="nav-text">test result</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#MP-Full-lms"><span class="nav-number">1.3.1.</span> <span class="nav-text">MP_Full + lms</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MP-odd-lms"><span class="nav-number">1.3.2.</span> <span class="nav-text">MP_odd + lms</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#GMP-lms"><span class="nav-number">1.3.3.</span> <span class="nav-text">GMP + lms</span></a></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 

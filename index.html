@@ -164,6 +164,93 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/03/18/Presentation20220318/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="JC.GGBond">
+      <meta itemprop="description" content="How you doing?">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="JC.GGBond 's homepage.">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/03/18/Presentation20220318/" class="post-title-link" itemprop="url">Presentation20220318</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2022-03-18 13:09:09 / 修改时间：14:11:59" itemprop="dateCreated datePublished" datetime="2022-03-18T13:09:09+08:00">2022-03-18</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Presentation/" itemprop="url" rel="index"><span itemprop="name">Presentation</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="Presentation-2022-03-04"><a href="#Presentation-2022-03-04" class="headerlink" title="Presentation 2022.03.04"></a>Presentation 2022.03.04</h1><h2 id="Modeling-amp-Coding"><a href="#Modeling-amp-Coding" class="headerlink" title="Modeling &amp; Coding"></a>Modeling &amp; Coding</h2><p>在上次组会对Matlab中DPD模块搭建simulink框图；</p>
+<p>本次对具体的两个数据集自己编写代码进行dpd建模。</p>
+<h2 id="dataset"><a href="#dataset" class="headerlink" title="dataset"></a>dataset</h2><p>Center Frequency:491520000 491.52MHz</p>
+<p>原信号x，过功放经CFR后去增益信号d，用x去建模d</p>
+<p><strong>评价dpd性能指标：</strong></p>
+<ul>
+<li>err=d-F(X),共计16384个点,实际输出-预测的输出,**这个也可以反应到功率谱上，也就是对e进行功率谱密度绘制，显得更小</li>
+<li>NMSE：归一化均方误差(Normalized Mean Square Error)，预测信号$y_d(n)$与实际输出信号y(n)差异大小<br>$$<br>NMSE=10\log_{10}{\frac{\sum_{n=1}^{N}|y_{arr}(n)-d(n)|^2}{\sum_{n=1}^{N}|d(n)|^2}}<br>$$<h3 id="dataset1"><a href="#dataset1" class="headerlink" title="dataset1"></a>dataset1</h3>20Mh宽带信号<br><img src="https://cdn.jsdelivr.net/gh/JC-GGBond/image-JC@master/Massive-MIMO-Competition/x&d.53kiy4e24qw0.webp"></li>
+</ul>
+<h3 id="dataset2"><a href="#dataset2" class="headerlink" title="dataset2"></a>dataset2</h3><p>40MHz带频率间隔的调制信号<br><img src="https://cdn.jsdelivr.net/gh/JC-GGBond/image-JC@master/Massive-MIMO-Competition/x&d_00.5wpnrqnenm80.webp"></p>
+<h2 id="test-result"><a href="#test-result" class="headerlink" title="test result"></a>test result</h2><h3 id="MP-Full-lms"><a href="#MP-Full-lms" class="headerlink" title="MP_Full + lms"></a>MP_Full + lms</h3><p>$$<br>y_{MP}(n)=\sum_{k=1}^{K} \sum_{q=0}^{Q-1} a_{kq} x(n-q)|x(n-q)|^{k-1}<br>$$<br>K=5,Q=2参数量15:</p>
+<p>dataset1</p>
+<p><strong>AfMPDPD_NMSE = -31.89 dB</strong><br><img src="https://cdn.jsdelivr.net/gh/JC-GGBond/image-JC@master/MP_full/predict.4v4ymhwxd6s0.webp"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/JC-GGBond/image-JC@master/MP_full/lmserror.38vvikmu0ca0.webp"></p>
+<p>dataset2</p>
+<p><strong>AfMPDPD_NMSE = -17.20 dB</strong><br><img src="https://cdn.jsdelivr.net/gh/JC-GGBond/image-JC@master/MP_full/predict_00.3y3lbdgh178.webp"><br><img src="https://cdn.jsdelivr.net/gh/JC-GGBond/image-JC@master/MP_full/lmserror_00.5k1a2eloig40.webp"></p>
+<h3 id="MP-odd-lms"><a href="#MP-odd-lms" class="headerlink" title="MP_odd + lms"></a>MP_odd + lms</h3><p>$$<br>y_{MP}(n)=\sum_{k=1,k=odd}^{K} \sum_{q=0}^{Q-1} a_{kq} x(n-q)|x(n-q)|^{k-1}<br>$$<br>K=5,Q=2且只取奇阶参数量9:</p>
+<p>dataset1<br><strong>AfMPDPD_NMSE = -32.48 dB</strong><br><img src="https://cdn.jsdelivr.net/gh/JC-GGBond/image-JC@master/Massive-MIMO-Competition/predict.y2z54m0yya8.webp"><br>dataset2<br><img src="https://cdn.jsdelivr.net/gh/JC-GGBond/image-JC@master/Massive-MIMO-Competition/lmserror.1k795xqfgeu8.webp"><br><strong>AfMPDPD_NMSE = -14.84 dB</strong><br><img src="https://cdn.jsdelivr.net/gh/JC-GGBond/image-JC@master/Massive-MIMO-Competition/predict_00.7jz21q0k7b0.webp"><br><img src="https://cdn.jsdelivr.net/gh/JC-GGBond/image-JC@master/Massive-MIMO-Competition/lmserror_00.5gvgdzwykqo0.webp"></p>
+<h3 id="GMP-lms"><a href="#GMP-lms" class="headerlink" title="GMP + lms"></a>GMP + lms</h3><p>$$<br>\begin{aligned}<br>y_{GMP}(n)=&amp; \sum_{k=0}^{K_{a}-1} \sum_{l=0}^{L_{a}-1} a_{k l} x(n-l)|x(n-l)|^{k} \<br>&amp;+\sum_{k=1}^{K_{b}} \sum_{l=0}^{L_{b}-1} \sum_{m=1}^{M_{b}} b_{k l m} x(n-l)|x(n-l-m)|^{k} \<br>\end{aligned}<br>$$<br>K_a=5;<br>L_a=3;<br>K_b=4;<br>L_b=4;<br>M_b=3;<br>参数量68</p>
+<p>dataset1<br><strong>AfMPDPD_NMSE = -35.20 dB</strong><br><img src="https://cdn.jsdelivr.net/gh/JC-GGBond/image-JC@master/GMP_1/predict.632l7h75q2w0.webp"><br><img src="https://cdn.jsdelivr.net/gh/JC-GGBond/image-JC@master/GMP_1/lmserror.4y18gsr3q340.webp"><br>dataset2<br><strong>AfMPDPD_NMSE = -19.82 dB</strong><br><img src="https://cdn.jsdelivr.net/gh/JC-GGBond/image-JC@master/GMP_1/predict_00.69xjbq53bao0.webp"><br><img src="https://cdn.jsdelivr.net/gh/JC-GGBond/image-JC@master/GMP_1/lmserror_00.63rsngyohwo0.webp"></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://example.com/2022/03/13/Daily20220313/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1044,95 +1131,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/01/27/Cmakeandmake-1/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="JC.GGBond">
-      <meta itemprop="description" content="How you doing?">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="JC.GGBond 's homepage.">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/01/27/Cmakeandmake-1/" class="post-title-link" itemprop="url">Cmakeandmake-1</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2022-01-27 00:31:44" itemprop="dateCreated datePublished" datetime="2022-01-27T00:31:44+08:00">2022-01-27</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-03-13 20:39:04" itemprop="dateModified" datetime="2022-03-13T20:39:04+08:00">2022-03-13</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Study-Notes/" itemprop="url" rel="index"><span itemprop="name">Study Notes</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="Cmake-amp-make"><a href="#Cmake-amp-make" class="headerlink" title="Cmake &amp; make"></a>Cmake &amp; make</h1><p>Cmake:用于多平台编译程序</p>
-<h2 id="1-Workflow"><a href="#1-Workflow" class="headerlink" title="1.Workflow"></a>1.Workflow</h2><ol>
-<li><p>编写main.c</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;Hello World\n&quot;</span>);</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
-<li><p>在main.c同目录下编写CmakeList.txt</p>
-<p>单行注释：使用“#”<br>多行注释：使用“#[[ ]]”</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># cmake最低版本2.8</span><br><span class="line">cmake_minimum_required (VERSION 2.8)</span><br><span class="line"># 本工程信息，工程名demo</span><br><span class="line">project (demo)</span><br><span class="line"># 最终生成的 可执行文件的名字叫main</span><br><span class="line">add_executable(main main.c)</span><br></pre></td></tr></table></figure></li>
-<li><p>运行cmake . 生成Makefile和其他自动生成的文件</p>
-</li>
-<li><p>运行 make 生成可执行文件</p>
-</li>
-<li><p>./main 执行命令</p>
-</li>
-</ol>
-<h2 id="2-Tips"><a href="#2-Tips" class="headerlink" title="2.Tips"></a>2.Tips</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cmake -DCMAKE_INSTALL_PREFIX=/usr ..</span><br></pre></td></tr></table></figure>
-
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1202,7 +1200,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">11</span>
+          <span class="site-state-item-count">12</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
