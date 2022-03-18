@@ -219,19 +219,26 @@
 <p><strong>评价dpd性能指标：</strong></p>
 <ul>
 <li>err=d-F(X),共计16384个点,实际输出-预测的输出,**这个也可以反应到功率谱上，也就是对e进行功率谱密度绘制，显得更小</li>
-<li>NMSE：归一化均方误差(Normalized Mean Square Error)，预测信号$y_d(n)$与实际输出信号y(n)差异大小<br>$$<br>NMSE=10\log_{10}{\frac{\sum_{n=1}^{N}|y_{arr}(n)-d(n)|^2}{\sum_{n=1}^{N}|d(n)|^2}}<br>$$<h3 id="dataset1"><a href="#dataset1" class="headerlink" title="dataset1"></a>dataset1</h3>20Mh宽带信号<br><img src="https://cdn.jsdelivr.net/gh/JC-GGBond/image-JC@master/Massive-MIMO-Competition/x&d.53kiy4e24qw0.webp"></li>
+<li>NMSE：归一化均方误差(Normalized Mean Square Error)，预测信号$y_d(n)$与实际输出信号y(n)差异大小<script type="math/tex; mode=display">
+NMSE=10\log_{10}{\frac{\sum_{n=1}^{N}|y_{arr}(n)-d(n)|^2}{\sum_{n=1}^{N}|d(n)|^2}}</script><h3 id="dataset1"><a href="#dataset1" class="headerlink" title="dataset1"></a>dataset1</h3>20Mh宽带信号<br><img src="https://cdn.jsdelivr.net/gh/JC-GGBond/image-JC@master/Massive-MIMO-Competition/x&amp;d.53kiy4e24qw0.webp" alt=""></li>
 </ul>
-<h3 id="dataset2"><a href="#dataset2" class="headerlink" title="dataset2"></a>dataset2</h3><p>40MHz带频率间隔的调制信号<br><img src="https://cdn.jsdelivr.net/gh/JC-GGBond/image-JC@master/Massive-MIMO-Competition/x&d_00.5wpnrqnenm80.webp"></p>
-<h2 id="test-result"><a href="#test-result" class="headerlink" title="test result"></a>test result</h2><h3 id="MP-Full-lms"><a href="#MP-Full-lms" class="headerlink" title="MP_Full + lms"></a>MP_Full + lms</h3><p>$$<br>y_{MP}(n)=\sum_{k=1}^{K} \sum_{q=0}^{Q-1} a_{kq} x(n-q)|x(n-q)|^{k-1}<br>$$<br>K=5,Q=2参数量15:</p>
+<h3 id="dataset2"><a href="#dataset2" class="headerlink" title="dataset2"></a>dataset2</h3><p>40MHz带频率间隔的调制信号<br><img src="https://cdn.jsdelivr.net/gh/JC-GGBond/image-JC@master/Massive-MIMO-Competition/x&amp;d_00.5wpnrqnenm80.webp" alt=""></p>
+<h2 id="test-result"><a href="#test-result" class="headerlink" title="test result"></a>test result</h2><h3 id="MP-Full-lms"><a href="#MP-Full-lms" class="headerlink" title="MP_Full + lms"></a>MP_Full + lms</h3><script type="math/tex; mode=display">
+y_{MP}(n)=\sum_{k=1}^{K} \sum_{q=0}^{Q-1} a_{kq} x(n-q)|x(n-q)|^{k-1}</script><p>K=5,Q=2参数量15:</p>
 <p>dataset1</p>
-<p><strong>AfMPDPD_NMSE = -31.89 dB</strong><br><img src="https://cdn.jsdelivr.net/gh/JC-GGBond/image-JC@master/MP_full/predict.4v4ymhwxd6s0.webp"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/JC-GGBond/image-JC@master/MP_full/lmserror.38vvikmu0ca0.webp"></p>
+<p><strong>AfMPDPD_NMSE = -31.89 dB</strong><br><img src="https://cdn.jsdelivr.net/gh/JC-GGBond/image-JC@master/MP_full/predict.4v4ymhwxd6s0.webp" alt=""></p>
+<p><img src="https://cdn.jsdelivr.net/gh/JC-GGBond/image-JC@master/MP_full/lmserror.38vvikmu0ca0.webp" alt=""></p>
 <p>dataset2</p>
-<p><strong>AfMPDPD_NMSE = -17.20 dB</strong><br><img src="https://cdn.jsdelivr.net/gh/JC-GGBond/image-JC@master/MP_full/predict_00.3y3lbdgh178.webp"><br><img src="https://cdn.jsdelivr.net/gh/JC-GGBond/image-JC@master/MP_full/lmserror_00.5k1a2eloig40.webp"></p>
-<h3 id="MP-odd-lms"><a href="#MP-odd-lms" class="headerlink" title="MP_odd + lms"></a>MP_odd + lms</h3><p>$$<br>y_{MP}(n)=\sum_{k=1,k=odd}^{K} \sum_{q=0}^{Q-1} a_{kq} x(n-q)|x(n-q)|^{k-1}<br>$$<br>K=5,Q=2且只取奇阶参数量9:</p>
-<p>dataset1<br><strong>AfMPDPD_NMSE = -32.48 dB</strong><br><img src="https://cdn.jsdelivr.net/gh/JC-GGBond/image-JC@master/Massive-MIMO-Competition/predict.y2z54m0yya8.webp"><br>dataset2<br><img src="https://cdn.jsdelivr.net/gh/JC-GGBond/image-JC@master/Massive-MIMO-Competition/lmserror.1k795xqfgeu8.webp"><br><strong>AfMPDPD_NMSE = -14.84 dB</strong><br><img src="https://cdn.jsdelivr.net/gh/JC-GGBond/image-JC@master/Massive-MIMO-Competition/predict_00.7jz21q0k7b0.webp"><br><img src="https://cdn.jsdelivr.net/gh/JC-GGBond/image-JC@master/Massive-MIMO-Competition/lmserror_00.5gvgdzwykqo0.webp"></p>
-<h3 id="GMP-lms"><a href="#GMP-lms" class="headerlink" title="GMP + lms"></a>GMP + lms</h3><p>$$<br>\begin{aligned}<br>y_{GMP}(n)=&amp; \sum_{k=0}^{K_{a}-1} \sum_{l=0}^{L_{a}-1} a_{k l} x(n-l)|x(n-l)|^{k} \<br>&amp;+\sum_{k=1}^{K_{b}} \sum_{l=0}^{L_{b}-1} \sum_{m=1}^{M_{b}} b_{k l m} x(n-l)|x(n-l-m)|^{k} \<br>\end{aligned}<br>$$<br>K_a=5;<br>L_a=3;<br>K_b=4;<br>L_b=4;<br>M_b=3;<br>参数量68</p>
-<p>dataset1<br><strong>AfMPDPD_NMSE = -35.20 dB</strong><br><img src="https://cdn.jsdelivr.net/gh/JC-GGBond/image-JC@master/GMP_1/predict.632l7h75q2w0.webp"><br><img src="https://cdn.jsdelivr.net/gh/JC-GGBond/image-JC@master/GMP_1/lmserror.4y18gsr3q340.webp"><br>dataset2<br><strong>AfMPDPD_NMSE = -19.82 dB</strong><br><img src="https://cdn.jsdelivr.net/gh/JC-GGBond/image-JC@master/GMP_1/predict_00.69xjbq53bao0.webp"><br><img src="https://cdn.jsdelivr.net/gh/JC-GGBond/image-JC@master/GMP_1/lmserror_00.63rsngyohwo0.webp"></p>
+<p><strong>AfMPDPD_NMSE = -17.20 dB</strong><br><img src="https://cdn.jsdelivr.net/gh/JC-GGBond/image-JC@master/MP_full/predict_00.3y3lbdgh178.webp" alt=""><br><img src="https://cdn.jsdelivr.net/gh/JC-GGBond/image-JC@master/MP_full/lmserror_00.5k1a2eloig40.webp" alt=""></p>
+<h3 id="MP-odd-lms"><a href="#MP-odd-lms" class="headerlink" title="MP_odd + lms"></a>MP_odd + lms</h3><script type="math/tex; mode=display">
+y_{MP}(n)=\sum_{k=1,k=odd}^{K} \sum_{q=0}^{Q-1} a_{kq} x(n-q)|x(n-q)|^{k-1}</script><p>K=5,Q=2且只取奇阶参数量9:</p>
+<p>dataset1<br><strong>AfMPDPD_NMSE = -32.48 dB</strong><br><img src="https://cdn.jsdelivr.net/gh/JC-GGBond/image-JC@master/Massive-MIMO-Competition/predict.y2z54m0yya8.webp" alt=""><br>dataset2<br><img src="https://cdn.jsdelivr.net/gh/JC-GGBond/image-JC@master/Massive-MIMO-Competition/lmserror.1k795xqfgeu8.webp" alt=""><br><strong>AfMPDPD_NMSE = -14.84 dB</strong><br><img src="https://cdn.jsdelivr.net/gh/JC-GGBond/image-JC@master/Massive-MIMO-Competition/predict_00.7jz21q0k7b0.webp" alt=""><br><img src="https://cdn.jsdelivr.net/gh/JC-GGBond/image-JC@master/Massive-MIMO-Competition/lmserror_00.5gvgdzwykqo0.webp" alt=""></p>
+<h3 id="GMP-lms"><a href="#GMP-lms" class="headerlink" title="GMP + lms"></a>GMP + lms</h3><script type="math/tex; mode=display">
+\begin{aligned}
+y_{GMP}(n)=& \sum_{k=0}^{K_{a}-1} \sum_{l=0}^{L_{a}-1} a_{k l} x(n-l)|x(n-l)|^{k} \\
+&+\sum_{k=1}^{K_{b}} \sum_{l=0}^{L_{b}-1} \sum_{m=1}^{M_{b}} b_{k l m} x(n-l)|x(n-l-m)|^{k} \\
+\end{aligned}</script><p>K_a=5;<br>L_a=3;<br>K_b=4;<br>L_b=4;<br>M_b=3;<br>参数量68</p>
+<p>dataset1<br><strong>AfMPDPD_NMSE = -35.20 dB</strong><br><img src="https://cdn.jsdelivr.net/gh/JC-GGBond/image-JC@master/GMP_1/predict.632l7h75q2w0.webp" alt=""><br><img src="https://cdn.jsdelivr.net/gh/JC-GGBond/image-JC@master/GMP_1/lmserror.4y18gsr3q340.webp" alt=""><br>dataset2<br><strong>AfMPDPD_NMSE = -19.82 dB</strong><br><img src="https://cdn.jsdelivr.net/gh/JC-GGBond/image-JC@master/GMP_1/predict_00.69xjbq53bao0.webp" alt=""><br><img src="https://cdn.jsdelivr.net/gh/JC-GGBond/image-JC@master/GMP_1/lmserror_00.63rsngyohwo0.webp" alt=""></p>
 
       
     </div>
@@ -460,17 +467,17 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="Presentation-2022-03-04"><a href="#Presentation-2022-03-04" class="headerlink" title="Presentation 2022.03.04"></a>Presentation 2022.03.04</h1><h2 id="Modeling-amp-Coding"><a href="#Modeling-amp-Coding" class="headerlink" title="Modeling &amp; Coding"></a>Modeling &amp; Coding</h2><h3 id="Modeling-using-matlab"><a href="#Modeling-using-matlab" class="headerlink" title="Modeling using matlab"></a>Modeling using matlab</h3><p>Simulink + simRF<br><img src="https://cdn.jsdelivr.net/gh/JC-GGBond/image-JC@master/20220304/dpd-twotone.79pcie42wlg0.webp"></p>
-<p>Spectrum Analyzer<br>without dpd<br><img src="https://cdn.jsdelivr.net/gh/JC-GGBond/image-JC@master/20220304/without-dpd.6r3ecdmg2b40.webp"></p>
-<p>after dpd<br><img src="https://cdn.jsdelivr.net/gh/JC-GGBond/image-JC@master/20220304/dpd.25xuh144t40w.webp"></p>
-<h3 id="Coding"><a href="#Coding" class="headerlink" title="Coding"></a>Coding</h3><h4 id="MP"><a href="#MP" class="headerlink" title="MP"></a>MP</h4><p>$$<br>y(n)=\sum_{k=1}^K\sum_{q=0}^Q x(n-q)|x(n-q)|^{k-1}<br>$$</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">% try to realise the MP function</span><br><span class="line">function MP_coef=Memory_Polymonial_model(x,y,memlen,K)</span><br><span class="line">%as the matlab language syntax from 1 to N</span><br><span class="line">%MP: q=0:Q  k=1:K</span><br><span class="line">%actually the memlen is Q+1;degree is k</span><br><span class="line">x=x(:);</span><br><span class="line">%原矩阵按每一列摞起来成为N*1</span><br><span class="line">y=y(:);</span><br><span class="line">xlen=length(x);</span><br><span class="line"></span><br><span class="line">xrow=reshape((memlen:-1:1)&#x27;+(0:xlen:xlen*(K-1)),1,[]);</span><br><span class="line"></span><br><span class="line">%reshape(([memlen,memlen-1,memlen-2,...,1]&#x27;+[0:xlen:xlen*(K-1)]),1,[])</span><br><span class="line"></span><br><span class="line">% caculate the delay matrix</span><br><span class="line">xVec=(0:xlen-memlen)&#x27;+xrow;</span><br><span class="line"></span><br><span class="line">%compute the delay matrix</span><br><span class="line">%.^ power(A ,B)得到时延项矩阵</span><br><span class="line">%.*按对应元素相乘</span><br><span class="line">xPow=x.*(abs(x).^(0:K-1));</span><br><span class="line"></span><br><span class="line">%天秀啊，矩阵元素查找</span><br><span class="line">%A(B)=A(B(i,j))=C;得到一个与B同样大小的矩阵</span><br><span class="line">%其中C（i,j）=先把A=A=(:),然后C（i，j）=A(第B(i,j))</span><br><span class="line">xVec=xPow(xVec);</span><br><span class="line"></span><br><span class="line">%\ mldivide Ax=B 求x 相当于解系数项，跳过了前1,2,...,memlen-1项的y(n)</span><br><span class="line">coef=xVec\y(memlen:xlen);</span><br><span class="line"></span><br><span class="line">%reshape(coef,memlen,size of (coef)/memlen)相当于再拆，拆成系数项矩阵而不是一个长列。</span><br><span class="line">MP_coef=reshape(coef,memlen,numel(coef)/memlen);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h4 id="LMS"><a href="#LMS" class="headerlink" title="LMS"></a>LMS</h4><p>$$<br>y(n)=w^T(n)u(n)\<br>e(n)=d(n)-y(n)\<br>w(n+1)=w(n)+2\mu e^*(n)x(n)<br>$$</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line">clear all;</span><br><span class="line">clc;</span><br><span class="line">%% data generate</span><br><span class="line">% original signal</span><br><span class="line">N=1000;%sample numble</span><br><span class="line">data=sign(rand(N,1)-0.5);%1000*1;rand() (0,1);-0.5-&gt;(-0.5,0.5);sign()&gt;0=1 &lt;0=-1</span><br><span class="line">% give filter taps value to calculate the first output</span><br><span class="line">w=[0.8783 -0.5806 0.6537 -0.3223 0.6577 -0.0582 0.2895 -0.2710];</span><br><span class="line">% caculate filter output</span><br><span class="line">output=conv(data,w);%M+N-1</span><br><span class="line">snr=20;</span><br><span class="line">output=awgn(output,snr,&#x27;measured&#x27;); </span><br><span class="line">%% LMS</span><br><span class="line"></span><br><span class="line">% initialization</span><br><span class="line"></span><br><span class="line">M=8;%w.size</span><br><span class="line">error_whole=zeros(1000,1);</span><br><span class="line">%for k =1:100 单纯的循环没有意义。</span><br><span class="line">w_lms=zeros(1,8);</span><br><span class="line">for i=M:N</span><br><span class="line">    input=data(i:-1:i-M+1);%8*1</span><br><span class="line">    error=output(i)-w_lms*input;%1*8*8*1</span><br><span class="line">    mu=0.04;</span><br><span class="line">    w_lms=w_lms+mu*error*input&#x27;;</span><br><span class="line">    error_whole(i)=error_whole(i)+error^2;</span><br><span class="line">end</span><br><span class="line">%end</span><br><span class="line"></span><br><span class="line">%% plot</span><br><span class="line">figure;</span><br><span class="line">error_dB=zeros(1,1000);</span><br><span class="line">for p =8:1000</span><br><span class="line">error_dB(p)=10*log10(error_whole(p));</span><br><span class="line">end</span><br><span class="line">plot(error_dB);</span><br><span class="line">axis tight;         % 使用紧凑的坐标轴</span><br><span class="line">legend(&#x27;LMS算法&#x27;);       % 图例</span><br><span class="line">title(&#x27;LMS算法误差曲线&#x27;);  % 图标题</span><br><span class="line">xlabel(&#x27;样本&#x27;);                     % x轴标签</span><br><span class="line">ylabel(&#x27;误差/dB&#x27;);                  % y轴标签</span><br><span class="line">grid on;                            % 网格线</span><br><span class="line"></span><br><span class="line">    </span><br></pre></td></tr></table></figure>
-
-<p>One epoch<br><img src="https://cdn.jsdelivr.net/gh/JC-GGBond/image-JC@master/20220304/lms.3kri5yn5v6w0.webp"></p>
-<p>Averange<br><img src="https://cdn.jsdelivr.net/gh/JC-GGBond/image-JC@master/20220304/multiple-rand-signal-lms-averange.170glmzkdta8.webp"></p>
+          <h1 id="Presentation-2022-03-04"><a href="#Presentation-2022-03-04" class="headerlink" title="Presentation 2022.03.04"></a>Presentation 2022.03.04</h1><h2 id="Modeling-amp-Coding"><a href="#Modeling-amp-Coding" class="headerlink" title="Modeling &amp; Coding"></a>Modeling &amp; Coding</h2><h3 id="Modeling-using-matlab"><a href="#Modeling-using-matlab" class="headerlink" title="Modeling using matlab"></a>Modeling using matlab</h3><p>Simulink + simRF<br><img src="https://cdn.jsdelivr.net/gh/JC-GGBond/image-JC@master/20220304/dpd-twotone.79pcie42wlg0.webp" alt=""></p>
+<p>Spectrum Analyzer<br>without dpd<br><img src="https://cdn.jsdelivr.net/gh/JC-GGBond/image-JC@master/20220304/without-dpd.6r3ecdmg2b40.webp" alt=""></p>
+<p>after dpd<br><img src="https://cdn.jsdelivr.net/gh/JC-GGBond/image-JC@master/20220304/dpd.25xuh144t40w.webp" alt=""></p>
+<h3 id="Coding"><a href="#Coding" class="headerlink" title="Coding"></a>Coding</h3><h4 id="MP"><a href="#MP" class="headerlink" title="MP"></a>MP</h4><script type="math/tex; mode=display">
+y(n)=\sum_{k=1}^K\sum_{q=0}^Q x(n-q)|x(n-q)|^{k-1}</script><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">% try to realise the MP function</span><br><span class="line">function MP_coef=Memory_Polymonial_model(x,y,memlen,K)</span><br><span class="line">%as the matlab language syntax from 1 to N</span><br><span class="line">%MP: q=0:Q  k=1:K</span><br><span class="line">%actually the memlen is Q+1;degree is k</span><br><span class="line">x=x(:);</span><br><span class="line">%原矩阵按每一列摞起来成为N*1</span><br><span class="line">y=y(:);</span><br><span class="line">xlen=length(x);</span><br><span class="line"></span><br><span class="line">xrow=reshape((memlen:-1:1)&#x27;+(0:xlen:xlen*(K-1)),1,[]);</span><br><span class="line"></span><br><span class="line">%reshape(([memlen,memlen-1,memlen-2,...,1]&#x27;+[0:xlen:xlen*(K-1)]),1,[])</span><br><span class="line"></span><br><span class="line">% caculate the delay matrix</span><br><span class="line">xVec=(0:xlen-memlen)&#x27;+xrow;</span><br><span class="line"></span><br><span class="line">%compute the delay matrix</span><br><span class="line">%.^ power(A ,B)得到时延项矩阵</span><br><span class="line">%.*按对应元素相乘</span><br><span class="line">xPow=x.*(abs(x).^(0:K-1));</span><br><span class="line"></span><br><span class="line">%天秀啊，矩阵元素查找</span><br><span class="line">%A(B)=A(B(i,j))=C;得到一个与B同样大小的矩阵</span><br><span class="line">%其中C（i,j）=先把A=A=(:),然后C（i，j）=A(第B(i,j))</span><br><span class="line">xVec=xPow(xVec);</span><br><span class="line"></span><br><span class="line">%\ mldivide Ax=B 求x 相当于解系数项，跳过了前1,2,...,memlen-1项的y(n)</span><br><span class="line">coef=xVec\y(memlen:xlen);</span><br><span class="line"></span><br><span class="line">%reshape(coef,memlen,size of (coef)/memlen)相当于再拆，拆成系数项矩阵而不是一个长列。</span><br><span class="line">MP_coef=reshape(coef,memlen,numel(coef)/memlen);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h4 id="LMS"><a href="#LMS" class="headerlink" title="LMS"></a>LMS</h4><script type="math/tex; mode=display">
+y(n)=w^T(n)u(n)\\
+e(n)=d(n)-y(n)\\
+w(n+1)=w(n)+2\mu e^*(n)x(n)</script><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line">clear all;</span><br><span class="line">clc;</span><br><span class="line">%% data generate</span><br><span class="line">% original signal</span><br><span class="line">N=1000;%sample numble</span><br><span class="line">data=sign(rand(N,1)-0.5);%1000*1;rand() (0,1);-0.5-&gt;(-0.5,0.5);sign()&gt;0=1 &lt;0=-1</span><br><span class="line">% give filter taps value to calculate the first output</span><br><span class="line">w=[0.8783 -0.5806 0.6537 -0.3223 0.6577 -0.0582 0.2895 -0.2710];</span><br><span class="line">% caculate filter output</span><br><span class="line">output=conv(data,w);%M+N-1</span><br><span class="line">snr=20;</span><br><span class="line">output=awgn(output,snr,&#x27;measured&#x27;); </span><br><span class="line">%% LMS</span><br><span class="line"></span><br><span class="line">% initialization</span><br><span class="line"></span><br><span class="line">M=8;%w.size</span><br><span class="line">error_whole=zeros(1000,1);</span><br><span class="line">%for k =1:100 单纯的循环没有意义。</span><br><span class="line">w_lms=zeros(1,8);</span><br><span class="line">for i=M:N</span><br><span class="line">    input=data(i:-1:i-M+1);%8*1</span><br><span class="line">    error=output(i)-w_lms*input;%1*8*8*1</span><br><span class="line">    mu=0.04;</span><br><span class="line">    w_lms=w_lms+mu*error*input&#x27;;</span><br><span class="line">    error_whole(i)=error_whole(i)+error^2;</span><br><span class="line">end</span><br><span class="line">%end</span><br><span class="line"></span><br><span class="line">%% plot</span><br><span class="line">figure;</span><br><span class="line">error_dB=zeros(1,1000);</span><br><span class="line">for p =8:1000</span><br><span class="line">error_dB(p)=10*log10(error_whole(p));</span><br><span class="line">end</span><br><span class="line">plot(error_dB);</span><br><span class="line">axis tight;         % 使用紧凑的坐标轴</span><br><span class="line">legend(&#x27;LMS算法&#x27;);       % 图例</span><br><span class="line">title(&#x27;LMS算法误差曲线&#x27;);  % 图标题</span><br><span class="line">xlabel(&#x27;样本&#x27;);                     % x轴标签</span><br><span class="line">ylabel(&#x27;误差/dB&#x27;);                  % y轴标签</span><br><span class="line">grid on;                            % 网格线</span><br><span class="line"></span><br><span class="line">    </span><br></pre></td></tr></table></figure>
+<p>One epoch<br><img src="https://cdn.jsdelivr.net/gh/JC-GGBond/image-JC@master/20220304/lms.3kri5yn5v6w0.webp" alt=""></p>
+<p>Averange<br><img src="https://cdn.jsdelivr.net/gh/JC-GGBond/image-JC@master/20220304/multiple-rand-signal-lms-averange.170glmzkdta8.webp" alt=""></p>
 <h2 id="Paper-reading"><a href="#Paper-reading" class="headerlink" title="Paper reading"></a>Paper reading</h2><p>decomposition dpd</p>
 <p>sub6G &amp; mmwave</p>
 <p>sub6G：</p>
@@ -478,12 +485,12 @@
 <p><strong>For me,all in SDR with AD9363.</strong></p>
 <p> After a preamplifier, it was fed into a symmetrical Doherty PA using two Wolfspeed CGH40010 GaN transistors (CREE Inc.) with an average output power of 32.1 dBm. The 1-dB compression point of PA is P1 d B = 41 dBm.</p>
 <p><strong>Choose PA</strong></p>
-<p>At last, the spectrum analyzer (Keysight, N9030A) captured in-phase and quadrature (I/Q) data  fter the attenuator and sent them back to PC for coefficients extraction and predistortion.</p>
+<p>At last, the spectrum analyzer (Keysight, N9030A) captured in-phase and quadrature (I/Q) data  fter the attenuator and sent them back to PC for coefficients extraction and predistortion.</p>
 <p><strong>Demodulation and FFT</strong><br>用不同的PA模型测试，对比不同文章NMSE 25 27 35 28</p>
 <p>mmwave:</p>
-<p>the center frequency was selected as 28 GHz and the modulation BWs were 400 and 800 MHz. </p>
+<p>the center frequency was selected as 28 GHz and the modulation BWs were 400 and 800 MHz. </p>
 <p>The test signals employed are a 5G NR waveform with the PAPR of around 9 dB by crest factor reduction and the BW of 400 and 800 MHz with 64-QAM.</p>
-<p> First, the ultrabroadband signals were generated in PC and downloaded into a vector signal generator (R&amp;S, SMW200A).</p>
+<p> First, the ultrabroadband signals were generated in PC and downloaded into a vector signal generator (R&amp;S, SMW200A).</p>
 <p>Then, it was upconverted to an mmWave frequency at 28 GHz. Later, a Ka-band PA (SAGE Millimeter,Inc., Torrance, CA, USA) transmitted the signal with gain =45 dB and P1dB = 26 dBm. The average output power is set as 18.2 dBm.</p>
 <p>A coupler was used to send a small portion of the amplified signal to the spectrum analyzer (R&amp;S, FSW).<br>At last, FSW captured I/Q data and sent them back to PC.</p>
 
@@ -640,16 +647,42 @@
 
 
 <hr>
-<h2 id="1-Block-diagram"><a href="#1-Block-diagram" class="headerlink" title="1.Block diagram"></a>1.Block diagram</h2><h2 id="2-PA-model"><a href="#2-PA-model" class="headerlink" title="2.PA model"></a>2.PA model</h2><p><strong>MP（Memory Polynomial）:</strong><br>$$<br>z(n)=\sum_{k=1}^{K}\sum_{q=0}^{Q}a_{kq}x(n-q)|x(n-q)|^{k-1}<br>$$<br><strong>Plug the above formula  into the variables in the block diagram:</strong><br>$$<br>z(n)=\vec y \alpha<br>$$<br><strong>Which:</strong><br>$$<br>\vec y=[\phi_{10}(y(n)),\phi_{11}(y(n)),\phi_{12}(y(n)),\phi_{13}(y(n)),\dots\dots,\phi_{KQ}(y(n))]\<br>\phi_{kq}(y(n))=y(n-q)|y(n-q)|^{k-1}\<br>$$<br><strong>and:</strong><br>$$<br>\alpha=[a_{10},\dots \dots,a_{1Q},a_{21},\dots \dots,a_{KQ}]^{T}<br>$$</p>
-<hr>
-<h2 id="3-Optimization"><a href="#3-Optimization" class="headerlink" title="3.Optimization"></a>3.Optimization</h2><h3 id="3-1-Iteration-range"><a href="#3-1-Iteration-range" class="headerlink" title="3.1 Iteration range"></a>3.1 Iteration range</h3><p><strong>Select:</strong><br>$$<br>\vec y_{o}=[y(n),y(n+1),\dots\dots,y(n+N-1)]^{T}<br>$$<br><strong>Now:</strong><br>$$<br>\vec z=Y\alpha<br>$$<br><strong>Which:</strong><br>$$<br>\vec z=[z(n),z(n+1),\dots\dots,z(n+N-1)]\<br>Y=[\phi_{10}(\vec y_{o}),\phi_{11}(\vec y_{o}),\phi_{12}(\vec y_{o}),\phi_{13}(\vec y_{o}),\dots\dots,\phi_{KQ}(\vec y_{o})]<br>$$</p>
-<hr>
-<h3 id="3-2-Optimize-algorithm"><a href="#3-2-Optimize-algorithm" class="headerlink" title="3.2 Optimize algorithm"></a>3.2 Optimize algorithm</h3><h4 id="3-2-1-LS-Least-Square"><a href="#3-2-1-LS-Least-Square" class="headerlink" title="3.2.1 LS  (Least Square)"></a>3.2.1 LS  (Least Square)</h4><p><strong>Target:</strong><br>$$<br>min||\vec z-Y\alpha||_{2}^2<br>$$<br><strong>So：</strong><br>$$<br>\frac{\partial ||\vec z-Y\alpha||_{2}^2}{\partial \alpha}=\frac{\partial (\vec z^{H}\vec z-2\alpha^{H}Y^{H}\vec z+\alpha^{H}Y^{H}Y\alpha)}{\partial \alpha}=2(Y^{H}Y\alpha-Y^{H}\vec z)\<br>$$<br><strong>Let it equal to zero:</strong><br>$$<br>\alpha=(Y^{H}Y)^{-1}Y^{H}\vec z<br>$$<br><strong>Q:</strong></p>
+<h2 id="1-Block-diagram"><a href="#1-Block-diagram" class="headerlink" title="1.Block diagram"></a>1.Block diagram</h2><h2 id="2-PA-model"><a href="#2-PA-model" class="headerlink" title="2.PA model"></a>2.PA model</h2><p><strong>MP（Memory Polynomial）:</strong></p>
+<script type="math/tex; mode=display">
+z(n)=\sum_{k=1}^{K}\sum_{q=0}^{Q}a_{kq}x(n-q)|x(n-q)|^{k-1}</script><p><strong>Plug the above formula  into the variables in the block diagram:</strong></p>
+<script type="math/tex; mode=display">
+z(n)=\vec y \alpha</script><p><strong>Which:</strong></p>
+<script type="math/tex; mode=display">
+\vec y=[\phi_{10}(y(n)),\phi_{11}(y(n)),\phi_{12}(y(n)),\phi_{13}(y(n)),\dots\dots,\phi_{KQ}(y(n))]\\
+\phi_{kq}(y(n))=y(n-q)|y(n-q)|^{k-1}\\</script><p><strong>and:</strong></p>
+<script type="math/tex; mode=display">
+\alpha=[a_{10},\dots \dots,a_{1Q},a_{21},\dots \dots,a_{KQ}]^{T}</script><hr>
+<h2 id="3-Optimization"><a href="#3-Optimization" class="headerlink" title="3.Optimization"></a>3.Optimization</h2><h3 id="3-1-Iteration-range"><a href="#3-1-Iteration-range" class="headerlink" title="3.1 Iteration range"></a>3.1 Iteration range</h3><p><strong>Select:</strong></p>
+<script type="math/tex; mode=display">
+\vec y_{o}=[y(n),y(n+1),\dots\dots,y(n+N-1)]^{T}</script><p><strong>Now:</strong></p>
+<script type="math/tex; mode=display">
+\vec z=Y\alpha</script><p><strong>Which:</strong></p>
+<script type="math/tex; mode=display">
+\vec z=[z(n),z(n+1),\dots\dots,z(n+N-1)]\\
+Y=[\phi_{10}(\vec y_{o}),\phi_{11}(\vec y_{o}),\phi_{12}(\vec y_{o}),\phi_{13}(\vec y_{o}),\dots\dots,\phi_{KQ}(\vec y_{o})]</script><hr>
+<h3 id="3-2-Optimize-algorithm"><a href="#3-2-Optimize-algorithm" class="headerlink" title="3.2 Optimize algorithm"></a>3.2 Optimize algorithm</h3><h4 id="3-2-1-LS-Least-Square"><a href="#3-2-1-LS-Least-Square" class="headerlink" title="3.2.1 LS  (Least Square)"></a>3.2.1 LS  (Least Square)</h4><p><strong>Target:</strong></p>
+<script type="math/tex; mode=display">
+min||\vec z-Y\alpha||_{2}^2</script><p><strong>So：</strong></p>
+<script type="math/tex; mode=display">
+\frac{\partial ||\vec z-Y\alpha||_{2}^2}{\partial \alpha}=\frac{\partial (\vec z^{H}\vec z-2\alpha^{H}Y^{H}\vec z+\alpha^{H}Y^{H}Y\alpha)}{\partial \alpha}=2(Y^{H}Y\alpha-Y^{H}\vec z)\\</script><p><strong>Let it equal to zero:</strong></p>
+<script type="math/tex; mode=display">
+\alpha=(Y^{H}Y)^{-1}Y^{H}\vec z</script><p><strong>Q:</strong></p>
 <p>$r(Y^{H}Y)\le min{r(Y^{H}),r(Y)}$，$inv(Y^{H}Y)$ <strong>may not exist</strong></p>
 <hr>
 <h4 id="3-2-2-QR-decomposition"><a href="#3-2-2-QR-decomposition" class="headerlink" title="3.2.2 QR decomposition"></a>3.2.2 QR decomposition</h4><p><strong>Principle：</strong></p>
 <p>$Y \in \mathbb{R}^{m\times n} ,m\ge n$， $Y=QR$，<strong>while</strong> $Q\in \mathbb{R}^{m\times m}$<strong>is orthogonal matrix</strong>，$R\equiv  \left[\begin{array}{c} \hat{R} \0 \end{array} \right] \in \mathbb{R^{m\times n}}$，$\hat{R} \in \mathbb{R^{n\times n}}$ <strong>is Upper triangular matrix</strong></p>
-<p><strong>Let:</strong> $Y=QR$<br>$$<br>\alpha=(R^{H}Q^{H}QR)^{-1}R^{H}Q^{H}\vec z\<br>$$<br><strong>Because:</strong>  $Q^{H}Q=E$<br>$$<br>\alpha=R^{-1}R^{-H}R^{H}Q^{H}\vec z\<br>\alpha=R^{-1}Q^{H}\vec z\<br>R\alpha=Q^H\vec z<br>$$<br>$\alpha$ <strong>can be solved by solving homogeneous equations from bottom to top</strong></p>
+<p><strong>Let:</strong> $Y=QR$</p>
+<script type="math/tex; mode=display">
+\alpha=(R^{H}Q^{H}QR)^{-1}R^{H}Q^{H}\vec z\\</script><p><strong>Because:</strong>  $Q^{H}Q=E$</p>
+<script type="math/tex; mode=display">
+\alpha=R^{-1}R^{-H}R^{H}Q^{H}\vec z\\
+\alpha=R^{-1}Q^{H}\vec z\\
+R\alpha=Q^H\vec z</script><p>$\alpha$ <strong>can be solved by solving homogeneous equations from bottom to top</strong></p>
 
       
     </div>
@@ -731,13 +764,22 @@
 
 
 
-<h2 id="1-Future-innovation-points-Algorithm-optimization"><a href="#1-Future-innovation-points-Algorithm-optimization" class="headerlink" title="1.Future innovation points: Algorithm optimization"></a>1.Future innovation points: Algorithm optimization</h2><h2 id="2-Algorithm-comparison"><a href="#2-Algorithm-comparison" class="headerlink" title="2.Algorithm comparison"></a>2.Algorithm comparison</h2><h3 id="2-1-LS（method-of-least-squares）"><a href="#2-1-LS（method-of-least-squares）" class="headerlink" title="2.1 LS（method of least squares）"></a>2.1 LS（method of least squares）</h3><h4 id="Target"><a href="#Target" class="headerlink" title="Target:"></a>Target:</h4><p>$$<br>min||\vec z-Y\alpha||_{2}^2<br>$$</p>
-<h4 id="So"><a href="#So" class="headerlink" title="So:"></a>So:</h4><p>$$<br>\frac{\partial ||\vec z-Y\alpha||_{2}^2}{\partial \alpha}=\frac{\partial (\vec z^{H}\vec z-2\alpha^{H}Y^{H}\vec z+\alpha^{H}Y^{H}Y\alpha)}{\partial \alpha}=2(Y^{H}Y\alpha-Y^{H}\vec z)\<br>$$</p>
-<h4 id="Let-it-equal-to-zero"><a href="#Let-it-equal-to-zero" class="headerlink" title="Let it equal to zero:"></a>Let it equal to zero:</h4><p>$$<br>\alpha=(Y^{H}Y)^{-1}Y^{H}\vec z<br>$$</p>
-<h3 id="2-2-LMS-least-mean-squares"><a href="#2-2-LMS-least-mean-squares" class="headerlink" title="2.2 LMS (least mean squares)"></a>2.2 LMS (least mean squares)</h3><p>$$<br>y(n)=\hat{w}^{H}(n)u(n)\<br>e(n)=d(n)-y(n)\<br>\hat{w(n+1)}=\hat{w(n)}+\mu u(n)e^{*}(n)<br>$$</p>
-<h3 id="2-3-RLS-Recursive-least-squares"><a href="#2-3-RLS-Recursive-least-squares" class="headerlink" title="2.3 RLS (Recursive least squares)"></a>2.3 RLS (Recursive least squares)</h3><p>$$<br>e(n)=y(n)-\boldsymbol{w}^{\mathrm{H}}(n-1) \boldsymbol{x}(n) \<br>\boldsymbol{k}(n)=\frac{\boldsymbol{P}(n-1) \boldsymbol{x}(n)}{\lambda+\boldsymbol{x}^{\mathrm{H}}(n) \boldsymbol{P}(n-1) \boldsymbol{x}(n)} \<br>\boldsymbol{P}(n)=\frac{1}{\lambda}\left[\boldsymbol{P}(n-1)-\boldsymbol{k}(n) \boldsymbol{x}^{\mathrm{H}}(n) \boldsymbol{P}(n-1)\right] \<br>\boldsymbol{w}(n)=\boldsymbol{w}(n-1)+\boldsymbol{k}(n) e^{*}(n)<br>$$</p>
-<h3 id="2-4-Comparison"><a href="#2-4-Comparison" class="headerlink" title="2.4 Comparison"></a>2.4 Comparison</h3><h4 id="Basic：Wiener-filter"><a href="#Basic：Wiener-filter" class="headerlink" title="Basic：Wiener filter"></a>Basic：Wiener filter</h4><p>$$<br>e(n)=d(n)-y(n)<br>$$</p>
-<p>actually we need $y(n)$ to divide Gain here<br>$$<br>J=\mathbb{E}[e^{2}(n)]\<br>\nabla_{k}J=0<br>$$<br>get Canonical equation,Wiener-Hoof equation</p>
+<h2 id="1-Future-innovation-points-Algorithm-optimization"><a href="#1-Future-innovation-points-Algorithm-optimization" class="headerlink" title="1.Future innovation points: Algorithm optimization"></a>1.Future innovation points: Algorithm optimization</h2><h2 id="2-Algorithm-comparison"><a href="#2-Algorithm-comparison" class="headerlink" title="2.Algorithm comparison"></a>2.Algorithm comparison</h2><h3 id="2-1-LS（method-of-least-squares）"><a href="#2-1-LS（method-of-least-squares）" class="headerlink" title="2.1 LS（method of least squares）"></a>2.1 LS（method of least squares）</h3><h4 id="Target"><a href="#Target" class="headerlink" title="Target:"></a>Target:</h4><script type="math/tex; mode=display">
+min||\vec z-Y\alpha||_{2}^2</script><h4 id="So"><a href="#So" class="headerlink" title="So:"></a>So:</h4><script type="math/tex; mode=display">
+\frac{\partial ||\vec z-Y\alpha||_{2}^2}{\partial \alpha}=\frac{\partial (\vec z^{H}\vec z-2\alpha^{H}Y^{H}\vec z+\alpha^{H}Y^{H}Y\alpha)}{\partial \alpha}=2(Y^{H}Y\alpha-Y^{H}\vec z)\\</script><h4 id="Let-it-equal-to-zero"><a href="#Let-it-equal-to-zero" class="headerlink" title="Let it equal to zero:"></a>Let it equal to zero:</h4><script type="math/tex; mode=display">
+\alpha=(Y^{H}Y)^{-1}Y^{H}\vec z</script><h3 id="2-2-LMS-least-mean-squares"><a href="#2-2-LMS-least-mean-squares" class="headerlink" title="2.2 LMS (least mean squares)"></a>2.2 LMS (least mean squares)</h3><script type="math/tex; mode=display">
+y(n)=\hat{w}^{H}(n)u(n)\\
+e(n)=d(n)-y(n)\\
+\hat{w(n+1)}=\hat{w(n)}+\mu u(n)e^{*}(n)</script><h3 id="2-3-RLS-Recursive-least-squares"><a href="#2-3-RLS-Recursive-least-squares" class="headerlink" title="2.3 RLS (Recursive least squares)"></a>2.3 RLS (Recursive least squares)</h3><script type="math/tex; mode=display">
+e(n)=y(n)-\boldsymbol{w}^{\mathrm{H}}(n-1) \boldsymbol{x}(n) \\
+\boldsymbol{k}(n)=\frac{\boldsymbol{P}(n-1) \boldsymbol{x}(n)}{\lambda+\boldsymbol{x}^{\mathrm{H}}(n) \boldsymbol{P}(n-1) \boldsymbol{x}(n)} \\
+\boldsymbol{P}(n)=\frac{1}{\lambda}\left[\boldsymbol{P}(n-1)-\boldsymbol{k}(n) \boldsymbol{x}^{\mathrm{H}}(n) \boldsymbol{P}(n-1)\right] \\
+\boldsymbol{w}(n)=\boldsymbol{w}(n-1)+\boldsymbol{k}(n) e^{*}(n)</script><h3 id="2-4-Comparison"><a href="#2-4-Comparison" class="headerlink" title="2.4 Comparison"></a>2.4 Comparison</h3><h4 id="Basic：Wiener-filter"><a href="#Basic：Wiener-filter" class="headerlink" title="Basic：Wiener filter"></a>Basic：Wiener filter</h4><script type="math/tex; mode=display">
+e(n)=d(n)-y(n)</script><p>actually we need $y(n)$ to divide Gain here</p>
+<script type="math/tex; mode=display">
+J=\mathbb{E}[e^{2}(n)]\\
+\nabla_{k}J=0</script><p>get Canonical equation,Wiener-Hoof equation</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -746,12 +788,15 @@
 <th>RLS</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>Matrix operation, a lot of calculation</td>
 <td>Stochastic gradient descent</td>
 <td>more Fast than LMS</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+</div>
 <h2 id="3-Hardware-platform"><a href="#3-Hardware-platform" class="headerlink" title="3.Hardware platform"></a>3.Hardware platform</h2><h3 id="Adalm-pluto"><a href="#Adalm-pluto" class="headerlink" title="Adalm-pluto"></a>Adalm-pluto</h3>
       
     </div>
@@ -912,7 +957,6 @@
 <p>​        <strong>Markdown</strong> is one lightweight markup language. Lightweight markup languages use simple markup syntax to  describe simple format description.</p>
 <p>For example:</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">h3</span> <span class="attr">align</span> = <span class="string">&quot;center&quot;</span>&gt;</span></span><br><span class="line">    hello, Prof.Zhang and every student in 404 lab! </span><br><span class="line"><span class="tag">&lt;/<span class="name">h3</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h6</span> <span class="attr">align</span> = <span class="string">&quot;center&quot;</span>&gt;</span></span><br><span class="line">    Here is the second Presentation by Jingci Zhu.</span><br><span class="line"><span class="tag">&lt;/<span class="name">h6</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
 <p>Well, we can see the result:</p>
 <h3 align = "center">
     Hello, Prof.Zhang and every student in 404 lab! 
@@ -924,8 +968,12 @@
 
 
 
-<p>We can find it is simple and fast to use <strong>markdown</strong> to edit our text! At the same time, it can also show the code with highlights as you just saw.</p>
-<p>By the way, the app which I edited this text is <strong>Typora</strong>. It is one <strong>markdown</strong> editor.</p>
+We can find it is simple and fast to use __markdown__ to edit our text! At the same time, it can also show the code with highlights as you just saw.
+
+By the way, the app which I edited this text is __Typora__. It is one __markdown__ editor.
+
+
+
 <h3 align = "center">
     Well, Let's start the presentation!
 </h3>
@@ -933,57 +981,88 @@
 
 
 
-<h2 id="Contents"><a href="#Contents" class="headerlink" title="Contents"></a>Contents</h2><p>[1.Something about the last presentation](# 1.Something about the last presentation)</p>
-<p>[2.Electromagnetic theory](2.Electromagnetic theory)</p>
+<h2 id="Contents"><a href="#Contents" class="headerlink" title="Contents"></a>Contents</h2><p><a href="# 1.Something about the last presentation">1.Something about the last presentation</a></p>
+<p><a href="2.Electromagnetic theory">2.Electromagnetic theory</a></p>
 <h3 id="1-Something-about-the-last-presentation"><a href="#1-Something-about-the-last-presentation" class="headerlink" title="1.Something about the last presentation"></a>1.Something about the last presentation</h3><ul>
 <li><p>The principle of dipole antenna</p>
 <pre><code>A dipole means one positive and one negative charge placed a distance apart. As the Coulomb low:
-</code></pre>
-<p>$$<br>\vec{F}=k \frac{q_{1} q_{2}}{r^{2}} \overrightarrow{e_{r}}<br>$$</p>
-<p> we can know their have interaction force between two charges, which makes them do <strong>simple harmonic motion</strong>.That means they doing <strong>sinusoidal motion</strong>.</p>
+</code></pre><script type="math/tex; mode=display">
+\vec{F}=k \frac{q_{1} q_{2}}{r^{2}} \overrightarrow{e_{r}}</script><p> we can know their have interaction force between two charges, which makes them do <strong>simple harmonic motion</strong>.That means they doing <strong>sinusoidal motion</strong>.</p>
 </li>
 </ul>
-<p>Consider the oscillating electric dipoles as a <strong>sinusoidal current</strong> :<br>$$<br>i(t)=I * \cos (\omega t)=\operatorname{Re}\left[I e^{j \omega t}\right]<br>$$<br>Use micro element method:<br>$$<br>J d V^{\prime}=e_{z} \frac{I}{\Delta s^{\prime}} \Delta s^{\prime} d z^{\prime}=e_{z} I d z<br>$$<br>At the same time, as the maxwell’ s functions and field theory, we use potential method to describe time-varying electromagnetic field:<br>$$<br>\nabla \cdot \vec{B}=0 \quad  \quad \vec{B}=\nabla \times \vec{A}<br>$$<br>So get the A(r),<br>$$<br>\vec{A(r)}=\frac{u_{0}}{4 \pi} \int_{l} \frac{e_{z} I}{\left|r-r^{\prime}\right|} e^{-j k\left|r-r^{\prime}\right|}<br>$$</p>
-<p>$$<br>\begin{array}{c}<br>\vec{A(r)}=e_{z} \frac{u_{0} I l}{4 \pi r} e^{-j k r} \<br>\end{array}<br>$$</p>
-<p> while I&lt;&lt;r, we can approximate it.<br>$$<br>\left{\begin{array}{l}<br>A_{r}=A_{z} \cos (\theta)=\frac{u_{0} I l}{4 \pi r} \operatorname{cosi}(\theta) e^{-j k r} \<br>A_{\theta}=-A_{z} \sin (\theta)=\frac{u_{0} I l}{4 \pi r} \sin (\theta) e^{-j k r} \<br>A_{\phi}=0<br>\end{array}\right.<br>$$<br>Finally, use maxwell’s functions to get <strong>E</strong> and <strong>H</strong>.<br>$$<br>\vec{H}=\frac{1}{u_{0}}\nabla  \times \vec{A}<br>$$</p>
-<p>$$<br>\vec{E}=\frac{1}{j \omega \varepsilon_{0}} \nabla \times \vec{H}<br>$$</p>
-<p>(The derivation of the powerline equation is complicated and is omitted here)</p>
+<p>Consider the oscillating electric dipoles as a <strong>sinusoidal current</strong> :</p>
+<script type="math/tex; mode=display">
+i(t)=I * \cos (\omega t)=\operatorname{Re}\left[I e^{j \omega t}\right]</script><p>Use micro element method:</p>
+<script type="math/tex; mode=display">
+J d V^{\prime}=e_{z} \frac{I}{\Delta s^{\prime}} \Delta s^{\prime} d z^{\prime}=e_{z} I d z</script><p>At the same time, as the maxwell’ s functions and field theory, we use potential method to describe time-varying electromagnetic field:</p>
+<script type="math/tex; mode=display">
+\nabla \cdot \vec{B}=0 \quad  \quad \vec{B}=\nabla \times \vec{A}</script><p>So get the A(r),</p>
+<script type="math/tex; mode=display">
+\vec{A(r)}=\frac{u_{0}}{4 \pi} \int_{l} \frac{e_{z} I}{\left|r-r^{\prime}\right|} e^{-j k\left|r-r^{\prime}\right|}</script><script type="math/tex; mode=display">
+\begin{array}{c}
+\vec{A(r)}=e_{z} \frac{u_{0} I l}{4 \pi r} e^{-j k r} \\
+\end{array}</script><p> while I&lt;&lt;r, we can approximate it.</p>
+<script type="math/tex; mode=display">
+\left\{\begin{array}{l}
+A_{r}=A_{z} \cos (\theta)=\frac{u_{0} I l}{4 \pi r} \operatorname{cosi}(\theta) e^{-j k r} \\
+A_{\theta}=-A_{z} \sin (\theta)=\frac{u_{0} I l}{4 \pi r} \sin (\theta) e^{-j k r} \\
+A_{\phi}=0
+\end{array}\right.</script><p>Finally, use maxwell’s functions to get <strong>E</strong> and <strong>H</strong>.</p>
+<script type="math/tex; mode=display">
+\vec{H}=\frac{1}{u_{0}}\nabla  \times \vec{A}</script><script type="math/tex; mode=display">
+\vec{E}=\frac{1}{j \omega \varepsilon_{0}} \nabla \times \vec{H}</script><p>(The derivation of the powerline equation is complicated and is omitted here)</p>
 <p>Next, we will simulate the radiation process.</p>
 <ul>
-<li><p>Figure <strong>Powerline</strong></p>
-</li>
-<li><p>Gif of <strong>radiation</strong></p>
-</li>
-<li><p>Figure in <strong>far field</strong></p>
+<li>Figure <strong>Powerline</strong></li>
+</ul>
+<ul>
+<li>Gif of <strong>radiation</strong></li>
+</ul>
+<ul>
+<li>Figure in <strong>far field</strong></li>
+</ul>
 <h3 id="2-Electromagnetic-theory"><a href="#2-Electromagnetic-theory" class="headerlink" title="2.Electromagnetic theory"></a>2.Electromagnetic theory</h3><ul>
-<li><p><strong>TE and TM</strong></p>
-</li>
+<li><strong>TE and TM</strong></li>
+</ul>
+<ul>
 <li><p><strong>Plane wave,  spherical wave, cylindrical wave,</strong></p>
 <p>The differences of them are the different Equiphase surface.</p>
 </li>
+</ul>
+<ul>
 <li><p><strong>Linear polarization, circular polarization, elliptic polarization</strong></p>
 <p>The path of an electric vector as a radio wave travels</p>
-<h3 id="3-Works-for-course-Electromagnetic-mathematical"><a href="#3-Works-for-course-Electromagnetic-mathematical" class="headerlink" title="3.Works for course: Electromagnetic mathematical"></a>3.Works for course: <strong>Electromagnetic mathematical</strong></h3><ul>
-<li>Why the formula below is an cylindrical wave?</li>
+</li>
 </ul>
-<p>$$<br>E=\frac{E_{max}}{\sqrt{r}}cos(kr-\omega t)<br>$$</p>
-<p>Use matlab to solve it:</p>
+<pre><code>### 3.Works for course: __Electromagnetic mathematical__
+
+* Why the formula below is an cylindrical wave?
+
+$$
+E=\frac&#123;E_&#123;max&#125;&#125;&#123;\sqrt&#123;r&#125;&#125;cos(kr-\omega t)
+$$
+
+Use matlab to solve it:
+
 <figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Emax=<span class="number">5</span>;</span><br><span class="line">r=<span class="number">0.01</span>:<span class="number">0.01</span>:<span class="number">4</span>;</span><br><span class="line">k=<span class="built_in">pi</span>;</span><br><span class="line">w=<span class="number">2</span>*<span class="built_in">pi</span>;</span><br><span class="line"><span class="keyword">for</span> t=<span class="number">0.01</span>:<span class="number">0.01</span>:<span class="number">10</span></span><br><span class="line">    <span class="keyword">for</span> <span class="built_in">i</span>=<span class="number">1</span>:<span class="number">400</span></span><br><span class="line">        E(<span class="built_in">i</span>)=(Emax/<span class="built_in">sqrt</span>(r(<span class="built_in">i</span>)))*<span class="built_in">cos</span>(k*r(<span class="built_in">i</span>)-w*t);</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line"><span class="built_in">plot</span>(r,E,<span class="string">&#x27;.&#x27;</span>);</span><br></pre></td></tr></table></figure>
 
-<p>Get the result:</p>
-<p>__Figure in a moment in time __</p>
-<p>(<strong>Cylindrical coordinates</strong> ，and X label is the <strong>radius</strong>, Y label is the <strong>Electric field intensity</strong>)</p>
-<p><strong>Gif of it</strong>:</p>
-<p>​                                                 </p>
-<ul>
-<li><strong>Bessel function</strong></li>
-</ul>
-</li>
-</ul>
-<h3 id="4-Our-‘academic’-Trip-to-ShangHai-for-IME-2020-☆＿☆"><a href="#4-Our-‘academic’-Trip-to-ShangHai-for-IME-2020-☆＿☆" class="headerlink" title="4.Our ‘academic’ Trip to ShangHai for IME 2020  (☆＿☆)"></a>4.Our ‘academic’ Trip to ShangHai for IME 2020  (☆＿☆)</h3><ul>
+Get the result:
+
+__Figure in a moment in time __
+
+(__Cylindrical coordinates__ ，and X label is the __radius__, Y label is the __Electric field intensity__)
+
+
+
+__Gif of it__:
+
+
+
+​                                                 
+
+* __Bessel function__
+</code></pre><h3 id="4-Our-‘academic’-Trip-to-ShangHai-for-IME-2020-☆＿☆"><a href="#4-Our-‘academic’-Trip-to-ShangHai-for-IME-2020-☆＿☆" class="headerlink" title="4.Our ‘academic’ Trip to ShangHai for IME 2020  (☆＿☆)"></a>4.Our ‘academic’ Trip to ShangHai for IME 2020  (☆＿☆)</h3><ul>
 <li><strong>My focus</strong></li>
-</ul>
-</li>
 </ul>
 <h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><ol>
 <li><a target="_blank" rel="noopener" href="https://wenku.baidu.com/view/34f5586f79563c1ec5da71b1.html">The simulation of dipole radiation</a></li>
@@ -1074,10 +1153,10 @@
 
       
           <h1 id="Seminar-Report-2021-12-27"><a href="#Seminar-Report-2021-12-27" class="headerlink" title="Seminar Report: 2021.12.27"></a>Seminar Report: 2021.12.27</h1><h2 id="1-Reference-conclude"><a href="#1-Reference-conclude" class="headerlink" title="1. Reference conclude"></a>1. Reference conclude</h2><ol>
-<li><p>Domestic Research state</p>
-</li>
-<li><p>Foreign Reasearch state</p>
-</li>
+<li>Domestic Research state</li>
+</ol>
+<ol>
+<li>Foreign Reasearch state</li>
 </ol>
 <ul>
 <li>Review</li>
@@ -1089,18 +1168,18 @@
 <h2 id="2-coding-process"><a href="#2-coding-process" class="headerlink" title="2. coding process"></a>2. coding process</h2><ol>
 <li>==OOT block:==</li>
 </ol>
-<ol start="2">
+<ol>
 <li>Prepare: (How time flies.)</li>
 </ol>
 <ul>
-<li>Select hardware platform*(SDR: adalm-pluto)*</li>
+<li>Select hardware platform<em>(SDR: adalm-pluto)</em></li>
 <li><ul>
 <li>from Paper reading:</li>
-<li>—–&gt;basic parameter estimation algorithm</li>
-<li>—–&gt;Adaptive filter <em>(LS,LMS,RLS)</em>  ==NOT Innovation because reference source==</li>
-<li>—–&gt;software platform:<em>(GNU Radio Company)</em></li>
-<li>—–&gt;Write OOT</li>
-<li>—–&gt;C++ for Algorithm&amp;Python for test:</li>
+<li>——-&gt;basic parameter estimation algorithm</li>
+<li>——-&gt;Adaptive filter <em>(LS,LMS,RLS)</em>  ==NOT Innovation because reference source==</li>
+<li>——-&gt;software platform:<em>(GNU Radio Company)</em></li>
+<li>——-&gt;Write OOT</li>
+<li>——-&gt;C++ for Algorithm&amp;Python for test:</li>
 </ul>
 </li>
 <li></li>
