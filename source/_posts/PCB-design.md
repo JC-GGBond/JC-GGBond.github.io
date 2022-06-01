@@ -11,6 +11,9 @@ categories: hardware_skills
 电源层、地层、信号层。
 信号层用来进行信号布线。
 
+多层PCB构成
+https://www.bilibili.com/read/cv16860517?spm_id_from=444.41.list.card_article.click
+
 ![](https://cdn.jsdelivr.net/gh/JC-GGBond/image-JC@master/SDR_project/微信截图_20220526153845.2z2vr4qj19o0.webp)
 
 ## 四层板和两层板

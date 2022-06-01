@@ -32,8 +32,10 @@ $$
   滤掉100兆以下的,留下电容位和电阻位以供观测。100pF左右。
 * 单刀双路开关
 ![](https://cdn.jsdelivr.net/gh/JC-GGBond/image-JC@master/SDR_project/O1CN01jxPYU428lgOfEn7oa_!!49027973.65nfv5w9eeo0.webp)
-
+  
 * 晚上找器件，周六买回来
+20220531：
+两个滤波器后分开U段和V段然后检波输出。
 
 
 截止频率：
