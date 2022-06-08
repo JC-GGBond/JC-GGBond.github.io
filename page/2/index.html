@@ -164,6 +164,166 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/05/12/JC-designSDR/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="JC.GGBond">
+      <meta itemprop="description" content="How you doing?">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="JC.GGBond 's homepage.">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/05/12/JC-designSDR/" class="post-title-link" itemprop="url">JC_designSDR</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2022-05-12 10:25:20" itemprop="dateCreated datePublished" datetime="2022-05-12T10:25:20+08:00">2022-05-12</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-06-01 19:34:37" itemprop="dateModified" datetime="2022-06-01T19:34:37+08:00">2022-06-01</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/SDR-Project/" itemprop="url" rel="index"><span itemprop="name">SDR_Project</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="项目研发需求"><a href="#项目研发需求" class="headerlink" title="项目研发需求"></a>项目研发需求</h1><h2 id="一、射频功放需求"><a href="#一、射频功放需求" class="headerlink" title="一、射频功放需求"></a>一、射频功放需求</h2><p>1.适应频率范围：108MHz－－470MHz（可在108－－200MHz和225－－470MHz分段放大，或按元件特性进行再划分）。</p>
+<p>三菱RA55H4047M,55W,12.5V，400-470MHz</p>
+<p>功放提供：1.UHF225-400 2.VHF108-200</p>
+<p>2.输出功率：40W以上。</p>
+<p>3.适应输入功率：1W－－15W。当输入功率变化较大，且非线性时，具备输出功率自动调节功能。</p>
+<p>AGC功放自动增益控制</p>
+<p>4.供电电压：9V－－15V（可以更高）。方便用车载点烟器或12V充电宝供电。</p>
+<p>5.结构需求：体积尽可能小，利于散热，兼顾防水。</p>
+<p>防水卧槽？？？</p>
+<p>6.元器件耐低温：－20℃。</p>
+<p>还要低温测试我靠？？？</p>
+<p>7.其他：分段放大时需要外设波段选择开关，研究能否从射频信号检测出频率信息，自动完成放大波段选择。</p>
+<p>俩带通滤波器设置，后面跟功率检测开关，选通功放。</p>
+<p>RF开关</p>
+<p>波段改变，自动检测频率信息选频段，切换功放</p>
+<h2 id="二、SDR电台需求"><a href="#二、SDR电台需求" class="headerlink" title="二、SDR电台需求"></a>二、SDR电台需求</h2><p>1.适应频率范围：108MHz－－470MHz。</p>
+<p>2.输出功率：1W以上。尽可能保障线性。</p>
+<p>3.调制方式：AM、FM、DMR（研究数传状态下使用MSK、BPSK、QPSK、TCM调制方式，及各调制方式下数传速率）。</p>
+<p>AD9361,双工方式FDD,TDD</p>
+<p>数传看一下？</p>
+<p>4.抗干扰方式：跳频1000跳/秒以上。研究能否使用扩频技术。</p>
+<p>扩频技术：包括直接序列扩频和跳频技术</p>
+<p>1.跳频（Frequency Hopping），窄带信号的频点在较大频带范围内根据设计好的随机频带间隔跳变；</p>
+<p>2.直接序列扩频（Direct Sequence），使基带数据获得高速率，从而加大带宽。这里主要分析DS 方式，毕竟在CDMA、GPS等体制中十分常见。</p>
+<p>跳频实现：FPGA传数据码控制DAC</p>
+<p>5.供电电压：9V－－15V（可以更高）。方便用车载点烟器或12V充电宝供电。</p>
+<p>6.结构需求：体积尽可能小，利于散热，兼顾防水。</p>
+<p>7.元器件耐低温：－20℃。</p>
+<p>8.其他：</p>
+<h2 id="跳频设计"><a href="#跳频设计" class="headerlink" title="跳频设计"></a>跳频设计</h2><p>伪随机码跳频图，李浩然做的混沌算法生成随机数？</p>
+<h2 id="杭电任继安设计的AD9361跳频系统方案"><a href="#杭电任继安设计的AD9361跳频系统方案" class="headerlink" title="杭电任继安设计的AD9361跳频系统方案"></a>杭电任继安设计的AD9361跳频系统方案</h2>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/05/12/hangdianAD9361JumpFreqSystem/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="JC.GGBond">
+      <meta itemprop="description" content="How you doing?">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="JC.GGBond 's homepage.">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/05/12/hangdianAD9361JumpFreqSystem/" class="post-title-link" itemprop="url">hangdianAD9361JumpFreqSystem</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2022-05-12 10:18:04" itemprop="dateCreated datePublished" datetime="2022-05-12T10:18:04+08:00">2022-05-12</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://example.com/2022/05/05/Software-copyright/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -803,219 +963,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/04/02/Cpp-tips/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="JC.GGBond">
-      <meta itemprop="description" content="How you doing?">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="JC.GGBond 's homepage.">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/04/02/Cpp-tips/" class="post-title-link" itemprop="url">Cpp_tips</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2022-04-02 13:57:18" itemprop="dateCreated datePublished" datetime="2022-04-02T13:57:18+08:00">2022-04-02</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-04-10 13:33:15" itemprop="dateModified" datetime="2022-04-10T13:33:15+08:00">2022-04-10</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/coding/" itemprop="url" rel="index"><span itemprop="name">coding</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="C-tips"><a href="#C-tips" class="headerlink" title="C++ tips"></a>C++ tips</h1><h2 id="函数命令"><a href="#函数命令" class="headerlink" title="函数命令"></a>函数命令</h2><ul>
-<li><p>模板类：容器、迭代器、函数对象、算法</p>
-</li>
-<li><p>string模板类使用</p>
-<p>  获取长度,类方法</p>
-<p>  使用string模板类，#include <cstring></p>
-<p>  str.length()</p>
-<p>  str.size()</p>
-<p>  strlen(s1)</p>
-<p>  sizeof是判断字节大小</p>
-<p>  strlen是获取字符串数组的，且要导入cstring模板类</p>
-</li>
-<li><p>数组求和</p>
-<p>  模板类库函数</p>
-  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;numeric&gt;</span><br><span class="line">int sum=accumulate(起始，结尾，初值)</span><br></pre></td></tr></table></figure></li>
-<li><p>不能直接int a[]可变数组或者char a[]没有等于XXXX，用模板类vector</p>
-  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vector&lt;int&gt; xxxx(长度，可为空)</span><br></pre></td></tr></table></figure>
-<p>  可以直接char XXX[]=XXXXX称为字符串常量</p>
-</li>
-<li><p>字符串某位数-‘0’得到原数：因为ASCII字符中的数字（‘123456’）想转换为纯数字（1,2,3,4…）就要减去48（ASCII单位），而‘0’的ASCII单位正好等于48。</p>
-</li>
-<li><p>变量存储范围：<br><img src="https://cdn.jsdelivr.net/gh/JC-GGBond/image-JC@master/C++/%E5%8F%98%E9%87%8F%E5%AD%98%E5%82%A8%E8%8C%83%E5%9B%B4.20cvqdqyaglc.webp"></p>
-</li>
-<li><p>STL容器unordered_map</p>
-<p>底层使用哈希表，在std命名空间中，要#include <unordered_map></p>
-</li>
-<li><p>C++位操作</p>
-<p>CSDN老鼠死问题有点意思，按二进制换转置</p>
-<p>|按位取或</p>
-</li>
-<li><p>swap函数，sort函数</p>
-</li>
-<li><p>删除vector中重复的其他元素，只保留一个：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sort(sum.begin(),sum.end());</span><br><span class="line">vector&lt;vector&lt;int&gt;&gt;::iterator pos=unique(sum.begin(),sum.end());</span><br><span class="line">sum.erase(pos,sum.end());</span><br></pre></td></tr></table></figure></li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/03/31/Weeklyproject202204/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="JC.GGBond">
-      <meta itemprop="description" content="How you doing?">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="JC.GGBond 's homepage.">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/03/31/Weeklyproject202204/" class="post-title-link" itemprop="url">Weeklyproject202204</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2022-03-31 16:07:02" itemprop="dateCreated datePublished" datetime="2022-03-31T16:07:02+08:00">2022-03-31</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-04-27 13:16:01" itemprop="dateModified" datetime="2022-04-27T13:16:01+08:00">2022-04-27</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Work-Project/" itemprop="url" rel="index"><span itemprop="name">Work Project</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="Weekly-Project202204"><a href="#Weekly-Project202204" class="headerlink" title="Weekly Project202204"></a>Weekly Project202204</h1><h2 id="Core-leetcode"><a href="#Core-leetcode" class="headerlink" title="Core: leetcode"></a>Core: leetcode</h2><ul>
-<li>本月核心目标，150道中等leetcode，随看随记，过了他妈机试。</li>
-<li>投论文，修改滤波天线</li>
-<li>学英语</li>
-<li>做个软件</li>
-</ul>
-<h2 id="List"><a href="#List" class="headerlink" title="List"></a>List</h2><ul>
-<li>上下午学leetcode<ul>
-<li>按照每天5题的速度，4.20刷到100题，4月底参加机试。</li>
-<li>做梦呢每天5题，一天一题不错了</li>
-<li>题目：<ul>
-<li>剑指offer专项突击版(120道)</li>
-<li>leetCode精选TOP面试题(145道）</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>晚做实验报告，改论文</li>
-</ul>
-<p>20220406：</p>
-<ul>
-<li>上午把他妈创新之星报告写了，下午敲算法，晚上肝报告</li>
-</ul>
-<p>他妈的！</p>
-<p>Massive MIMO<br>考虑DDR怎么拟合？<br>spline怎么拟合？</p>
-<p>20220418：</p>
-<p>19号制作一阶与二阶DDR模型测试结果</p>
-<p>spline模型</p>
-<p>20220420：<br>写DDR补充模型效果，<br>补几张测试效果好的图，<br>写总结</p>
-<p>20220425：</p>
-<p>massive MIMO比赛事情结束，<br>spline的求解问题，是一个研究点，<br>写软件！改论文。<br>准备面试。</p>
-<p>0427：<br>准备面试，<br>写软件：MP+LMS<br>看看能不能写成函数。</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1085,7 +1032,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">34</span>
+          <span class="site-state-item-count">36</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
