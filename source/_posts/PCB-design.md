@@ -12,6 +12,7 @@ categories: hardware_skills
 信号层用来进行信号布线。
 
 多层PCB构成
+
 https://www.bilibili.com/read/cv16860517?spm_id_from=444.41.list.card_article.click
 
 ![](https://cdn.jsdelivr.net/gh/JC-GGBond/image-JC@master/SDR_project/微信截图_20220526153845.2z2vr4qj19o0.webp)
@@ -38,3 +39,10 @@ https://www.bilibili.com/read/cv16860517?spm_id_from=444.41.list.card_article.cl
   重要信号线走表层
 
 ## 电源相对地内缩一个毫米
+
+## 每面走线一个方向，比如上层都是竖向，下层都是横向
+
+## 天线上下端不能有铺铜
+
+## 封装大小
+https://blog.csdn.net/li707414287/article/details/99239656
