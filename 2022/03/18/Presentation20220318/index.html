@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="Presentation 2022.03.18Modeling &amp; Coding在上次组会对Matlab中DPD模块搭建simulink框图； 本次对具体的两个数据集自己编写代码进行dpd建模。 datasetCenter Frequency:491520000 491.52MHz 原信号x，过功放经CFR后去增益信号d，用x去建模d 评价dpd性能指标：  err&#x3D;d-F(X),共计16">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Presentation20220318">
+<meta property="og:url" content="http://example.com/2022/03/18/Presentation20220318/index.html">
+<meta property="og:site_name" content="JC.GGBond &#39;s homepage.">
+<meta property="og:description" content="Presentation 2022.03.18Modeling &amp; Coding在上次组会对Matlab中DPD模块搭建simulink框图； 本次对具体的两个数据集自己编写代码进行dpd建模。 datasetCenter Frequency:491520000 491.52MHz 原信号x，过功放经CFR后去增益信号d，用x去建模d 评价dpd性能指标：  err&#x3D;d-F(X),共计16">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/JC-GGBond/image-JC@master/Massive-MIMO-Competition/x&amp;d.53kiy4e24qw0.webp">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/JC-GGBond/image-JC@master/Massive-MIMO-Competition/x&amp;d_00.5wpnrqnenm80.webp">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/JC-GGBond/image-JC@master/MP_full/predict.4v4ymhwxd6s0.webp">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/JC-GGBond/image-JC@master/MP_full/lmserror.38vvikmu0ca0.webp">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/JC-GGBond/image-JC@master/MP_full/predict_00.3y3lbdgh178.webp">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/JC-GGBond/image-JC@master/MP_full/lmserror_00.5k1a2eloig40.webp">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/JC-GGBond/image-JC@master/Massive-MIMO-Competition/predict.y2z54m0yya8.webp">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/JC-GGBond/image-JC@master/Massive-MIMO-Competition/lmserror.1k795xqfgeu8.webp">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/JC-GGBond/image-JC@master/Massive-MIMO-Competition/predict_00.7jz21q0k7b0.webp">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/JC-GGBond/image-JC@master/Massive-MIMO-Competition/lmserror_00.5gvgdzwykqo0.webp">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/JC-GGBond/image-JC@master/GMP_1/predict.632l7h75q2w0.webp">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/JC-GGBond/image-JC@master/GMP_1/lmserror.4y18gsr3q340.webp">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/JC-GGBond/image-JC@master/GMP_1/predict_00.69xjbq53bao0.webp">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/JC-GGBond/image-JC@master/GMP_1/lmserror_00.63rsngyohwo0.webp">
+<meta property="article:published_time" content="2022-03-18T05:09:09.000Z">
+<meta property="article:modified_time" content="2022-09-02T03:52:53.518Z">
+<meta property="article:author" content="JC.GGBond">
+<meta property="article:tag" content="做一个比生活本身还操蛋的人">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/JC-GGBond/image-JC@master/Massive-MIMO-Competition/x&amp;d.53kiy4e24qw0.webp">
+
+<link rel="canonical" href="http://example.com/2022/03/18/Presentation20220318/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>Presentation20220318 | JC.GGBond 's homepage.</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">JC.GGBond 's homepage.</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">操蛋日常</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/03/18/Presentation20220318/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="JC.GGBond">
+      <meta itemprop="description" content="How you doing?">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="JC.GGBond 's homepage.">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Presentation20220318
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2022-03-18 13:09:09" itemprop="dateCreated datePublished" datetime="2022-03-18T13:09:09+08:00">2022-03-18</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-09-02 11:52:53" itemprop="dateModified" datetime="2022-09-02T11:52:53+08:00">2022-09-02</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Presentation/" itemprop="url" rel="index"><span itemprop="name">Presentation</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="Presentation-2022-03-18"><a href="#Presentation-2022-03-18" class="headerlink" title="Presentation 2022.03.18"></a>Presentation 2022.03.18</h1><h2 id="Modeling-amp-Coding"><a href="#Modeling-amp-Coding" class="headerlink" title="Modeling &amp; Coding"></a>Modeling &amp; Coding</h2><p>在上次组会对Matlab中DPD模块搭建simulink框图；</p>
+<p>本次对具体的两个数据集自己编写代码进行dpd建模。</p>
+<h2 id="dataset"><a href="#dataset" class="headerlink" title="dataset"></a>dataset</h2><p>Center Frequency:491520000 491.52MHz</p>
+<p>原信号x，过功放经CFR后去增益信号d，用x去建模d</p>
+<p><strong>评价dpd性能指标：</strong></p>
+<ul>
+<li>err=d-F(X),共计16384个点,实际输出-预测的输出,**这个也可以反应到功率谱上，也就是对e进行功率谱密度绘制，显得更小</li>
+<li>NMSE：归一化均方误差(Normalized Mean Square Error)，预测信号$y_d(n)$与实际输出信号y(n)差异大小<script type="math/tex; mode=display">
+NMSE=10\log_{10}{\frac{\sum_{n=1}^{N}|y_{arr}(n)-d(n)|^2}{\sum_{n=1}^{N}|d(n)|^2}}</script><h3 id="dataset1"><a href="#dataset1" class="headerlink" title="dataset1"></a>dataset1</h3>20Mh宽带信号<br><img src="https://cdn.jsdelivr.net/gh/JC-GGBond/image-JC@master/Massive-MIMO-Competition/x&amp;d.53kiy4e24qw0.webp" alt=""></li>
+</ul>
+<h3 id="dataset2"><a href="#dataset2" class="headerlink" title="dataset2"></a>dataset2</h3><p>40MHz带频率间隔的调制信号<br><img src="https://cdn.jsdelivr.net/gh/JC-GGBond/image-JC@master/Massive-MIMO-Competition/x&amp;d_00.5wpnrqnenm80.webp" alt=""></p>
+<h2 id="test-result"><a href="#test-result" class="headerlink" title="test result"></a>test result</h2><h3 id="MP-Full-lms"><a href="#MP-Full-lms" class="headerlink" title="MP_Full + lms"></a>MP_Full + lms</h3><script type="math/tex; mode=display">
+y_{MP}(n)=\sum_{k=1}^{K} \sum_{q=0}^{Q-1} a_{kq} x(n-q)|x(n-q)|^{k-1}</script><p>K=5,Q=2参数量15:</p>
+<p>dataset1</p>
+<p><strong>AfMPDPD_NMSE = -31.89 dB</strong><br><img src="https://cdn.jsdelivr.net/gh/JC-GGBond/image-JC@master/MP_full/predict.4v4ymhwxd6s0.webp" alt=""></p>
+<p><img src="https://cdn.jsdelivr.net/gh/JC-GGBond/image-JC@master/MP_full/lmserror.38vvikmu0ca0.webp" alt=""></p>
+<p>dataset2</p>
+<p><strong>AfMPDPD_NMSE = -17.20 dB</strong><br><img src="https://cdn.jsdelivr.net/gh/JC-GGBond/image-JC@master/MP_full/predict_00.3y3lbdgh178.webp" alt=""><br><img src="https://cdn.jsdelivr.net/gh/JC-GGBond/image-JC@master/MP_full/lmserror_00.5k1a2eloig40.webp" alt=""></p>
+<h3 id="MP-odd-lms"><a href="#MP-odd-lms" class="headerlink" title="MP_odd + lms"></a>MP_odd + lms</h3><script type="math/tex; mode=display">
+y_{MP}(n)=\sum_{k=1,k=odd}^{K} \sum_{q=0}^{Q-1} a_{kq} x(n-q)|x(n-q)|^{k-1}</script><p>K=5,Q=2且只取奇阶参数量9:</p>
+<p>dataset1<br><strong>AfMPDPD_NMSE = -32.48 dB</strong><br><img src="https://cdn.jsdelivr.net/gh/JC-GGBond/image-JC@master/Massive-MIMO-Competition/predict.y2z54m0yya8.webp" alt=""><br>dataset2<br><img src="https://cdn.jsdelivr.net/gh/JC-GGBond/image-JC@master/Massive-MIMO-Competition/lmserror.1k795xqfgeu8.webp" alt=""><br><strong>AfMPDPD_NMSE = -14.84 dB</strong><br><img src="https://cdn.jsdelivr.net/gh/JC-GGBond/image-JC@master/Massive-MIMO-Competition/predict_00.7jz21q0k7b0.webp" alt=""><br><img src="https://cdn.jsdelivr.net/gh/JC-GGBond/image-JC@master/Massive-MIMO-Competition/lmserror_00.5gvgdzwykqo0.webp" alt=""></p>
+<h3 id="GMP-lms"><a href="#GMP-lms" class="headerlink" title="GMP + lms"></a>GMP + lms</h3><script type="math/tex; mode=display">
+\begin{aligned}
+y_{GMP}(n)=& \sum_{k=0}^{K_{a}-1} \sum_{l=0}^{L_{a}-1} a_{k l} x(n-l)|x(n-l)|^{k} \\
+&+\sum_{k=1}^{K_{b}} \sum_{l=0}^{L_{b}-1} \sum_{m=1}^{M_{b}} b_{k l m} x(n-l)|x(n-l-m)|^{k} \\
+\end{aligned}</script><p>K_a=5;<br>L_a=3;<br>K_b=4;<br>L_b=4;<br>M_b=3;<br>参数量68</p>
+<p>dataset1<br><strong>AfMPDPD_NMSE = -35.20 dB</strong><br><img src="https://cdn.jsdelivr.net/gh/JC-GGBond/image-JC@master/GMP_1/predict.632l7h75q2w0.webp" alt=""><br><img src="https://cdn.jsdelivr.net/gh/JC-GGBond/image-JC@master/GMP_1/lmserror.4y18gsr3q340.webp" alt=""><br>dataset2<br><strong>AfMPDPD_NMSE = -19.82 dB</strong><br><img src="https://cdn.jsdelivr.net/gh/JC-GGBond/image-JC@master/GMP_1/predict_00.69xjbq53bao0.webp" alt=""><br><img src="https://cdn.jsdelivr.net/gh/JC-GGBond/image-JC@master/GMP_1/lmserror_00.63rsngyohwo0.webp" alt=""></p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2022/03/13/Daily20220313/" rel="prev" title="Daily20220313">
+      <i class="fa fa-chevron-left"></i> Daily20220313
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2022/03/31/Intern-test/" rel="next" title="Intern_test">
+      Intern_test <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Presentation-2022-03-18"><span class="nav-number">1.</span> <span class="nav-text">Presentation 2022.03.18</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Modeling-amp-Coding"><span class="nav-number">1.1.</span> <span class="nav-text">Modeling &amp; Coding</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#dataset"><span class="nav-number">1.2.</span> <span class="nav-text">dataset</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#dataset1"><span class="nav-number">1.2.1.</span> <span class="nav-text">dataset1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#dataset2"><span class="nav-number">1.2.2.</span> <span class="nav-text">dataset2</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#test-result"><span class="nav-number">1.3.</span> <span class="nav-text">test result</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#MP-Full-lms"><span class="nav-number">1.3.1.</span> <span class="nav-text">MP_Full + lms</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MP-odd-lms"><span class="nav-number">1.3.2.</span> <span class="nav-text">MP_odd + lms</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#GMP-lms"><span class="nav-number">1.3.3.</span> <span class="nav-text">GMP + lms</span></a></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">JC.GGBond</p>
+  <div class="site-description" itemprop="description">How you doing?</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">41</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">13</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">JC.GGBond</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+</body>
+</html>
