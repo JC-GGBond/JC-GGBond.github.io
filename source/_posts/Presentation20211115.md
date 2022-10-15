@@ -3,7 +3,7 @@ title: Presentation20211115
 date: 2022-01-27 23:56:51
 tags:
 categories: Presentation
-
+mathjax: true
 ---
 
 <h1 align = "center">
