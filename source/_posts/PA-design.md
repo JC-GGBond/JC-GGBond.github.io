@@ -5,7 +5,7 @@ tags:
 categories: hardware_skills 
 mathjax: true
 ---
-# PA design
+# PA design by 徐兴福ADS设计
 
 ## 非线性指标
 估计最常问的也就是那个三阶互调失真IMD3和三阶截断点IP3
@@ -73,3 +73,4 @@ $$
 
 ### 生成Layout
 
+# PA design by 曹中华师兄

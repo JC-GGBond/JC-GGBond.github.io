@@ -7,6 +7,23 @@ mathjax: true
 ---
 ## Background
 
+
+### 使用MATLAB+SDR的意义
+https://ww2.mathworks.cn/videos/simplify-the-implementation-of-software-defined-radio-in-hardware-1510052703793.html?s_tid=srchtitle_%25E5%25B0%2584%25E9%25A2%2591_5
+
+在日益复杂的无线通信协议标准发展下，
+分离组件单独设计的传统开发模式过程繁琐，
+组合调试难度大。
+
+MATLAB提出了基于模型设计的设计流程。
+
+
+可以灵活高效的，
+进行软件无线电设备的原型实现。
+
+
+
+
 ### non-linear distortion
 
 ### DPD Block diagram

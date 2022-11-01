@@ -9,14 +9,10 @@ mathjax: true
 
 
 
-
-
-
-
-
-
-
 ## Source signal generation
 看论文查信源信号
 5G NR up link or down link for test
+
+* 目前使用MATLAB helperPACharGenerateOFDM/Tones函数可以生成时域信号，分别为5G 64QAM OFDM信号和双音信号
+
 
