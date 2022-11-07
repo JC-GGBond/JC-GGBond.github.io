@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="Music Theory——和弦(chord)https:&#x2F;&#x2F;zhuanlan.zhihu.com&#x2F;p&#x2F;22695694 感谢你，光能丰，光能战士吗&#x3D; &#x3D; 1. 普通三和弦 2. 普通七和弦 3. 九和弦，十一和弦，十三和弦 4. 变化和弦 5. 组合变化和弦">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Music_Theory_chord">
+<meta property="og:url" content="http://example.com/2022/11/07/Music-Theory-chord/index.html">
+<meta property="og:site_name" content="JC.GGBond &#39;s homepage.">
+<meta property="og:description" content="Music Theory——和弦(chord)https:&#x2F;&#x2F;zhuanlan.zhihu.com&#x2F;p&#x2F;22695694 感谢你，光能丰，光能战士吗&#x3D; &#x3D; 1. 普通三和弦 2. 普通七和弦 3. 九和弦，十一和弦，十三和弦 4. 变化和弦 5. 组合变化和弦">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.staticaly.com/gh/JC-GGBond/image-JC@master/Music/v2-9c2daf2cb2c8e9f7b8ada264ac422bad_720w.mc9qg6a1cj4.webp">
+<meta property="og:image" content="https://cdn.staticaly.com/gh/JC-GGBond/image-JC@master/Music/v2-4cfda171e4e88c3760a6d894045be22a_720w.2u49nyc7ly80.webp">
+<meta property="og:image" content="https://cdn.staticaly.com/gh/JC-GGBond/image-JC@master/Music/v2-5aa4300c99e192477b25e01ddc84764e_720w.47t2b06r7kq0.webp">
+<meta property="og:image" content="https://cdn.staticaly.com/gh/JC-GGBond/image-JC@master/Music/v2-fdd1815ca97b30af98b55c9de6700f07_720w.281rg42po6fw.webp">
+<meta property="og:image" content="https://cdn.staticaly.com/gh/JC-GGBond/image-JC@master/Music/v2-fb989d4f60e6a9e4887d0ce9e08e3675_720w.6x38ccgpr180.webp">
+<meta property="og:image" content="https://cdn.staticaly.com/gh/JC-GGBond/image-JC@master/Music/v2-f7aca86823c42a729efcf53dcf714629_720w.2h3of25kzwm0.webp">
+<meta property="article:published_time" content="2022-11-07T13:08:20.000Z">
+<meta property="article:modified_time" content="2022-11-07T16:25:31.083Z">
+<meta property="article:author" content="JC.GGBond">
+<meta property="article:tag" content="做一个比生活本身还操蛋的人">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.staticaly.com/gh/JC-GGBond/image-JC@master/Music/v2-9c2daf2cb2c8e9f7b8ada264ac422bad_720w.mc9qg6a1cj4.webp">
+
+<link rel="canonical" href="http://example.com/2022/11/07/Music-Theory-chord/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>Music_Theory_chord | JC.GGBond 's homepage.</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">JC.GGBond 's homepage.</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">操蛋日常</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/11/07/Music-Theory-chord/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="JC.GGBond">
+      <meta itemprop="description" content="How you doing?">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="JC.GGBond 's homepage.">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Music_Theory_chord
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2022-11-07 21:08:20" itemprop="dateCreated datePublished" datetime="2022-11-07T21:08:20+08:00">2022-11-07</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-11-08 00:25:31" itemprop="dateModified" datetime="2022-11-08T00:25:31+08:00">2022-11-08</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Music/" itemprop="url" rel="index"><span itemprop="name">Music</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="Music-Theory——和弦-chord"><a href="#Music-Theory——和弦-chord" class="headerlink" title="Music Theory——和弦(chord)"></a>Music Theory——和弦(chord)</h1><p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/22695694">https://zhuanlan.zhihu.com/p/22695694</a></p>
+<p><strong>感谢你，光能丰，光能战士吗= =</strong></p>
+<h2 id="1-普通三和弦"><a href="#1-普通三和弦" class="headerlink" title="1. 普通三和弦"></a>1. 普通三和弦</h2><p><img src="https://cdn.staticaly.com/gh/JC-GGBond/image-JC@master/Music/v2-9c2daf2cb2c8e9f7b8ada264ac422bad_720w.mc9qg6a1cj4.webp" alt=""></p>
+<h2 id="2-普通七和弦"><a href="#2-普通七和弦" class="headerlink" title="2. 普通七和弦"></a>2. 普通七和弦</h2><p><img src="https://cdn.staticaly.com/gh/JC-GGBond/image-JC@master/Music/v2-4cfda171e4e88c3760a6d894045be22a_720w.2u49nyc7ly80.webp" alt=""></p>
+<h2 id="3-九和弦，十一和弦，十三和弦"><a href="#3-九和弦，十一和弦，十三和弦" class="headerlink" title="3. 九和弦，十一和弦，十三和弦"></a>3. 九和弦，十一和弦，十三和弦</h2><p><img src="https://cdn.staticaly.com/gh/JC-GGBond/image-JC@master/Music/v2-5aa4300c99e192477b25e01ddc84764e_720w.47t2b06r7kq0.webp" alt=""><br><img src="https://cdn.staticaly.com/gh/JC-GGBond/image-JC@master/Music/v2-fdd1815ca97b30af98b55c9de6700f07_720w.281rg42po6fw.webp" alt=""></p>
+<h2 id="4-变化和弦"><a href="#4-变化和弦" class="headerlink" title="4. 变化和弦"></a>4. 变化和弦</h2><p><img src="https://cdn.staticaly.com/gh/JC-GGBond/image-JC@master/Music/v2-fb989d4f60e6a9e4887d0ce9e08e3675_720w.6x38ccgpr180.webp" alt=""></p>
+<h2 id="5-组合变化和弦"><a href="#5-组合变化和弦" class="headerlink" title="5. 组合变化和弦"></a>5. 组合变化和弦</h2><p><img src="https://cdn.staticaly.com/gh/JC-GGBond/image-JC@master/Music/v2-f7aca86823c42a729efcf53dcf714629_720w.2h3of25kzwm0.webp" alt=""></p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2022/11/06/Paper-conclusion-content/" rel="prev" title="Paper_conclusion_content">
+      <i class="fa fa-chevron-left"></i> Paper_conclusion_content
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Music-Theory%E2%80%94%E2%80%94%E5%92%8C%E5%BC%A6-chord"><span class="nav-number">1.</span> <span class="nav-text">Music Theory——和弦(chord)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E6%99%AE%E9%80%9A%E4%B8%89%E5%92%8C%E5%BC%A6"><span class="nav-number">1.1.</span> <span class="nav-text">1. 普通三和弦</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E6%99%AE%E9%80%9A%E4%B8%83%E5%92%8C%E5%BC%A6"><span class="nav-number">1.2.</span> <span class="nav-text">2. 普通七和弦</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-%E4%B9%9D%E5%92%8C%E5%BC%A6%EF%BC%8C%E5%8D%81%E4%B8%80%E5%92%8C%E5%BC%A6%EF%BC%8C%E5%8D%81%E4%B8%89%E5%92%8C%E5%BC%A6"><span class="nav-number">1.3.</span> <span class="nav-text">3. 九和弦，十一和弦，十三和弦</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-%E5%8F%98%E5%8C%96%E5%92%8C%E5%BC%A6"><span class="nav-number">1.4.</span> <span class="nav-text">4. 变化和弦</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-%E7%BB%84%E5%90%88%E5%8F%98%E5%8C%96%E5%92%8C%E5%BC%A6"><span class="nav-number">1.5.</span> <span class="nav-text">5. 组合变化和弦</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">JC.GGBond</p>
+  <div class="site-description" itemprop="description">How you doing?</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">72</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">20</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">JC.GGBond</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
+
+  
+
+</body>
+</html>
