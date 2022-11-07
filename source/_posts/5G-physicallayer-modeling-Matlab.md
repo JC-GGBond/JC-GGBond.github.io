@@ -15,7 +15,7 @@ https://ww2.mathworks.cn/videos/understanding-and-modeling-the-5g-nr-physical-la
 
 有关5G的优势，看PPT吧，放在链路建立文档里了
 
-%XXXXXXXpdf链接%，使用大括号引用文件链接
+{% pdf https://github.com/JC-GGBond/JC-GGBond.github.io/blob/hexo/source/understandingandmodelingthe5gnrphysicallayer.pdf %}，使用大括号引用文件链接
 
 反正就是5G比4G适用范围广，低时延，频带宽，带宽大，载波间距可调，频率分配部署方式灵活？(freq allocation),好像是不用终端监控整个接受频带的信号，频谱感知？减少stand by功率消耗。
 
