@@ -6,7 +6,9 @@ categories: final project DPD
 mathjax: true
 ---
 # AD9361+ZYNQ7000 adalm-pluto(ZYNQ7010+AD9363) 下的SDR design
-
+真巧，看了相关的视频有阮卡佳讲的化繁为简SDR设计，
+这次兰大买了MATLAB就是阮卡佳和Mathworks会务组来讲。
+真的神奇。
 
 **ZYNQ是一款内嵌了ARM的FPGA**
 
