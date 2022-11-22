@@ -78,3 +78,8 @@ The Applied Computational Electromagnetics Society Journal (ACES)
 
 state：uploaded revision 
 ![](https://cdn.staticaly.com/gh/JC-GGBond/image-JC@master/careering/论文.5kkhaex1znc0.webp)
+
+## 学术参会
+![](https://cdn.staticaly.com/gh/JC-GGBond/image-JC@master/careering/f478dc45c9677736d4a2c399be64361.2tw7004hpgu0.webp)
+![](https://cdn.staticaly.com/gh/JC-GGBond/image-JC@master/careering/92fc9654fef8d74892071eca5ee5cba.2ien8qhlks00.webp)
+![](https://cdn.staticaly.com/gh/JC-GGBond/image-JC@master/careering/d6307d4aee4f4fd433343b1bf7d8bb3.503uss1p0pk.webp)
