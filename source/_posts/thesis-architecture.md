@@ -5,6 +5,10 @@ tags:
 categories: final project DPD
 mathjax: true
 ---
+
+看其他人的硕士毕业论文确定整个文章的结构.
+
+
 ## Background
 
 
@@ -20,7 +24,6 @@ MATLAB提出了基于模型设计的设计流程。
 
 可以灵活高效的，
 进行软件无线电设备的原型实现。
-
 
 
 
