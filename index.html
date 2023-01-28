@@ -164,6 +164,188 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/01/15/sensor-project/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="JC.GGBond">
+      <meta itemprop="description" content="How you doing?">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="JC.GGBond 's homepage.">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2023/01/15/sensor-project/" class="post-title-link" itemprop="url">sensor_project</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2023-01-15 21:11:21" itemprop="dateCreated datePublished" datetime="2023-01-15T21:11:21+08:00">2023-01-15</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2023-01-17 22:12:19" itemprop="dateModified" datetime="2023-01-17T22:12:19+08:00">2023-01-17</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Sensor-Project/" itemprop="url" rel="index"><span itemprop="name">Sensor_Project</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="物理院传感器项目"><a href="#物理院传感器项目" class="headerlink" title="物理院传感器项目"></a>物理院传感器项目</h1><h2 id="Paper1-A-full-sample-type-magneto-impedance-MI-magnetometer-with-programmable-circuit-for-high-compatibility"><a href="#Paper1-A-full-sample-type-magneto-impedance-MI-magnetometer-with-programmable-circuit-for-high-compatibility" class="headerlink" title="Paper1: A full sample-type magneto-impedance (MI) magnetometer with programmable circuit for high compatibility"></a>Paper1: A full sample-type magneto-impedance (MI) magnetometer with programmable circuit for high compatibility</h2><p>AIP Advance: 水刊</p>
+<p>具有</p>
+<ul>
+<li>高兼容性</li>
+<li>可编程电路的</li>
+<li>全采样型</li>
+<li>磁阻抗（MI）型磁强计</li>
+</ul>
+<p>应该是要关注那个模拟开关运放电路.</p>
+<p>长光所磁强计:<br><a target="_blank" rel="noopener" href="http://www.jl1.cn/product_view.aspx?id=1500">http://www.jl1.cn/product_view.aspx?id=1500</a></p>
+<p>好像是用在卫星上面的</p>
+<p>指标：<br>工作模式</p>
+<p>应答式和自主上传</p>
+<p>量程</p>
+<p>-2 Gauss～+2Gauss</p>
+<p>分辨率</p>
+<p>≤ 70μGauss</p>
+<p>精度（25℃）</p>
+<p>0.8%～1%（@±1Gauss）</p>
+<p>数据更新率</p>
+<p>10Hz</p>
+<p>输出接口</p>
+<p>RS422</p>
+<p>供电电压</p>
+<p>+12V</p>
+<p>工作电流</p>
+<p>45mA～80mA</p>
+<p>功耗</p>
+<p>≤1W</p>
+<p>环境适应性</p>
+<p>温度：-10℃～+45℃</p>
+<p>外包络尺寸</p>
+<p>Φ（98±0.2）mm×（80±0.2）mm</p>
+<p>重量</p>
+<p>0.4kg±0.03kg</p>
+<p>、</p>
+<p>WIKI:<br><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E7%A3%81%E5%BC%BA%E8%AE%A1">https://zh.wikipedia.org/wiki/%E7%A3%81%E5%BC%BA%E8%AE%A1</a></p>
+<h2 id="Amorphous-wire-MI-micro-sensor-using-C-MOS-IC-multivibrator"><a href="#Amorphous-wire-MI-micro-sensor-using-C-MOS-IC-multivibrator" class="headerlink" title="Amorphous wire MI micro sensor using C-MOS IC multivibrator"></a>Amorphous wire MI micro sensor using C-MOS IC multivibrator</h2><p>采用C-MOS IC多谐振荡器的非晶丝MI(磁阻)微型传感器</p>
+<h2 id="模拟电路模块功能"><a href="#模拟电路模块功能" class="headerlink" title="模拟电路模块功能"></a>模拟电路模块功能</h2><p>在激励电路的作用下，<br>磁强计三分量探头探测的分量输出均为与激励信号同频的微弱交流信号，<br>经过前级放大和交流耦合后，通过相敏解调电路将交流信号<br>转换为直流信号并进行积分运算；<br>并采用闭环控制的工作模式，<br>将积分输出的电压信号通过 U/I 转换模块转换为电流信号反馈到磁强计探头端，<br>的 offset 电流带组成反馈环路；积分电路的电压信<br>号通过低通滤波后输出。模拟电路的设计作用在<br>于：采用交流耦合和闭环控制工作模式，提高磁强<br>计的灵敏度和分辨率，稳定磁强计工作状态。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/01/06/To-graduate-List/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="JC.GGBond">
+      <meta itemprop="description" content="How you doing?">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="JC.GGBond 's homepage.">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2023/01/06/To-graduate-List/" class="post-title-link" itemprop="url">To_graduate_List</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2023-01-06 21:48:49 / 修改时间：21:52:18" itemprop="dateCreated datePublished" datetime="2023-01-06T21:48:49+08:00">2023-01-06</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Life/" itemprop="url" rel="index"><span itemprop="name">Life</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="毕业前事项2023-01-06"><a href="#毕业前事项2023-01-06" class="headerlink" title="毕业前事项2023.01-06"></a>毕业前事项2023.01-06</h1><h2 id="1-户口问题"><a href="#1-户口问题" class="headerlink" title="1.户口问题"></a>1.户口问题</h2><p>关注上海六月落户政策.</p>
+<p>上海市学生事务中心: 021-64829191</p>
+<p>22年应届生是有免打分政策的,<br>现在就不知道有没有了.</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://example.com/2023/01/02/Cooking/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -652,7 +834,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-11-22 02:31:37" itemprop="dateModified" datetime="2022-11-22T02:31:37+08:00">2022-11-22</time>
+                <time title="修改时间：2023-01-07 00:54:02" itemprop="dateModified" datetime="2023-01-07T00:54:02+08:00">2023-01-07</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -777,163 +959,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/11/11/Daily20221111/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="JC.GGBond">
-      <meta itemprop="description" content="How you doing?">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="JC.GGBond 's homepage.">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/11/11/Daily20221111/" class="post-title-link" itemprop="url">Daily20221111</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2022-11-11 22:57:35 / 修改时间：23:03:52" itemprop="dateCreated datePublished" datetime="2022-11-11T22:57:35+08:00">2022-11-11</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Daily/" itemprop="url" rel="index"><span itemprop="name">Daily</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="世间万物蝴蝶效应"><a href="#世间万物蝴蝶效应" class="headerlink" title="世间万物蝴蝶效应"></a>世间万物蝴蝶效应</h1><p>非常神奇的，<br>来兰大线上MATLAB的培训的阮卡佳就是MATLAB EXPO上的做化繁为简SDR设计的。</p>
-<p>资源间是有联系的。</p>
-<p>亲人的缺陷如何平稳的看待与接纳，<br>是个大学问。</p>
-<p>另外脑海中老有那个死亡笔记的Luke样子，<br>快他妈逼成心理阴影了，<br>还是然哥牛逼。<br>说当场给他操了，<br>日球死他，<br>所以对一切这种虚幻的恐惧物具有免疫。<br>然哥真的是天才！！！</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/11/11/Matlab-LZU-edu/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="JC.GGBond">
-      <meta itemprop="description" content="How you doing?">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="JC.GGBond 's homepage.">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/11/11/Matlab-LZU-edu/" class="post-title-link" itemprop="url">Matlab_LZU_edu</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2022-11-11 15:42:01 / 修改时间：16:14:32" itemprop="dateCreated datePublished" datetime="2022-11-11T15:42:01+08:00">2022-11-11</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Matlab/" itemprop="url" rel="index"><span itemprop="name">Matlab</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="Matlab-兰大校园培训"><a href="#Matlab-兰大校园培训" class="headerlink" title="Matlab 兰大校园培训"></a>Matlab 兰大校园培训</h1><p>真巧，看了相关的视频有阮卡佳讲的化繁为简SDR设计，<br>这次兰大买了MATLAB就是阮卡佳和Mathworks会务组就杨嘉琛来讲。<br>真的神奇。</p>
-<h2 id="基础，把帮助文档安装到本地！！！"><a href="#基础，把帮助文档安装到本地！！！" class="headerlink" title="基础，把帮助文档安装到本地！！！"></a>基础，把帮助文档安装到本地！！！</h2><p>自定进度在线课程，新出的功能</p>
-<p>分类器APP？<br>自动KNN，SVM之类的。</p>
-<h2 id="并行运算培训"><a href="#并行运算培训" class="headerlink" title="并行运算培训"></a>并行运算培训</h2><p>MATLAB里面的左下角有显示什么什么正忙，<br>计算资源不够。</p>
-<p>可以使用学院超算中心资源进行加速。</p>
-<p>MATLAB避免使用过多for循环。</p>
-<p>并行计算这个真的很好啊，可以simulink加速啊什么的。<br>原来我跑一个仿真用那么长时间。</p>
-<ul>
-<li>首先进行代码优化，减少for循环</li>
-<li>找到硬件资源，进行多核运算</li>
-<li>具体操作，Parallel里进行修改</li>
-<li>对代码进行修改。<ul>
-<li>比如for变成par-for(很多条件不支持，必须从1开始啊,不能循环套循环的)(真他妈费劲- -)</li>
-<li>feval-parfeval</li>
-<li>sim-parsim。</li>
-</ul>
-</li>
-<li>有的APP里面直接点那个parallel按键就行。</li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1003,14 +1028,14 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">83</span>
+          <span class="site-state-item-count">85</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">22</span>
+        <span class="site-state-item-count">23</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">

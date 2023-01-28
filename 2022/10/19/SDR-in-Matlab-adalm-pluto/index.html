@@ -20,12 +20,12 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="AD9361+ZYNQ7000 adalm-pluto(ZYNQ7010+AD9363) 下的SDR design真巧，看了相关的视频有阮卡佳讲的化繁为简SDR设计，这次兰大买了MATLAB就是阮卡佳和Mathworks会务组来讲。真的神奇。 ZYNQ是一款内嵌了ARM的FPGA https:&#x2F;&#x2F;ww2.mathworks.cn&#x2F;videos&#x2F;simplify-the-implementation">
+  <meta name="description" content="AD9361+ZYNQ7000 adalm-pluto(ZYNQ7010+AD9363) 下的SDR design(化繁为简无线电)ZYNQ是一款内嵌了ARM的FPGA https:&#x2F;&#x2F;ww2.mathworks.cn&#x2F;videos&#x2F;simplify-the-implementation-of-software-defined-radio-in-hardware-1510052703793.htm">
 <meta property="og:type" content="article">
 <meta property="og:title" content="SDR_in_Matlab_adalm_pluto">
 <meta property="og:url" content="http://example.com/2022/10/19/SDR-in-Matlab-adalm-pluto/index.html">
 <meta property="og:site_name" content="JC.GGBond &#39;s homepage.">
-<meta property="og:description" content="AD9361+ZYNQ7000 adalm-pluto(ZYNQ7010+AD9363) 下的SDR design真巧，看了相关的视频有阮卡佳讲的化繁为简SDR设计，这次兰大买了MATLAB就是阮卡佳和Mathworks会务组来讲。真的神奇。 ZYNQ是一款内嵌了ARM的FPGA https:&#x2F;&#x2F;ww2.mathworks.cn&#x2F;videos&#x2F;simplify-the-implementation">
+<meta property="og:description" content="AD9361+ZYNQ7000 adalm-pluto(ZYNQ7010+AD9363) 下的SDR design(化繁为简无线电)ZYNQ是一款内嵌了ARM的FPGA https:&#x2F;&#x2F;ww2.mathworks.cn&#x2F;videos&#x2F;simplify-the-implementation-of-software-defined-radio-in-hardware-1510052703793.htm">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://cdn.staticaly.com/gh/JC-GGBond/image-JC@master/final-project-DPD/微信截图_20221019163110.3bilj05ujd40.webp">
 <meta property="og:image" content="https://cdn.staticaly.com/gh/JC-GGBond/image-JC@master/final-project-DPD/微信截图_20221019164021.42bjmmn9tns0.webp">
@@ -36,7 +36,7 @@
 <meta property="og:image" content="https://cdn.staticaly.com/gh/JC-GGBond/image-JC@master/final-project-DPD/微信截图_20221019210242.4xjifcppj5w0.webp">
 <meta property="og:image" content="https://cdn.staticaly.com/gh/JC-GGBond/image-JC@master/final-project-DPD/微信截图_20221019210738.6kek05uo8ng0.webp">
 <meta property="article:published_time" content="2022-10-19T08:13:12.000Z">
-<meta property="article:modified_time" content="2022-11-11T07:11:39.025Z">
+<meta property="article:modified_time" content="2023-01-14T04:29:11.559Z">
 <meta property="article:author" content="JC.GGBond">
 <meta property="article:tag" content="做一个比生活本身还操蛋的人">
 <meta name="twitter:card" content="summary">
@@ -206,7 +206,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-11-11 15:11:39" itemprop="dateModified" datetime="2022-11-11T15:11:39+08:00">2022-11-11</time>
+                <time title="修改时间：2023-01-14 12:29:11" itemprop="dateModified" datetime="2023-01-14T12:29:11+08:00">2023-01-14</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -229,8 +229,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="AD9361-ZYNQ7000-adalm-pluto-ZYNQ7010-AD9363-下的SDR-design"><a href="#AD9361-ZYNQ7000-adalm-pluto-ZYNQ7010-AD9363-下的SDR-design" class="headerlink" title="AD9361+ZYNQ7000 adalm-pluto(ZYNQ7010+AD9363) 下的SDR design"></a>AD9361+ZYNQ7000 adalm-pluto(ZYNQ7010+AD9363) 下的SDR design</h1><p>真巧，看了相关的视频有阮卡佳讲的化繁为简SDR设计，<br>这次兰大买了MATLAB就是阮卡佳和Mathworks会务组来讲。<br>真的神奇。</p>
-<p><strong>ZYNQ是一款内嵌了ARM的FPGA</strong></p>
+        <h1 id="AD9361-ZYNQ7000-adalm-pluto-ZYNQ7010-AD9363-下的SDR-design-化繁为简无线电"><a href="#AD9361-ZYNQ7000-adalm-pluto-ZYNQ7010-AD9363-下的SDR-design-化繁为简无线电" class="headerlink" title="AD9361+ZYNQ7000 adalm-pluto(ZYNQ7010+AD9363) 下的SDR design(化繁为简无线电)"></a>AD9361+ZYNQ7000 adalm-pluto(ZYNQ7010+AD9363) 下的SDR design(化繁为简无线电)</h1><p><strong>ZYNQ是一款内嵌了ARM的FPGA</strong></p>
 <p><a target="_blank" rel="noopener" href="https://ww2.mathworks.cn/videos/simplify-the-implementation-of-software-defined-radio-in-hardware-1510052703793.html?s_tid=srchtitle_%25E5%25B0%2584%25E9%25A2%2591_5">https://ww2.mathworks.cn/videos/simplify-the-implementation-of-software-defined-radio-in-hardware-1510052703793.html?s_tid=srchtitle_%25E5%25B0%2584%25E9%25A2%2591_5</a></p>
 <h2 id="RF-system-design"><a href="#RF-system-design" class="headerlink" title="RF system design"></a>RF system design</h2><p>antenna RF mix_signal digital_hardware digital_hardware DSP Software architecture</p>
 <h2 id="SDR"><a href="#SDR" class="headerlink" title="SDR"></a>SDR</h2><p><img src="https://cdn.staticaly.com/gh/JC-GGBond/image-JC@master/final-project-DPD/微信截图_20221019163110.3bilj05ujd40.webp" alt=""></p>
@@ -332,7 +331,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#AD9361-ZYNQ7000-adalm-pluto-ZYNQ7010-AD9363-%E4%B8%8B%E7%9A%84SDR-design"><span class="nav-number">1.</span> <span class="nav-text">AD9361+ZYNQ7000 adalm-pluto(ZYNQ7010+AD9363) 下的SDR design</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#RF-system-design"><span class="nav-number">1.1.</span> <span class="nav-text">RF system design</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SDR"><span class="nav-number">1.2.</span> <span class="nav-text">SDR</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#design"><span class="nav-number">1.3.</span> <span class="nav-text">design</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AB%AF%E5%88%B0%E7%AB%AF%E4%BB%BF%E7%9C%9F"><span class="nav-number">1.3.1.</span> <span class="nav-text">端到端仿真</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#over-the-air%E6%B5%8B%E8%AF%95%E7%A9%BA%E5%8F%A3%E6%B5%8B%E8%AF%95-%E6%AD%A4%E6%97%B6%E6%95%B0%E5%AD%97%E5%89%8D%E7%AB%AF%E6%B2%A1%E6%9C%89%E4%B8%8D%E6%95%B0%E5%88%B0ARM%EF%BC%8CFPGA%E9%87%8C"><span class="nav-number">1.3.2.</span> <span class="nav-text">over the air测试空口测试(此时数字前端没有不数到ARM，FPGA里)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8E%9F%E5%9E%8B%E4%B8%8E%E5%AE%9E%E7%8E%B0-C%E4%BB%A3%E7%A0%81-%E6%AD%A4%E6%97%B6%E6%8A%8A%E6%95%B0%E5%AD%97%E5%89%8D%E7%AB%AF%E9%83%A8%E7%BD%B2%E5%88%B0ARM%E5%92%8CFPGA%E4%B8%8A"><span class="nav-number">1.3.3.</span> <span class="nav-text">原型与实现(C代码)(此时把数字前端部署到ARM和FPGA上)</span></a></li></ol></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#AD9361-ZYNQ7000-adalm-pluto-ZYNQ7010-AD9363-%E4%B8%8B%E7%9A%84SDR-design-%E5%8C%96%E7%B9%81%E4%B8%BA%E7%AE%80%E6%97%A0%E7%BA%BF%E7%94%B5"><span class="nav-number">1.</span> <span class="nav-text">AD9361+ZYNQ7000 adalm-pluto(ZYNQ7010+AD9363) 下的SDR design(化繁为简无线电)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#RF-system-design"><span class="nav-number">1.1.</span> <span class="nav-text">RF system design</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SDR"><span class="nav-number">1.2.</span> <span class="nav-text">SDR</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#design"><span class="nav-number">1.3.</span> <span class="nav-text">design</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AB%AF%E5%88%B0%E7%AB%AF%E4%BB%BF%E7%9C%9F"><span class="nav-number">1.3.1.</span> <span class="nav-text">端到端仿真</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#over-the-air%E6%B5%8B%E8%AF%95%E7%A9%BA%E5%8F%A3%E6%B5%8B%E8%AF%95-%E6%AD%A4%E6%97%B6%E6%95%B0%E5%AD%97%E5%89%8D%E7%AB%AF%E6%B2%A1%E6%9C%89%E4%B8%8D%E6%95%B0%E5%88%B0ARM%EF%BC%8CFPGA%E9%87%8C"><span class="nav-number">1.3.2.</span> <span class="nav-text">over the air测试空口测试(此时数字前端没有不数到ARM，FPGA里)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8E%9F%E5%9E%8B%E4%B8%8E%E5%AE%9E%E7%8E%B0-C%E4%BB%A3%E7%A0%81-%E6%AD%A4%E6%97%B6%E6%8A%8A%E6%95%B0%E5%AD%97%E5%89%8D%E7%AB%AF%E9%83%A8%E7%BD%B2%E5%88%B0ARM%E5%92%8CFPGA%E4%B8%8A"><span class="nav-number">1.3.3.</span> <span class="nav-text">原型与实现(C代码)(此时把数字前端部署到ARM和FPGA上)</span></a></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -346,14 +345,14 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">83</span>
+          <span class="site-state-item-count">85</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">22</span>
+        <span class="site-state-item-count">23</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">

@@ -164,6 +164,199 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/10/19/SDR-in-Matlab-adalm-pluto/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="JC.GGBond">
+      <meta itemprop="description" content="How you doing?">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="JC.GGBond 's homepage.">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/10/19/SDR-in-Matlab-adalm-pluto/" class="post-title-link" itemprop="url">SDR_in_Matlab_adalm_pluto</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2022-10-19 16:13:12" itemprop="dateCreated datePublished" datetime="2022-10-19T16:13:12+08:00">2022-10-19</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2023-01-14 12:29:11" itemprop="dateModified" datetime="2023-01-14T12:29:11+08:00">2023-01-14</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/final-project-DPD/" itemprop="url" rel="index"><span itemprop="name">final project DPD</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="AD9361-ZYNQ7000-adalm-pluto-ZYNQ7010-AD9363-下的SDR-design-化繁为简无线电"><a href="#AD9361-ZYNQ7000-adalm-pluto-ZYNQ7010-AD9363-下的SDR-design-化繁为简无线电" class="headerlink" title="AD9361+ZYNQ7000 adalm-pluto(ZYNQ7010+AD9363) 下的SDR design(化繁为简无线电)"></a>AD9361+ZYNQ7000 adalm-pluto(ZYNQ7010+AD9363) 下的SDR design(化繁为简无线电)</h1><p><strong>ZYNQ是一款内嵌了ARM的FPGA</strong></p>
+<p><a target="_blank" rel="noopener" href="https://ww2.mathworks.cn/videos/simplify-the-implementation-of-software-defined-radio-in-hardware-1510052703793.html?s_tid=srchtitle_%25E5%25B0%2584%25E9%25A2%2591_5">https://ww2.mathworks.cn/videos/simplify-the-implementation-of-software-defined-radio-in-hardware-1510052703793.html?s_tid=srchtitle_%25E5%25B0%2584%25E9%25A2%2591_5</a></p>
+<h2 id="RF-system-design"><a href="#RF-system-design" class="headerlink" title="RF system design"></a>RF system design</h2><p>antenna RF mix_signal digital_hardware digital_hardware DSP Software architecture</p>
+<h2 id="SDR"><a href="#SDR" class="headerlink" title="SDR"></a>SDR</h2><p><img src="https://cdn.staticaly.com/gh/JC-GGBond/image-JC@master/final-project-DPD/微信截图_20221019163110.3bilj05ujd40.webp" alt=""></p>
+<p>模拟前端：FMC:可调RF卡</p>
+<p>数字前端:FPGA或SOC片上系统</p>
+<p>基带处理:主机</p>
+<h2 id="design"><a href="#design" class="headerlink" title="design"></a>design</h2><h3 id="端到端仿真"><a href="#端到端仿真" class="headerlink" title="端到端仿真"></a>端到端仿真</h3><h3 id="over-the-air测试空口测试-此时数字前端没有不数到ARM，FPGA里"><a href="#over-the-air测试空口测试-此时数字前端没有不数到ARM，FPGA里" class="headerlink" title="over the air测试空口测试(此时数字前端没有不数到ARM，FPGA里)"></a>over the air测试空口测试(此时数字前端没有不数到ARM，FPGA里)</h3><p>射频前端+PC端MATLAB设计</p>
+<p>MATLAB开发了硬件接口模块：ZYNQ-SDR radio I/O<br><img src="https://cdn.staticaly.com/gh/JC-GGBond/image-JC@master/final-project-DPD/微信截图_20221019164021.42bjmmn9tns0.webp" alt=""></p>
+<p>以太网口速率限制问题：SDR硬件厂商已经用burst解决(数据缓冲)</p>
+<p>以对象函数调用方式访问端口<br><img src="https://cdn.staticaly.com/gh/JC-GGBond/image-JC@master/final-project-DPD/微信截图_20221019164330.6fj3cauxiew0.webp" alt=""></p>
+<p>repeated waveform transmitter 存储信号，不断连续发送信号，相当于把SDR当成发生器！<br>就是我DPD的信源<br><img src="https://cdn.staticaly.com/gh/JC-GGBond/image-JC@master/final-project-DPD/微信截图_20221019204354.50ezws24pb80.webp" alt=""></p>
+<p>网址视频里有演示LTE发送过程：26分钟处</p>
+<p>他这个一套流程，相当于LTE从头撸到尾发射接收，真的牛逼，能看到源码就好了</p>
+<p><img src="https://cdn.staticaly.com/gh/JC-GGBond/image-JC@master/final-project-DPD/微信截图_20221019205112.27z3qn16l2jo.webp" alt=""></p>
+<h3 id="原型与实现-C代码-此时把数字前端部署到ARM和FPGA上"><a href="#原型与实现-C代码-此时把数字前端部署到ARM和FPGA上" class="headerlink" title="原型与实现(C代码)(此时把数字前端部署到ARM和FPGA上)"></a>原型与实现(C代码)(此时把数字前端部署到ARM和FPGA上)</h3><p>基于模型设计的理念:<br>系统搭建simulink，算法实现C+HDL,集成和部署</p>
+<p><img src="https://cdn.staticaly.com/gh/JC-GGBond/image-JC@master/final-project-DPD/微信截图_20221019205722.3fcg43dqqi00.webp" alt=""></p>
+<p>自动代码生成:<br>Embedded coder:C</p>
+<p>HDL Coder: HDL</p>
+<p>HW.SW:硬件模块和软件模块</p>
+<p>HDL Workflow Advisor:卧槽一步一步教你做仿真<br><img src="https://cdn.staticaly.com/gh/JC-GGBond/image-JC@master/final-project-DPD/微信截图_20221019210242.4xjifcppj5w0.webp" alt=""></p>
+<p><img src="https://cdn.staticaly.com/gh/JC-GGBond/image-JC@master/final-project-DPD/微信截图_20221019210738.6kek05uo8ng0.webp" alt=""></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/10/19/DPD-in-Matlab-overall/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="JC.GGBond">
+      <meta itemprop="description" content="How you doing?">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="JC.GGBond 's homepage.">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/10/19/DPD-in-Matlab-overall/" class="post-title-link" itemprop="url">DPD_in_Matlab_overall</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2022-10-19 16:01:45" itemprop="dateCreated datePublished" datetime="2022-10-19T16:01:45+08:00">2022-10-19</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-11-05 16:37:29" itemprop="dateModified" datetime="2022-11-05T16:37:29+08:00">2022-11-05</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/final-project-DPD/" itemprop="url" rel="index"><span itemprop="name">final project DPD</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="SDR-in-MATLAB"><a href="#SDR-in-MATLAB" class="headerlink" title="SDR in MATLAB"></a>SDR in MATLAB</h1><p>MATLAB官方MATLAB+RF宣讲:<br><a target="_blank" rel="noopener" href="https://ww2.mathworks.cn/videos/smart-rf-model-and-design-119258.html?s_tid=srchtitle_%25E5%25B0%2584%25E9%25A2%2591_1">https://ww2.mathworks.cn/videos/smart-rf-model-and-design-119258.html?s_tid=srchtitle_%25E5%25B0%2584%25E9%25A2%2591_1</a></p>
+<p>上海贝尔DPD宣讲：<br>chrome-extension://ikhdkkncnoglghljlkmcimlnlhkeamad/pdf-viewer/web/viewer.html?file=https%3A%2F%2Fwww.mathworks.com%2Fcontent%2Fdam%2Fmathworks%2Fmathworks-dot-com%2Fcompany%2Fevents%2Fconferences%2Fmatlab-tour-china%2F2015%2Fproceedings%2Fmatlab-rf-development-application-in-numbers.pdf</p>
+<p>这个应该是之前看过，回忆一下</p>
+<p>射频建模设计</p>
+<p>Simulink+SimRF：射频前端，射频系统级设计</p>
+<h2 id="SimRF"><a href="#SimRF" class="headerlink" title="SimRF"></a>SimRF</h2><p>里面具有PA,Mixer,S,filter,LC,耦合器等等</p>
+<h3 id="RF-toolbox-射频链路预算分析"><a href="#RF-toolbox-射频链路预算分析" class="headerlink" title="RF toolbox:射频链路预算分析"></a>RF toolbox:射频链路预算分析</h3><h3 id="DPD-in-Matlab"><a href="#DPD-in-Matlab" class="headerlink" title="DPD in Matlab"></a>DPD in Matlab</h3><p><a target="_blank" rel="noopener" href="https://ww2.mathworks.cn/videos/search.html?q=DPD&amp;page=1">https://ww2.mathworks.cn/videos/search.html?q=DPD&amp;page=1</a></p>
+<ul>
+<li>2021.02.26:RF Power Amplifier Behavioral Modeling using MATLAB</li>
+</ul>
+<p><a target="_blank" rel="noopener" href="https://ww2.mathworks.cn/videos/rf-power-amplifier-behavioral-modeling-using-matlab-1614963392123.html?s_tid=srchtitle_DPD_5">https://ww2.mathworks.cn/videos/rf-power-amplifier-behavioral-modeling-using-matlab-1614963392123.html?s_tid=srchtitle_DPD_5</a></p>
+<p>典型线性化方法里：DPD,包络监测envelop tracking，CFR crest-factor reduction </p>
+<p>要用同类型的信号去测试和实际验证</p>
+<p>给功放供电，连接TX,RX</p>
+<p>数次不同输入功率下的信号测量</p>
+<p>PA model参数估计</p>
+<p>(他用的是NI 的PXIe,一个VST测试单元，像矢量信源+矢量分析仪)</p>
+<p>测量PA的栅压和Ic</p>
+<p>再有了模型数据之后，可以用simulink里面的示例，进行测试：Power Amplifier Characterization &amp; Digital Predistortion to compensate for Power Amplifier Nonlinearities</p>
+<p><strong>(所以我要用什么东西生成和接受信号，集成在SDR里)</strong></p>
+<p>例程中测试信号选用双音信号和5G-OFDM，64QAM调制信号！</p>
+<p>oversampling:几倍采样下，一般5倍，就是ADC的。</p>
+<p>例程搞得真好！</p>
+<p>MATLAB真的是伟大的公司！是工程师与科学家的智慧结晶！也是学子圣经，含有自由的力量！</p>
+<h2 id="Power-Amplifier-Characterization"><a href="#Power-Amplifier-Characterization" class="headerlink" title="Power Amplifier Characterization"></a>Power Amplifier Characterization</h2><p>1.select，生成合适信号去测试<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">function: helperPACharGenerateOFDM Generate OFDM signal</span><br><span class="line">    [X,R,N] = helperPACharGenerateOFDM generates a 5G-like OFDM waveform,</span><br><span class="line">    X, at a sample rate of R. N is the suggested number of frames.</span><br><span class="line"></span><br><span class="line">    helperPACharGenerateTones Generate two complex tones</span><br><span class="line">    [X,R,N] = helperPACharGenerateTones generates a two tone waveform,</span><br><span class="line">    X, at a sample rate of R. N is the suggested number of frames.</span><br><span class="line"></span><br><span class="line">If testSignal is &quot;OFDM&quot;, this example uses a 5G-like OFDM waveform with 64-QAM modulated signals for each subcarrier. If testSignal is &quot;Tones&quot;, this example uses two tones at 1.8 MHz and 2.6 MHz, to test the intermodulation caused by the PA.</span><br><span class="line"></span><br><span class="line">example:</span><br><span class="line">    switch testSignal</span><br><span class="line">    case &quot;OFDM&quot;</span><br><span class="line">        bw = 100e6;</span><br><span class="line">        [txWaveform,sampleRate,numFrames] = helperPACharGenerateOFDM(bw);</span><br><span class="line">    case &quot;Tones&quot;</span><br><span class="line">        bw = 3e6;</span><br><span class="line">        [txWaveform,sampleRate,numFrames] = helperPACharGenerateTones();</span><br><span class="line">    end</span><br></pre></td></tr></table></figure><br>查一下这个5G OFDM QAM信号为啥没有子载波</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://example.com/2022/10/15/united-image-offer/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -578,7 +771,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-10-25 19:47:23" itemprop="dateModified" datetime="2022-10-25T19:47:23+08:00">2022-10-25</time>
+                <time title="修改时间：2023-01-07 00:54:02" itemprop="dateModified" datetime="2023-01-07T00:54:02+08:00">2023-01-07</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -920,196 +1113,6 @@ V_{DS},I_{DS},每个V_{GS}一条线</script><p>找静态工作点</p>
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/09/02/nuclear-magnetic-resonance/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="JC.GGBond">
-      <meta itemprop="description" content="How you doing?">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="JC.GGBond 's homepage.">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/09/02/nuclear-magnetic-resonance/" class="post-title-link" itemprop="url">nuclear_magnetic_resonance</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2022-09-02 23:29:52" itemprop="dateCreated datePublished" datetime="2022-09-02T23:29:52+08:00">2022-09-02</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-10-22 13:05:00" itemprop="dateModified" datetime="2022-10-22T13:05:00+08:00">2022-10-22</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/knowledges/" itemprop="url" rel="index"><span itemprop="name">knowledges</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>磁共振原理：<br>氢质子自旋，<br>磁矩平行同向低能态；平行反向高能态</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/09/02/careering/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="JC.GGBond">
-      <meta itemprop="description" content="How you doing?">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="JC.GGBond 's homepage.">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/09/02/careering/" class="post-title-link" itemprop="url">careering</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2022-09-02 12:10:15" itemprop="dateCreated datePublished" datetime="2022-09-02T12:10:15+08:00">2022-09-02</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-11-22 15:07:46" itemprop="dateModified" datetime="2022-11-22T15:07:46+08:00">2022-11-22</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/careering/" itemprop="url" rel="index"><span itemprop="name">careering</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="求职准备"><a href="#求职准备" class="headerlink" title="求职准备"></a>求职准备</h1><h2 id="1。基本情况"><a href="#1。基本情况" class="headerlink" title="1。基本情况"></a>1。基本情况</h2><h3 id="1-1-个人简历附件"><a href="#1-1-个人简历附件" class="headerlink" title="1.1 个人简历附件"></a>1.1 个人简历附件</h3><p><img src="https://cdn.staticaly.com/gh/JC-GGBond/image-JC@master/careering/射频硬件方向+朱敬慈+兰州大学+电子信息.64s13wb0ibg0.webp" alt=""></p>
-<h3 id="1-2-毕业研究方向"><a href="#1-2-毕业研究方向" class="headerlink" title="1.2 毕业研究方向"></a>1.2 毕业研究方向</h3><p>功放数字预失真技术：Digital pre-distortion，DPD</p>
-<p>相关成果：</p>
-<ul>
-<li><p>1.企业类技术竞赛：<br><img src="https://cdn.staticaly.com/gh/JC-GGBond/image-JC@master/careering/证书.2eralrvxiihw.webp" alt=""></p>
-<p>介绍参赛文档</p>
-</li>
-<li><p>2.软件系统制作<br>  <img src="https://cdn.staticaly.com/gh/JC-GGBond/image-JC@master/careering/制作matlab软件.2ajnrdjxqkn4.webp" alt=""><br>  <img src="https://cdn.staticaly.com/gh/JC-GGBond/image-JC@master/careering/软著.6r80ax7ptco.webp" alt=""></p>
-<h2 id="2-项目经历"><a href="#2-项目经历" class="headerlink" title="2.项目经历"></a>2.项目经历</h2><p>按时间排序：</p>
-</li>
-</ul>
-<p><strong>本科阶段</strong><br>大创项目：<br>基于脑电信号负性情绪强度检测系统设计</p>
-<ul>
-<li>MATLAB psytoolbox </li>
-<li>近红外脑血氧</li>
-<li>ICA，PCA,KNN<br><img src="https://cdn.staticaly.com/gh/JC-GGBond/image-JC@master/careering/f2884a917118a9962be04563c28f658.43wr3mm8byw0.webp" alt=""></li>
-</ul>
-<p>毕业设计：<br>智能频谱感知，神经网络不同调制方式信号识别</p>
-<p><strong>硕士阶段</strong><br>SDR系统模块设计——选通开关设计</p>
-<p>1.无源功分滤波选通</p>
-<ul>
-<li>仿真阶段<br>a.fliter solution<br><img src="https://cdn.staticaly.com/gh/JC-GGBond/image-JC@master/careering/功分滤波filter.2iph5ob51y00.webp" alt=""></li>
-</ul>
-<p>椭圆：阶数相同的条件下有着最小的通带和阻带波动</p>
-<p>巴特沃斯：最大限度平坦，没有纹波，而在阻频带则逐渐下降为零</p>
-<p>切比雪夫:通带或阻带上频率响应幅度等波纹波动的滤波器</p>
-<p>b.Wilkinson divider CST/CAD/热转印实物制作<br><img src="https://cdn.staticaly.com/gh/JC-GGBond/image-JC@master/careering/功分滤波仿真.2z39xof8vu00.webp" alt=""></p>
-<ul>
-<li>实物制作<br><img src="https://cdn.staticaly.com/gh/JC-GGBond/image-JC@master/careering/功分滤波.77nefyzbv2s0.webp" alt=""><br><img src="https://cdn.staticaly.com/gh/JC-GGBond/image-JC@master/careering/功分滤波实物.4d5d3zpkboa0.webp" alt=""></li>
-</ul>
-<p>2.有源功放U/V选通</p>
-<ul>
-<li>原理图<br><img src="https://cdn.staticaly.com/gh/JC-GGBond/image-JC@master/careering/立创原理图.1nkk8ua6r5kw.webp" alt=""></li>
-<li>PCB<br><img src="https://cdn.staticaly.com/gh/JC-GGBond/image-JC@master/careering/立创PCB.5u9xfzu8c1w0.webp" alt=""></li>
-<li>实物模拟<br><img src="https://cdn.staticaly.com/gh/JC-GGBond/image-JC@master/careering/立创3D.6qyknpyxrlo0.webp" alt=""></li>
-</ul>
-<h2 id="实习经历"><a href="#实习经历" class="headerlink" title="实习经历"></a>实习经历</h2><p>Hytera:深圳海能达通信股份有限公司<br><img src="https://cdn.staticaly.com/gh/JC-GGBond/image-JC@master/careering/Hytera_intern.4zgc68iqnjg0.webp" alt=""><br>实习汇报PPT<br><img src="https://cdn.staticaly.com/gh/JC-GGBond/image-JC@master/careering/Hytera_intern_JC.7havpd67zxo0.webp" alt=""></p>
-<ul>
-<li>实习记录<br><img src="https://cdn.staticaly.com/gh/JC-GGBond/image-JC@master/careering/Intern经历.6nrxz54k5aw.webp" alt=""><br><img src="https://cdn.staticaly.com/gh/JC-GGBond/image-JC@master/careering/RF设备.7axgjkxu9900.webp" alt=""><br><img src="https://cdn.staticaly.com/gh/JC-GGBond/image-JC@master/careering/Intern经历.6nrxz54k5aw.webp" alt=""></li>
-</ul>
-<h2 id="在投论文"><a href="#在投论文" class="headerlink" title="在投论文"></a>在投论文</h2><p>研一师姐主要工作，配合完成<br>The Applied Computational Electromagnetics Society Journal (ACES)</p>
-<p>state：uploaded revision<br><img src="https://cdn.staticaly.com/gh/JC-GGBond/image-JC@master/careering/论文.5kkhaex1znc0.webp" alt=""></p>
-<h2 id="学术参会"><a href="#学术参会" class="headerlink" title="学术参会"></a>学术参会</h2><p><img src="https://cdn.staticaly.com/gh/JC-GGBond/image-JC@master/careering/f478dc45c9677736d4a2c399be64361.2tw7004hpgu0.webp" alt=""><br><img src="https://cdn.staticaly.com/gh/JC-GGBond/image-JC@master/careering/92fc9654fef8d74892071eca5ee5cba.2ien8qhlks00.webp" alt=""><br><img src="https://cdn.staticaly.com/gh/JC-GGBond/image-JC@master/careering/d6307d4aee4f4fd433343b1bf7d8bb3.503uss1p0pk.webp" alt=""></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1179,14 +1182,14 @@ V_{DS},I_{DS},每个V_{GS}一条线</script><p>找静态工作点</p>
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">83</span>
+          <span class="site-state-item-count">85</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">22</span>
+        <span class="site-state-item-count">23</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
