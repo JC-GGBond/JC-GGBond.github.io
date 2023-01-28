@@ -10,7 +10,8 @@ mathjax: true
 
 
 ## Source signal generation
-看论文查信源信号
+信源信号：
+
 5G NR up link or down link for test
 
 * 目前使用MATLAB helperPACharGenerateOFDM/Tones函数可以生成时域信号，分别为5G 64QAM OFDM信号和双音信号
@@ -26,7 +27,11 @@ mathjax: true
 每组信号6000训练，150000验证.
 训练时候的数据选择发射的信号峰值包络.
 
+使用matlab模块:
 
+见白皮书(Testing 5G NR Devices with Standard Waveforms)
+
+https://www.mathworks.com/content/dam/mathworks/white-paper/gated/5g-nr-testing-white-paper.pdf
 
 
 ## DUT (Device Under Test)
