@@ -25,6 +25,10 @@ categories: Work Project
 
 面试结束。
 
+服了，11月中旬了，华子依旧在等，
+也是要投一些别的多做准备。
+
+
 ## huawei wireless shanghai
 * 制作个人介绍文件
 

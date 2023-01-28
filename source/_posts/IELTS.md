@@ -62,3 +62,5 @@ https://www.bilibili.com/video/BV1rv411g7VH/?spm_id_from=333.337.search-card.all
 1,5,9更新口语考题，在12月底，4月底，8月底考比较好
 
 
+# 2022.11.12 Update
+11.19兰州新东方模考体验一次

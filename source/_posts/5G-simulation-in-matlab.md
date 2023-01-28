@@ -72,7 +72,7 @@ beamforming:省PA
 
 ## 工作人员功能
 少数的5-10人组成一个算法团队，快速的做原型验证。都是算法工程师。
-Ericsson试验台：HDL
+Ericsson试验台：HDL 
 https://www.mathworks.com/videos/radio-testbed-design-using-hdl-coder-92636.html?s_tid=srchtitle_radio%20test%20bed%20design_1
 
 关注自动代码生成
