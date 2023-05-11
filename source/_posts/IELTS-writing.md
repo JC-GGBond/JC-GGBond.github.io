@@ -2,7 +2,7 @@
 title: IELTS_writing
 date: 2022-10-22 20:17:27
 tags:
-categories: language
+categories: IELTS
 ---
 # IELTS writing
 

@@ -2,7 +2,7 @@
 title: Cmakeandmake-1
 date: 2022-01-27 00:31:44
 tags: C++
-categories: Study Notes
+categories: coding
 ---
 # Cmake & make
 
