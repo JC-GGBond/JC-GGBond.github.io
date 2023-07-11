@@ -15,7 +15,12 @@ categories: IELTS
 
 4个部分每天都要投入，但时间分配看掌握情况。
 
-多考几次避免不报班。
+6小时学习计划
+1小时听力加改正，
+2小时阅读，
+1小时写作，
+1小时口语，
+1小时综合。
 
 https://www.bilibili.com/video/BV1gq4y117Mv/?spm_id_from=333.880.my_history.page.click&vd_source=b4c269b3b39dc7c70e9ef0888d9e60e2
 

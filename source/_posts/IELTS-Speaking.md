@@ -12,7 +12,7 @@ Home/Accommodation
 
 Well, Now I am living in Tianjin.
 
-"**Yes, I live in Tianjin, a city located in northern China. Tianjin is a pleasant place to live, with a mix of modern and traditional architecture and plenty of green spaces. **My neighborhood is fairly quiet and family-friendly, with lots of shops and restaurants within walking distance.
+Yes, I live in Tianjin, a city located in northern China. Tianjin is a pleasant place to live, with a mix of modern and traditional architecture and plenty of green spaces. My neighborhood is fairly quiet and family-friendly, with lots of shops and restaurants within walking distance.
 
 One of the things I love about Tianjin is its rich history and culture. There are many historical sites and museums to visit, such as the Ancient Culture Street and the Museum of Natural History. The city is also famous for its food, especially its street food, which is both delicious and affordable.
 
@@ -24,61 +24,11 @@ Overall, I think Tianjin is a great place to live. It has everything you need fo
 
 总的来说，我认为天津是一个非常适合居住的地方。它拥有日常生活所需的一切，也有很多机会去探索和学习中国文化和历史。
 
-● 词汇观点 Idea & Vocabulary
-abundant supply：充足的供应
-
-natural resources：自然资源
-
-dynamic：有活力的
-
-colorful and full of life：丰富多彩的生活
-
-always on the go：总是忙碌的
-
-spacious：宽敞的
-
-residence community： 社区
-
-comfort and cozy： 舒适
-
-suburb area ：郊区
-
-● 同义替换 Paraphrase
-tall buildings = skyscrapers = high rise buildings高层建筑
-
-environment = surrounding = atmosphere 环境
-
-modern = state of the art = high tech先进的
-
-Well, it sure has an abundant supply(充足的供应) of natural resources(自然资源). It is very dynamic. (有活力的)People tend to be always on the go. (总是忙碌的)Basically, colorful and full of life(丰富多彩的生活). 
-
 
 2.Do you plan to live there for a long time?  Future（未来类）
 ● 词汇观点 Idea & Vocabulary
 better shot at my career：对我的事业更有帮助
 
-relocate：搬迁
-
-pursue my studies：继续我的学业
-
-metropolis：大都市
-
-migrate：迁移
-
-satisfied with rent/location ：满意租金/ 地段
-
-landlord ：房东
-
-job-hopping ：跳槽
-
-interior： 内部装潢
-
-● 同义替换 Paraphrase
-residence = address = lodging：住所
-
-temporary = short-lived = briefly：暂时
-
-plan = intend ：计划
 
 ● 回答范例 Sample answer
 As much as I will miss my hometown I believe I will have a better shot at my career(对我的事业更有帮助) if I relocate(搬迁). I am planning to pursue my studies(继续我的学业) in the metropolis(大都市) and eventually migrate(迁移) there. 
@@ -99,96 +49,12 @@ I like rainy days. From a daily life perspective, rainy days are cooler, with mo
 
 
 
-● 词汇观点 Idea & Vocabulary
-1. Categorized Ideas
-
-A. Yes 
-
-• It cools the temperature in my area down.
-
-• I like walking in the rain.
-
-• I don't have to go out/play sports/work outside on rainy days.
-
-B. No
-
-• I hate going out when it rains.
-
-• The rain in my hometown is really cold.
-
-• My street often floods when it rains.
-
-• I hate getting wet in the rain.
-
-中文思路：
-
-A. 喜欢 
-
-1. 会降温
-
-2. 喜欢在雨中散步
-
-3. 不必在雨天外出/运动/工作
-
-B. 不喜欢
-
-1. 讨厌下雨天出门
-
-2. 雨很冷
-
-3. 街道经常被淹没
-
-4. 讨厌被淋湿
-
-2. Relevant Vocabulary
-
-• soaked（湿透） 
-
-• uncomfortable（不舒服的）
-
-• nostalgia（怀旧）
-
-• cozy（舒适的）
-
-• raincoat（雨衣）
-
-• umbrella（雨伞）
-
-• climate（气候）
-
-• wind chill（风寒）
-
-• relaxing（令人放松的）
-
-3. Useful Idioms
-
-• happy as a clam（非常幸福）: extremely happy and comfortable
-
-• raining cats and dogs（倾盆大雨）: raining extremely heavily
-
-● 同义替换 Paraphrase
-A. Paraphrase the Question: 
-
-• rainy（下雨）: wet; drizzly 
-
-• days（日子）: times; periods
-
-B. Paraphrase the Answer: 
-
-• relaxing（令人放松的）: calming; soporific
-
-• climate（气候）: weather; temperature
-
-• helps（帮助）: assists; contributes
-
 ● 回答范例 Sample answer
 Yes, I'm happy as a clam when it rains. I think it's because I've always found the sound of rain relaxing, and it really helps me sleep. Besides, the climate in my province is quite hot, and the rain really helps to cool things down. 
 
 
 
 **“I've... seen things you people wouldn't believe... [contemptuous laugh] Attack ships on fire off the shoulder of Orion. I watched c-beams glitter in the dark near the Tannhäuser Gate. All those... moments... will be lost in time, like [small cough] tears... in... rain. Time... to die...”**
-
-**温馨提示：划线内容在Paraphrase可查看同义替换
 
 
 
@@ -220,58 +86,6 @@ B. No - Possible reasons
 
 • I've never liked ice cream
 
-中文思路：
-
-A. 喜欢 - 可能的原因
-
-1. 一直都喜欢
-
-2. 让我想起童年
-
-3. 天气热的时候吃很清爽
-
-4. 喜欢在下班/放学回家的路上买
-
-5. 当做甜点吃
-
-B. 不喜欢 - 可能的原因
-
-1. 不喜欢吃甜食
-
-2. 太冷了
-
-3. 不想发胖
-
-4. 从不喜欢吃
-
-2. Relevant Vocabulary
-
-• climate（气候）
-
-• special occasion（特殊场合）
-
-• topping（浇汁）
-
-• flavour（风味）
-
-• sprinkles（撒）
-
-• scoop（勺）
-
-• syrup（糖水）
-
-• flake（小薄片）
-
-• obesity（肥胖）
-
-• diabetes（糖尿病）
-
-• holidays（假期）
-
-• treat（款待）
-
-3. Useful Idioms
-
 • it melts in your mouth（入口即化）: it's very tasty and easy to eat
 
 • chilled to the bone（寒气逼人）: feeling extremely cold
@@ -300,10 +114,36 @@ No, I’ve never much liked ice cream. I guess this is because my hometown has a
 
 **温馨提示：划线内容在Paraphrase可查看同义替换
 
-## part 2
-Do you think there are too many rules for children to follow, whether at school or at home? 
+## part 2(可以准备的模块，IMF方法introduction main part feelings and future)
+把题库过一遍，每个都说一遍。
+
+1.Do you think there are too many rules for children to follow, whether at school or at home? 
 
 Absolutely，especially for Chinese children.
 Fisrt，it's obviously that there are so many rules for children. They must follow the timetable and schedule.Like when to attend classes and performing duty on time.  Then, the children have regular examinations and tests.Those cause double pressure from life and peers.
 And when the children back to home, they should compliance with internal family rules.These vary according to customs and habits in different countries and regions. For example,In some Western countries, the elder family members believe in Christianity and say grace before meals, while such practices are rare in China. However, due to traditional culture and etiquette, children are expected to behave properly at home, such as not putting their feet on the coffee table or sofa, which is a common scene in the American sitcom Friends.
 In short, children have many rules to follow at both school and home.
+
+2.Describe an activity you enjoyed doing in your free time when you were younger
+
+when thinking about this question, the first activity comes to my mind is watching moives.
+
+My parents were quite busy during the time that I was a teenager.
+
+
+
+
+3.Describe a time when you were teaching a friend or a relative to do something.
+
+
+
+
+4.Describe an invention which is very useful in your daily life
+
+I'd like to talk about the new Artificial Intelligence production ChatGpt which is invented by OpenAI.
+
+encyclopedia,copilot.
+
+5.Describe a time when you lost your way.
+
+I'm going to tell you about that time I got lost during driving to the coastal park.
